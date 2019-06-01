@@ -17,22 +17,30 @@
 {
 	self = [super init];
 	if (self) {
-		[self configureRootViewController];
+		[self configureInitialViewController];
 		[self configureNavigationBar];
 	}
 	return self;
 }
 
-- (void)configureRootViewController
+#pragma mark - Конфигурация Navigation Controller
+
+- (void)configureInitialViewController
 {
 	CPTMainScreenViewController *mainViewController = [CPTMainScreenViewController new];
+	mainViewController.title = @"CRYPTO PROFIT";
 	[self addChildViewController:mainViewController];
 }
 
 - (void)configureNavigationBar
 {
+	NSDictionary *settings = @{
+							   NSForegroundColorAttributeName:[UIColor cpt_green],
+							   NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Bold" size:20.f]
+							   };
+	self.navigationBar.titleTextAttributes = settings;
 	self.navigationBar.barTintColor = [UIColor cpt_darkGray100];
-	self.navigationBar.opaque = NO;
+	self.navigationBar.translucent = NO;
 }
 
 @end

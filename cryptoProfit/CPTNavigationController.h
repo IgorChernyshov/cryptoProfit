@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ Navigation Controller который используется во всём приложении.
+ */
 @interface CPTNavigationController : UINavigationController
 
 @end
