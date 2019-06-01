@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
+
 
 @interface UIColor (CPTColors)
 
-+ (UIColor)
++ (UIColor *)cpt_darkGray100;
++ (UIColor *)cpt_darkGray65;
++ (UIColor *)cpt_lightGray;
++ (UIColor *)cpt_green;
 
 @end
 
