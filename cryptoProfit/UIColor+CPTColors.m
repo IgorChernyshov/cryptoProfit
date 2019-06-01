@@ -13,17 +13,17 @@
 
 + (UIColor *)cpt_darkGray100
 {
-	return [UIColor colorWithRed:41.f/255.f
-						   green:40.f/255.f
-							blue:52.f/255.f
+	return [UIColor colorWithRed:21.f/255.f
+						   green:20.f/255.f
+							blue:32.f/255.f
 						   alpha:1];
 }
 
 + (UIColor *)cpt_darkGray65
 {
-	return [UIColor colorWithRed:41.f/255.f
-						   green:40.f/255.f
-							blue:52.f/255.f
+	return [UIColor colorWithRed:21.f/255.f
+						   green:20.f/255.f
+							blue:32.f/255.f
 						   alpha:0.65];
 }
 

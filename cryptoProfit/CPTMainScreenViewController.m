@@ -7,6 +7,7 @@
 //
 
 #import "CPTMainScreenViewController.h"
+#import "UIColor+CPTColors.h"
 
 @interface CPTMainScreenViewController ()
 
@@ -14,10 +15,13 @@
 
 @implementation CPTMainScreenViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (instancetype)init
+{
+	self = [super init];
+	if (self) {
+		self.view.backgroundColor = [UIColor cpt_lightGray];
+	}
+	return self;
 }
-
 
 @end

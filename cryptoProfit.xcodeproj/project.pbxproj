@@ -16,6 +16,7 @@
 		9C7A53D92296E030008A1632 /* cryptoProfitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53D82296E030008A1632 /* cryptoProfitTests.m */; };
 		9C7A53E42296E030008A1632 /* cryptoProfitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53E32296E030008A1632 /* cryptoProfitUITests.m */; };
 		9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */; };
+		9C7A54A322A29E17008A1632 /* CPTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A54A222A29E17008A1632 /* CPTNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		9C7A53E52296E030008A1632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C7A549422A299AC008A1632 /* UIColor+CPTColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CPTColors.h"; sourceTree = "<group>"; };
 		9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CPTColors.m"; sourceTree = "<group>"; };
+		9C7A54A122A29E17008A1632 /* CPTNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNavigationController.h; sourceTree = "<group>"; };
+		9C7A54A222A29E17008A1632 /* CPTNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,13 +155,63 @@
 		9C7A549A22A299E2008A1632 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				9C7A53BC2296E02E008A1632 /* AppDelegate.h */,
-				9C7A53BD2296E02E008A1632 /* AppDelegate.m */,
-				9C7A53BF2296E02E008A1632 /* CPTMainScreenViewController.h */,
-				9C7A53C02296E02E008A1632 /* CPTMainScreenViewController.m */,
-				9C7A53CE2296E030008A1632 /* main.m */,
+				9C7A549B22A29D7E008A1632 /* BusinessLogic */,
+				9C7A549F22A29DD0008A1632 /* Flows */,
+				9C7A549C22A29D96008A1632 /* UI */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		9C7A549B22A29D7E008A1632 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A53CE2296E030008A1632 /* main.m */,
+				9C7A53BC2296E02E008A1632 /* AppDelegate.h */,
+				9C7A53BD2296E02E008A1632 /* AppDelegate.m */,
+			);
+			name = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		9C7A549C22A29D96008A1632 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A549D22A29D9B008A1632 /* Elements */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		9C7A549D22A29D9B008A1632 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A54A422A29E45008A1632 /* UINavigationController */,
+			);
+			name = Elements;
+			sourceTree = "<group>";
+		};
+		9C7A549F22A29DD0008A1632 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A54A022A29DE2008A1632 /* Main */,
+			);
+			name = Flows;
+			sourceTree = "<group>";
+		};
+		9C7A54A022A29DE2008A1632 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A53BF2296E02E008A1632 /* CPTMainScreenViewController.h */,
+				9C7A53C02296E02E008A1632 /* CPTMainScreenViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		9C7A54A422A29E45008A1632 /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A54A122A29E17008A1632 /* CPTNavigationController.h */,
+				9C7A54A222A29E17008A1632 /* CPTNavigationController.m */,
+			);
+			name = UINavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +348,7 @@
 				9C7A53CF2296E030008A1632 /* main.m in Sources */,
 				9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */,
 				9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */,
+				9C7A54A322A29E17008A1632 /* CPTNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

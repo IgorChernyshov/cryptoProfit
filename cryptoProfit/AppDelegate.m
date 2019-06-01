@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "CPTMainScreenViewController.h"
+#import "CPTNavigationController.h"
 
 
 @implementation AppDelegate
@@ -16,7 +16,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     CGRect windowFrame = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:windowFrame];
-    self.window.rootViewController = [CPTMainScreenViewController new];
+	
+	CPTNavigationController *navigationController = [CPTNavigationController new];
+	
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     
     return YES;
