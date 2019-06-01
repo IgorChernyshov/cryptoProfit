@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53BD2296E02E008A1632 /* AppDelegate.m */; };
-		9C7A53C12296E02E008A1632 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53C02296E02E008A1632 /* ViewController.m */; };
+		9C7A53C12296E02E008A1632 /* CPTMainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53C02296E02E008A1632 /* CPTMainScreenViewController.m */; };
 		9C7A53C72296E02E008A1632 /* cryptoProfit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53C52296E02E008A1632 /* cryptoProfit.xcdatamodeld */; };
 		9C7A53C92296E030008A1632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C7A53C82296E030008A1632 /* Assets.xcassets */; };
 		9C7A53CC2296E030008A1632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7A53CA2296E030008A1632 /* LaunchScreen.storyboard */; };
 		9C7A53CF2296E030008A1632 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53CE2296E030008A1632 /* main.m */; };
 		9C7A53D92296E030008A1632 /* cryptoProfitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53D82296E030008A1632 /* cryptoProfitTests.m */; };
 		9C7A53E42296E030008A1632 /* cryptoProfitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53E32296E030008A1632 /* cryptoProfitUITests.m */; };
+		9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +39,8 @@
 		9C7A53B92296E02E008A1632 /* cryptoProfit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cryptoProfit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7A53BC2296E02E008A1632 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9C7A53BD2296E02E008A1632 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9C7A53BF2296E02E008A1632 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9C7A53C02296E02E008A1632 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9C7A53BF2296E02E008A1632 /* CPTMainScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenViewController.h; sourceTree = "<group>"; };
+		9C7A53C02296E02E008A1632 /* CPTMainScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenViewController.m; sourceTree = "<group>"; };
 		9C7A53C62296E02E008A1632 /* cryptoProfit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cryptoProfit.xcdatamodel; sourceTree = "<group>"; };
 		9C7A53C82296E030008A1632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C7A53CB2296E030008A1632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,8 @@
 		9C7A53DF2296E030008A1632 /* cryptoProfitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cryptoProfitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7A53E32296E030008A1632 /* cryptoProfitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cryptoProfitUITests.m; sourceTree = "<group>"; };
 		9C7A53E52296E030008A1632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C7A549422A299AC008A1632 /* UIColor+CPTColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CPTColors.h"; sourceTree = "<group>"; };
+		9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CPTColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,15 +104,9 @@
 		9C7A53BB2296E02E008A1632 /* cryptoProfit */ = {
 			isa = PBXGroup;
 			children = (
-				9C7A53BC2296E02E008A1632 /* AppDelegate.h */,
-				9C7A53BD2296E02E008A1632 /* AppDelegate.m */,
-				9C7A53BF2296E02E008A1632 /* ViewController.h */,
-				9C7A53C02296E02E008A1632 /* ViewController.m */,
-				9C7A53C82296E030008A1632 /* Assets.xcassets */,
-				9C7A53CA2296E030008A1632 /* LaunchScreen.storyboard */,
-				9C7A53CD2296E030008A1632 /* Info.plist */,
-				9C7A53CE2296E030008A1632 /* main.m */,
-				9C7A53C52296E02E008A1632 /* cryptoProfit.xcdatamodeld */,
+				9C7A549A22A299E2008A1632 /* Application */,
+				9C7A549922A299D4008A1632 /* Configuration */,
+				9C7A549722A299B1008A1632 /* Resources */,
 			);
 			path = cryptoProfit;
 			sourceTree = "<group>";
@@ -130,6 +127,38 @@
 				9C7A53E52296E030008A1632 /* Info.plist */,
 			);
 			path = cryptoProfitUITests;
+			sourceTree = "<group>";
+		};
+		9C7A549722A299B1008A1632 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A53C82296E030008A1632 /* Assets.xcassets */,
+				9C7A53CA2296E030008A1632 /* LaunchScreen.storyboard */,
+				9C7A549422A299AC008A1632 /* UIColor+CPTColors.h */,
+				9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C7A549922A299D4008A1632 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A53CD2296E030008A1632 /* Info.plist */,
+				9C7A53C52296E02E008A1632 /* cryptoProfit.xcdatamodeld */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		9C7A549A22A299E2008A1632 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A53BC2296E02E008A1632 /* AppDelegate.h */,
+				9C7A53BD2296E02E008A1632 /* AppDelegate.m */,
+				9C7A53BF2296E02E008A1632 /* CPTMainScreenViewController.h */,
+				9C7A53C02296E02E008A1632 /* CPTMainScreenViewController.m */,
+				9C7A53CE2296E030008A1632 /* main.m */,
+			);
+			name = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C7A53C12296E02E008A1632 /* ViewController.m in Sources */,
+				9C7A53C12296E02E008A1632 /* CPTMainScreenViewController.m in Sources */,
 				9C7A53C72296E02E008A1632 /* cryptoProfit.xcdatamodeld in Sources */,
 				9C7A53CF2296E030008A1632 /* main.m in Sources */,
 				9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */,
+				9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

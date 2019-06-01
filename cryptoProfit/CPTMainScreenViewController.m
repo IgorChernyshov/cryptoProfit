@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  CPTMainScreenViewController.m
 //  cryptoProfit
 //
 //  Created by Igor Chernyshov on 23/05/2019.
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CPTMainScreenViewController.h"
 
-@interface ViewController ()
+@interface CPTMainScreenViewController ()
 
 @end
 
-@implementation ViewController
+@implementation CPTMainScreenViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

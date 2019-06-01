@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CPTMainScreenViewController.h
 //  cryptoProfit
 //
 //  Created by Igor Chernyshov on 23/05/2019.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CPTMainScreenViewController : UIViewController
 
 
 @end

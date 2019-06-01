@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (CPTColors)
 
++ (UIColor)
+
 @end
 
 NS_ASSUME_NONNULL_END

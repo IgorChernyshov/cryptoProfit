@@ -7,16 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "CPTMainScreenViewController.h"
 
-@interface AppDelegate ()
-
-@end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    CGRect windowFrame = [[UIScreen mainScreen] bounds];
+    self.window = [[UIWindow alloc] initWithFrame:windowFrame];
+    self.window.rootViewController = [CPTMainScreenViewController new];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
