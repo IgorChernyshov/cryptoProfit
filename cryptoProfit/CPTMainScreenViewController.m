@@ -7,17 +7,25 @@
 //
 
 #import "CPTMainScreenViewController.h"
+#import "UIColor+CPTColors.h"
 
 @interface CPTMainScreenViewController ()
+
+@property (nonatomic, strong) id<CPTMainScreenPresenterProtocol> presenter;
 
 @end
 
 @implementation CPTMainScreenViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (instancetype)initWithPresenter:(id<CPTMainScreenPresenterProtocol>)presenter
+{
+	self = [super init];
+	if (self) {
+		_presenter = presenter;
+		self.view.backgroundColor = [UIColor cpt_lightGray];
+		self.title = @"CRYPTO PROFIT";
+	}
+	return self;
 }
-
 
 @end
