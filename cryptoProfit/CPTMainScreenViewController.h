@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CPTMainScreenPresenterProtocol.h"
+#import "CPTMainScreenViewProtocol.h"
 
-@interface CPTMainScreenViewController : UIViewController
+@interface CPTMainScreenViewController : UIViewController <CPTMainScreenViewProtocol>
 
+- (instancetype)initWithPresenter:(id<CPTMainScreenPresenterProtocol>)presenter;
 
 @end
 

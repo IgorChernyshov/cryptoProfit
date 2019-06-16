@@ -11,15 +11,19 @@
 
 @interface CPTMainScreenViewController ()
 
+@property (nonatomic, strong) id<CPTMainScreenPresenterProtocol> presenter;
+
 @end
 
 @implementation CPTMainScreenViewController
 
-- (instancetype)init
+- (instancetype)initWithPresenter:(id<CPTMainScreenPresenterProtocol>)presenter
 {
 	self = [super init];
 	if (self) {
+		_presenter = presenter;
 		self.view.backgroundColor = [UIColor cpt_lightGray];
+		self.title = @"CRYPTO PROFIT";
 	}
 	return self;
 }

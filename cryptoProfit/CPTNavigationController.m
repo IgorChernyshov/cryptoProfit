@@ -7,7 +7,7 @@
 //
 
 #import "CPTNavigationController.h"
-#import "CPTMainScreenViewController.h"
+#import "CPTMainScreenBuilder.h"
 #import "UIColor+CPTColors.h"
 
 
@@ -23,13 +23,13 @@
 	return self;
 }
 
+
 #pragma mark - Конфигурация Navigation Controller
 
 - (void)configureInitialViewController
 {
-	CPTMainScreenViewController *mainViewController = [CPTMainScreenViewController new];
-	mainViewController.title = @"CRYPTO PROFIT";
-	[self addChildViewController:mainViewController];
+	UIViewController<CPTMainScreenViewProtocol> *viewController = [CPTMainScreenBuilder build];
+	[self addChildViewController:viewController];
 }
 
 - (void)configureNavigationBar
