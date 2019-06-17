@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface CPTMainScreenBuilder : NSObject
 
-+(UIViewController<CPTMainScreenViewProtocol> *)build;	/**< Метод класса для сборки модуля */
++ (UIViewController<CPTMainScreenViewProtocol> *)build;	/**< Метод класса для сборки модуля */
 
 @end
 

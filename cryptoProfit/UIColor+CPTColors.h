@@ -14,10 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (CPTColors)
 
-+ (UIColor *)cpt_darkGray100;
-+ (UIColor *)cpt_darkGray65;
-+ (UIColor *)cpt_lightGray;
-+ (UIColor *)cpt_green;
++ (UIColor *)navigationControllerBackgroundColor;
++ (UIColor *)navigationControllerTintColor;
+
++ (UIColor *)walletTableViewBackgroundColor;
++ (UIColor *)walletTableViewSeparatorColor;
 
 @end
 

@@ -11,6 +11,32 @@
 
 @implementation UIColor (CPTColors)
 
+
+#pragma mark - Public colors
+
++ (UIColor *)navigationControllerBackgroundColor
+{
+	return [self cpt_darkGray100];
+}
+
++ (UIColor *)navigationControllerTintColor
+{
+	return [self cpt_green];
+}
+
++ (UIColor *)walletTableViewBackgroundColor
+{
+	return [self cpt_lightGray];
+}
+
++ (UIColor *)walletTableViewSeparatorColor
+{
+	return [self cpt_green];
+}
+
+
+#pragma mark - Private colors
+
 + (UIColor *)cpt_darkGray100
 {
 	return [UIColor colorWithRed:41.f/255.f

@@ -35,11 +35,12 @@
 - (void)configureNavigationBar
 {
 	NSDictionary *settings = @{
-							   NSForegroundColorAttributeName:[UIColor cpt_green],
+							   NSForegroundColorAttributeName:[UIColor navigationControllerTintColor],
 							   NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Bold" size:20.f]
 							   };
 	self.navigationBar.titleTextAttributes = settings;
-	self.navigationBar.barTintColor = [UIColor cpt_darkGray100];
+	self.navigationBar.tintColor = [UIColor navigationControllerTintColor];
+	self.navigationBar.barTintColor = [UIColor navigationControllerBackgroundColor];
 	self.navigationBar.translucent = NO;
 }
 
