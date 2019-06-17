@@ -19,6 +19,7 @@
 		9C7A54A322A29E17008A1632 /* CPTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A54A222A29E17008A1632 /* CPTNavigationController.m */; };
 		9CEC441A22B60E89004BC6FE /* CPTMainScreenBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441922B60E89004BC6FE /* CPTMainScreenBuilder.m */; };
 		9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */; };
+		9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442122B62650004BC6FE /* CPTWalletCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenPresenter.m; sourceTree = "<group>"; };
 		9CEC441E22B60F5D004BC6FE /* CPTMainScreenPresenterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenPresenterProtocol.h; sourceTree = "<group>"; };
 		9CEC441F22B610C1004BC6FE /* CPTMainScreenViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenViewProtocol.h; sourceTree = "<group>"; };
+		9CEC442022B62650004BC6FE /* CPTWalletCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTWalletCell.h; sourceTree = "<group>"; };
+		9CEC442122B62650004BC6FE /* CPTWalletCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTWalletCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +240,8 @@
 				9C7A53BF2296E02E008A1632 /* CPTMainScreenViewController.h */,
 				9C7A53C02296E02E008A1632 /* CPTMainScreenViewController.m */,
 				9CEC441F22B610C1004BC6FE /* CPTMainScreenViewProtocol.h */,
+				9CEC442022B62650004BC6FE /* CPTWalletCell.h */,
+				9CEC442122B62650004BC6FE /* CPTWalletCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C7A53C12296E02E008A1632 /* CPTMainScreenViewController.m in Sources */,
+				9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */,
 				9C7A53C72296E02E008A1632 /* cryptoProfit.xcdatamodeld in Sources */,
 				9C7A53CF2296E030008A1632 /* main.m in Sources */,
 				9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */,

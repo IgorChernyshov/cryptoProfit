@@ -10,6 +10,10 @@
 #import "CPTMainScreenPresenterProtocol.h"
 #import "CPTMainScreenViewProtocol.h"
 
+
+/**
+ Главный экран приложения, где отображается список криптовалют и откуда осуществляется навигация на другие экраны.
+ */
 @interface CPTMainScreenViewController : UIViewController <CPTMainScreenViewProtocol>
 
 - (instancetype)initWithPresenter:(id<CPTMainScreenPresenterProtocol>)presenter;
