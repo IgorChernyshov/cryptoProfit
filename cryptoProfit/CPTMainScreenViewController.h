@@ -6,9 +6,11 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import "CPTMainScreenPresenterProtocol.h"
 #import "CPTMainScreenViewProtocol.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 
 /**
@@ -18,5 +20,9 @@
 
 - (instancetype)initWithPresenter:(id<CPTMainScreenPresenterProtocol>)presenter;
 
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+
 @end
 
+NS_ASSUME_NONNULL_END

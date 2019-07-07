@@ -7,7 +7,7 @@
 //
 
 #import "CPTNavigationController.h"
-#import "CPTMainScreenBuilder.h"
+#import "CPTMainScreenFactory.h"
 #import "UIColor+CPTColors.h"
 
 
@@ -28,7 +28,7 @@
 
 - (void)configureInitialViewController
 {
-	UIViewController<CPTMainScreenViewProtocol> *viewController = [CPTMainScreenBuilder build];
+	UIViewController<CPTMainScreenViewProtocol> *viewController = [CPTMainScreenFactory build];
 	[self addChildViewController:viewController];
 }
 

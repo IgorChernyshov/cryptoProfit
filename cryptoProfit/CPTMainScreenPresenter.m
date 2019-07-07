@@ -7,8 +7,20 @@
 //
 
 #import "CPTMainScreenPresenter.h"
+#import "CPTMainScreenViewController.h"
+#import "CPTAddCurrencyFactory.h"
 
 
 @implementation CPTMainScreenPresenter
+
+@synthesize view;
+
+- (void)addCurrencyButtonWasPressed {
+	[self.view.navigationController pushViewController:[CPTAddCurrencyFactory build] animated:YES];
+}
+
+- (void)optionsButtonWasPressed {
+	// TODO
+}
 
 @end

@@ -1,5 +1,5 @@
 //
-//  CPTMainScreenBuilder.h
+//  CPTMainScreenFactory.h
 //  cryptoProfit
 //
 //  Created by Igor Chernyshov on 16/06/2019.
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Собирает модуль CPTMainScreenViewController.
  */
-@interface CPTMainScreenBuilder : NSObject
+@interface CPTMainScreenFactory : NSObject
 
 + (UIViewController<CPTMainScreenViewProtocol> *)build;	/**< Метод класса для сборки модуля */
 

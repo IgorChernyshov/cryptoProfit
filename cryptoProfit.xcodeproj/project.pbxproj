@@ -17,9 +17,12 @@
 		9C7A53E42296E030008A1632 /* cryptoProfitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53E32296E030008A1632 /* cryptoProfitUITests.m */; };
 		9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */; };
 		9C7A54A322A29E17008A1632 /* CPTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A54A222A29E17008A1632 /* CPTNavigationController.m */; };
-		9CEC441A22B60E89004BC6FE /* CPTMainScreenBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441922B60E89004BC6FE /* CPTMainScreenBuilder.m */; };
+		9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */; };
 		9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */; };
 		9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442122B62650004BC6FE /* CPTWalletCell.m */; };
+		9CEC442A22B7595D004BC6FE /* CPTAddCurrencyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442922B7595D004BC6FE /* CPTAddCurrencyFactory.m */; };
+		9CEC442E22B75AC0004BC6FE /* CPTAddCurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442D22B75AC0004BC6FE /* CPTAddCurrencyViewController.m */; };
+		9CEC443122B75B69004BC6FE /* CPTAddCurrencyPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC443022B75B69004BC6FE /* CPTAddCurrencyPresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,14 +63,22 @@
 		9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CPTColors.m"; sourceTree = "<group>"; };
 		9C7A54A122A29E17008A1632 /* CPTNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNavigationController.h; sourceTree = "<group>"; };
 		9C7A54A222A29E17008A1632 /* CPTNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTNavigationController.m; sourceTree = "<group>"; };
-		9CEC441822B60E89004BC6FE /* CPTMainScreenBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenBuilder.h; sourceTree = "<group>"; };
-		9CEC441922B60E89004BC6FE /* CPTMainScreenBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenBuilder.m; sourceTree = "<group>"; };
+		9CEC441822B60E89004BC6FE /* CPTMainScreenFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenFactory.h; sourceTree = "<group>"; };
+		9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenFactory.m; sourceTree = "<group>"; };
 		9CEC441B22B60EEE004BC6FE /* CPTMainScreenPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenPresenter.h; sourceTree = "<group>"; };
 		9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenPresenter.m; sourceTree = "<group>"; };
 		9CEC441E22B60F5D004BC6FE /* CPTMainScreenPresenterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenPresenterProtocol.h; sourceTree = "<group>"; };
 		9CEC441F22B610C1004BC6FE /* CPTMainScreenViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenViewProtocol.h; sourceTree = "<group>"; };
 		9CEC442022B62650004BC6FE /* CPTWalletCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTWalletCell.h; sourceTree = "<group>"; };
 		9CEC442122B62650004BC6FE /* CPTWalletCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTWalletCell.m; sourceTree = "<group>"; };
+		9CEC442822B7595D004BC6FE /* CPTAddCurrencyFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAddCurrencyFactory.h; sourceTree = "<group>"; };
+		9CEC442922B7595D004BC6FE /* CPTAddCurrencyFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTAddCurrencyFactory.m; sourceTree = "<group>"; };
+		9CEC442B22B75A05004BC6FE /* CPTAddCurrencyViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAddCurrencyViewProtocol.h; sourceTree = "<group>"; };
+		9CEC442C22B75AC0004BC6FE /* CPTAddCurrencyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAddCurrencyViewController.h; sourceTree = "<group>"; };
+		9CEC442D22B75AC0004BC6FE /* CPTAddCurrencyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTAddCurrencyViewController.m; sourceTree = "<group>"; };
+		9CEC442F22B75B69004BC6FE /* CPTAddCurrencyPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAddCurrencyPresenter.h; sourceTree = "<group>"; };
+		9CEC443022B75B69004BC6FE /* CPTAddCurrencyPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTAddCurrencyPresenter.m; sourceTree = "<group>"; };
+		9CEC443222B75B77004BC6FE /* CPTAddCurrencyPresenterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAddCurrencyPresenterProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +213,7 @@
 		9C7A549F22A29DD0008A1632 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				9CEC442322B7591A004BC6FE /* AddCurrency */,
 				9C7A54A022A29DE2008A1632 /* Main */,
 			);
 			name = Flows;
@@ -212,8 +224,8 @@
 			children = (
 				9CEC441722B60E6D004BC6FE /* Builder */,
 				9CEC441422B60B7E004BC6FE /* Model */,
-				9CEC441522B60B7F004BC6FE /* View */,
 				9CEC441622B60B7F004BC6FE /* Presenter */,
+				9CEC441522B60B7F004BC6FE /* View */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -259,10 +271,57 @@
 		9CEC441722B60E6D004BC6FE /* Builder */ = {
 			isa = PBXGroup;
 			children = (
-				9CEC441822B60E89004BC6FE /* CPTMainScreenBuilder.h */,
-				9CEC441922B60E89004BC6FE /* CPTMainScreenBuilder.m */,
+				9CEC441822B60E89004BC6FE /* CPTMainScreenFactory.h */,
+				9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */,
 			);
 			name = Builder;
+			sourceTree = "<group>";
+		};
+		9CEC442322B7591A004BC6FE /* AddCurrency */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC442422B75922004BC6FE /* Builder */,
+				9CEC442622B75932004BC6FE /* Model */,
+				9CEC442722B75935004BC6FE /* Presenter */,
+				9CEC442522B7592E004BC6FE /* View */,
+			);
+			name = AddCurrency;
+			sourceTree = "<group>";
+		};
+		9CEC442422B75922004BC6FE /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC442822B7595D004BC6FE /* CPTAddCurrencyFactory.h */,
+				9CEC442922B7595D004BC6FE /* CPTAddCurrencyFactory.m */,
+			);
+			name = Builder;
+			sourceTree = "<group>";
+		};
+		9CEC442522B7592E004BC6FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC442C22B75AC0004BC6FE /* CPTAddCurrencyViewController.h */,
+				9CEC442D22B75AC0004BC6FE /* CPTAddCurrencyViewController.m */,
+				9CEC442B22B75A05004BC6FE /* CPTAddCurrencyViewProtocol.h */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9CEC442622B75932004BC6FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9CEC442722B75935004BC6FE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC442F22B75B69004BC6FE /* CPTAddCurrencyPresenter.h */,
+				9CEC443022B75B69004BC6FE /* CPTAddCurrencyPresenter.m */,
+				9CEC443222B75B77004BC6FE /* CPTAddCurrencyPresenterProtocol.h */,
+			);
+			name = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,12 +453,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CEC442A22B7595D004BC6FE /* CPTAddCurrencyFactory.m in Sources */,
 				9C7A53C12296E02E008A1632 /* CPTMainScreenViewController.m in Sources */,
 				9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */,
+				9CEC443122B75B69004BC6FE /* CPTAddCurrencyPresenter.m in Sources */,
+				9CEC442E22B75AC0004BC6FE /* CPTAddCurrencyViewController.m in Sources */,
 				9C7A53C72296E02E008A1632 /* cryptoProfit.xcdatamodeld in Sources */,
 				9C7A53CF2296E030008A1632 /* main.m in Sources */,
 				9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */,
-				9CEC441A22B60E89004BC6FE /* CPTMainScreenBuilder.m in Sources */,
+				9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */,
 				9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */,
 				9C7A54A322A29E17008A1632 /* CPTNavigationController.m in Sources */,
 				9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */,
