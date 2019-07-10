@@ -52,12 +52,12 @@
 {
 	self.view.backgroundColor = [UIColor walletTableViewBackgroundColor];
 
-	[self createTableView];
+	[self addTableView];
 	[self configureNavigationController];
 	[self createConstraints];
 }
 
-- (void)createTableView
+- (void)addTableView
 {
 	self.tableView = [UITableView new];
 	self.tableView.delegate = self;
@@ -78,7 +78,7 @@
 																	  style:UIBarButtonItemStylePlain
 																	 target:self
 																	 action:@selector(optionsButtonWasPressed)];
-	UIBarButtonItem *addCurrencyButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"addCurrencyButton"]
+	UIBarButtonItem *addCurrencyButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"addCurrencyIcon"]
 																		  style:UIBarButtonItemStylePlain
 																		 target:self
 																		 action:@selector(addCurrencyButtonWasPressed)];
@@ -98,7 +98,7 @@
 }
 
 
-#pragma mark - Navigation Buttons Methods
+#pragma mark - Методы кнопок Navigation Bar
 
 - (void)optionsButtonWasPressed
 {

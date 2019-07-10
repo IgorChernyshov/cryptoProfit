@@ -34,6 +34,21 @@
 	return [self cpt_green];
 }
 
++ (UIColor *)addCurrencyBackgroundColor
+{
+	return [self cpt_lightGray];
+}
+
++ (UIColor *)addCurrencyTextColor
+{
+	return [self cpt_green];
+}
+
++ (UIColor *)addCurrencyPlaceholderColor
+{
+	return [self cpt_green64];
+}
+
 
 #pragma mark - Private colors
 
@@ -67,6 +82,14 @@
 						   green:207.f/255.f
 							blue:78.f/255.f
 						   alpha:1];
+}
+
++ (UIColor *)cpt_green64
+{
+	return [UIColor colorWithRed:143.f/255.f
+						   green:207.f/255.f
+							blue:78.f/255.f
+						   alpha:0.64];
 }
 
 @end

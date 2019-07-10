@@ -15,7 +15,7 @@
 
 + (UIViewController<CPTAddCurrencyViewProtocol> *)build
 {
-	CPTAddCurrencyPresenter *presenter = [CPTAddCurrencyPresenter new];
+	id<CPTAddCurrencyPresenterProtocol> presenter = [CPTAddCurrencyPresenter new];
 	UIViewController<CPTAddCurrencyViewProtocol> *view = [[CPTAddCurrencyViewController alloc] initWithPresenter:presenter];
 	
 	return view;

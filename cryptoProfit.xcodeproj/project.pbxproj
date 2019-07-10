@@ -17,6 +17,7 @@
 		9C7A53E42296E030008A1632 /* cryptoProfitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53E32296E030008A1632 /* cryptoProfitUITests.m */; };
 		9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */; };
 		9C7A54A322A29E17008A1632 /* CPTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A54A222A29E17008A1632 /* CPTNavigationController.m */; };
+		9CAF12DC22D4588F001528E7 /* CPTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12DB22D4588F001528E7 /* CPTTextField.m */; };
 		9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */; };
 		9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */; };
 		9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442122B62650004BC6FE /* CPTWalletCell.m */; };
@@ -63,6 +64,8 @@
 		9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CPTColors.m"; sourceTree = "<group>"; };
 		9C7A54A122A29E17008A1632 /* CPTNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNavigationController.h; sourceTree = "<group>"; };
 		9C7A54A222A29E17008A1632 /* CPTNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTNavigationController.m; sourceTree = "<group>"; };
+		9CAF12DA22D4588F001528E7 /* CPTTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTTextField.h; sourceTree = "<group>"; };
+		9CAF12DB22D4588F001528E7 /* CPTTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTTextField.m; sourceTree = "<group>"; };
 		9CEC441822B60E89004BC6FE /* CPTMainScreenFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenFactory.h; sourceTree = "<group>"; };
 		9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenFactory.m; sourceTree = "<group>"; };
 		9CEC441B22B60EEE004BC6FE /* CPTMainScreenPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenPresenter.h; sourceTree = "<group>"; };
@@ -205,6 +208,7 @@
 		9C7A549D22A29D9B008A1632 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				9CAF12D922D45844001528E7 /* UITextField */,
 				9C7A54A422A29E45008A1632 /* UINavigationController */,
 			);
 			name = Elements;
@@ -237,6 +241,15 @@
 				9C7A54A222A29E17008A1632 /* CPTNavigationController.m */,
 			);
 			name = UINavigationController;
+			sourceTree = "<group>";
+		};
+		9CAF12D922D45844001528E7 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12DA22D4588F001528E7 /* CPTTextField.h */,
+				9CAF12DB22D4588F001528E7 /* CPTTextField.m */,
+			);
+			name = UITextField;
 			sourceTree = "<group>";
 		};
 		9CEC441422B60B7E004BC6FE /* Model */ = {
@@ -456,6 +469,7 @@
 				9CEC442A22B7595D004BC6FE /* CPTAddCurrencyFactory.m in Sources */,
 				9C7A53C12296E02E008A1632 /* CPTMainScreenViewController.m in Sources */,
 				9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */,
+				9CAF12DC22D4588F001528E7 /* CPTTextField.m in Sources */,
 				9CEC443122B75B69004BC6FE /* CPTAddCurrencyPresenter.m in Sources */,
 				9CEC442E22B75AC0004BC6FE /* CPTAddCurrencyViewController.m in Sources */,
 				9C7A53C72296E02E008A1632 /* cryptoProfit.xcdatamodeld in Sources */,
