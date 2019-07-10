@@ -50,18 +50,14 @@
 
 - (void)configureUI
 {
-	[self configureView];
-	[self createTableView];
+	self.view.backgroundColor = [UIColor walletTableViewBackgroundColor];
+
+	[self addTableView];
+	[self configureNavigationController];
 	[self createConstraints];
 }
 
-- (void)configureView
-{
-	self.view.backgroundColor = [UIColor walletTableViewBackgroundColor];
-	self.title = @"CRYPTO PROFIT";
-}
-
-- (void)createTableView
+- (void)addTableView
 {
 	self.tableView = [UITableView new];
 	self.tableView.delegate = self;
@@ -76,6 +72,21 @@
 	[self.view addSubview:self.tableView];
 }
 
+- (void)configureNavigationController
+{
+	UIBarButtonItem *optionsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"optionsIcon"]
+																	  style:UIBarButtonItemStylePlain
+																	 target:self
+																	 action:@selector(optionsButtonWasPressed)];
+	UIBarButtonItem *addCurrencyButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"addCurrencyIcon"]
+																		  style:UIBarButtonItemStylePlain
+																		 target:self
+																		 action:@selector(addCurrencyButtonWasPressed)];
+	self.navigationItem.leftBarButtonItem = optionsButton;
+	self.navigationItem.rightBarButtonItem = addCurrencyButton;
+	self.title = @"CRYPTO PROFIT";
+}
+
 - (void)createConstraints
 {
 	[self.view addConstraints:@[
@@ -84,6 +95,19 @@
 								[self.tableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
 								[self.tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]
 								]];
+}
+
+
+#pragma mark - Методы кнопок Navigation Bar
+
+- (void)optionsButtonWasPressed
+{
+	[self.presenter optionsButtonWasPressed];
+}
+
+- (void)addCurrencyButtonWasPressed
+{
+	[self.presenter addCurrencyButtonWasPressed];
 }
 
 
