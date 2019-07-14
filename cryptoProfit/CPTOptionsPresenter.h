@@ -6,10 +6,11 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "CPTOptionsPresenterProtocol.h"
 
+
 NS_ASSUME_NONNULL_BEGIN
+
 
 @interface CPTOptionsPresenter : NSObject <CPTOptionsPresenterProtocol>
 

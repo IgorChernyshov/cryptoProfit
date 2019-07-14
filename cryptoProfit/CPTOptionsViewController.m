@@ -72,7 +72,7 @@
 	UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"doneIcon"]
 																   style:UIBarButtonItemStylePlain
 																  target:self
-																  action:@selector(doneButtonWasPressed)];
+																  action:@selector(saveButtonWasPressed)];
 	self.navigationItem.leftBarButtonItem = backButton;
 	self.navigationItem.rightBarButtonItem = doneButton;
 	self.title = @"Настройки";
@@ -130,13 +130,13 @@
 
 - (void)backButtonWasPressed
 {
-	[self.navigationController popViewControllerAnimated:YES];
+	[self.presenter backButtonWasPressed];
 }
 
-- (void)doneButtonWasPressed
+- (void)saveButtonWasPressed
 {
 	// TODO: Сохранение настроек в NSUserDefaults
-	[self.navigationController popViewControllerAnimated:YES];
+	[self.presenter saveButtonWasPressed];
 }
 
 

@@ -29,7 +29,8 @@
 - (instancetype)initWithPresenter:(id<CPTMainScreenPresenterProtocol>)presenter
 {
 	self = [super init];
-	if (self) {
+	if (self)
+	{
 		_presenter = presenter;
 	}
 	return self;

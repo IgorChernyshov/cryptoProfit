@@ -17,6 +17,7 @@
 {
 	id<CPTOptionsPresenterProtocol> presenter = [CPTOptionsPresenter new];
 	UIViewController<CPTOptionsViewProtocol> *view = [[CPTOptionsViewController alloc] initWithPresenter:presenter];
+	presenter.view = view;
 	
 	return view;
 }

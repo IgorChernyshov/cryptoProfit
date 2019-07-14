@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol CPTMainScreenPresenterProtocol <NSObject>
 
 @property (nonatomic, weak) CPTMainScreenViewController *view;
+
 - (void)optionsButtonWasPressed;
 - (void)addCurrencyButtonWasPressed;
 

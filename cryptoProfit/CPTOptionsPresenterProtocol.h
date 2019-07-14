@@ -6,11 +6,19 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@class UIViewController;
+@protocol CPTOptionsViewProtocol;
+
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @protocol CPTOptionsPresenterProtocol <NSObject>
+
+@property (nonatomic, weak) UIViewController<CPTOptionsViewProtocol> *view;
+
+- (void)backButtonWasPressed;
+- (void)saveButtonWasPressed;
 
 @end
 
