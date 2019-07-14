@@ -6,6 +6,7 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
+@import UIKit.UIColor;
 #import "UIColor+CPTColors.h"
 
 
@@ -13,6 +14,11 @@
 
 
 #pragma mark - Public colors
+
++ (UIColor *)defaultTextColor
+{
+	return [self cpt_green];
+}
 
 + (UIColor *)navigationControllerBackgroundColor
 {
@@ -39,14 +45,14 @@
 	return [self cpt_lightGray];
 }
 
-+ (UIColor *)addCurrencyTextColor
-{
-	return [self cpt_green];
-}
-
 + (UIColor *)addCurrencyPlaceholderColor
 {
 	return [self cpt_green64];
+}
+
++ (UIColor *)optionsBackgroundColor
+{
+	return [self cpt_lightGray];
 }
 
 

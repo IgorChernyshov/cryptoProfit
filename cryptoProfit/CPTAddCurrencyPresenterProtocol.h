@@ -6,11 +6,19 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@protocol CPTAddCurrencyViewProtocol;
+@class UIViewController;
+
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @protocol CPTAddCurrencyPresenterProtocol <NSObject>
+
+@property (nonatomic, weak) UIViewController<CPTAddCurrencyViewProtocol> *view;
+
+- (void)backButtonWasPressed;
+- (void)saveButtonWasPressed;
 
 @end
 

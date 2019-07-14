@@ -6,6 +6,7 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
+@import UIKit;
 #import "CPTTextField.h"
 #import "UIColor+CPTColors.h"
 
@@ -15,11 +16,12 @@
 - (instancetype)init
 {
 	self = [super init];
-	if (self) {
+	if (self)
+	{
 		self.translatesAutoresizingMaskIntoConstraints = NO;
 		self.borderStyle = UITextBorderStyleRoundedRect;
 		self.backgroundColor = [UIColor addCurrencyBackgroundColor];
-		self.textColor = [UIColor addCurrencyTextColor];
+		self.textColor = [UIColor defaultTextColor];
 		self.font = [self textFieldFont];
 		self.autocorrectionType = UITextAutocorrectionTypeNo;
 		self.spellCheckingType = UITextSpellCheckingTypeNo;

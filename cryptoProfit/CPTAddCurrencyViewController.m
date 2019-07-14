@@ -26,7 +26,8 @@
 - (instancetype)initWithPresenter:(id<CPTAddCurrencyPresenterProtocol>)presenter
 {
 	self = [super init];
-	if (self) {
+	if (self)
+	{
 		_presenter = presenter;
 	}
 	return self;
@@ -40,7 +41,6 @@
 	[super viewDidLoad];
 	
 	[self configureUI];
-	
 }
 
 
@@ -65,7 +65,7 @@
 	UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"doneIcon"]
 																		  style:UIBarButtonItemStylePlain
 																		 target:self
-																		 action:@selector(doneButtonWasPressed)];
+																		 action:@selector(saveButtonWasPressed)];
 	self.navigationItem.leftBarButtonItem = backButton;
 	self.navigationItem.rightBarButtonItem = doneButton;
 	self.title = @"Добавьте валюту";
@@ -105,13 +105,13 @@
 
 - (void)backButtonWasPressed
 {
-	[self.navigationController popViewControllerAnimated:YES];
+	[self.presenter backButtonWasPressed];
 }
 
-- (void)doneButtonWasPressed
+- (void)saveButtonWasPressed
 {
 	// TODO: Save currency information into Core Data
-	[self.navigationController popViewControllerAnimated:YES];
+	[self.presenter saveButtonWasPressed];
 }
 
 @end
