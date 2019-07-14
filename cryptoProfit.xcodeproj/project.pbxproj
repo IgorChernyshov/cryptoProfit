@@ -18,6 +18,10 @@
 		9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */; };
 		9C7A54A322A29E17008A1632 /* CPTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A54A222A29E17008A1632 /* CPTNavigationController.m */; };
 		9CAF12DC22D4588F001528E7 /* CPTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12DB22D4588F001528E7 /* CPTTextField.m */; };
+		9CAF12EA22D84E5A001528E7 /* CPTOptionsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12E922D84E5A001528E7 /* CPTOptionsPresenter.m */; };
+		9CAF12ED22D84E74001528E7 /* CPTOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12EC22D84E74001528E7 /* CPTOptionsViewController.m */; };
+		9CAF12F022D84E8E001528E7 /* CPTOptionsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12EF22D84E8E001528E7 /* CPTOptionsFactory.m */; };
+		9CAF12F622D85401001528E7 /* CPTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12F522D85401001528E7 /* CPTLabel.m */; };
 		9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */; };
 		9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */; };
 		9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442122B62650004BC6FE /* CPTWalletCell.m */; };
@@ -66,6 +70,16 @@
 		9C7A54A222A29E17008A1632 /* CPTNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTNavigationController.m; sourceTree = "<group>"; };
 		9CAF12DA22D4588F001528E7 /* CPTTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTTextField.h; sourceTree = "<group>"; };
 		9CAF12DB22D4588F001528E7 /* CPTTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTTextField.m; sourceTree = "<group>"; };
+		9CAF12E822D84E5A001528E7 /* CPTOptionsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTOptionsPresenter.h; sourceTree = "<group>"; };
+		9CAF12E922D84E5A001528E7 /* CPTOptionsPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTOptionsPresenter.m; sourceTree = "<group>"; };
+		9CAF12EB22D84E74001528E7 /* CPTOptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTOptionsViewController.h; sourceTree = "<group>"; };
+		9CAF12EC22D84E74001528E7 /* CPTOptionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTOptionsViewController.m; sourceTree = "<group>"; };
+		9CAF12EE22D84E8E001528E7 /* CPTOptionsFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTOptionsFactory.h; sourceTree = "<group>"; };
+		9CAF12EF22D84E8E001528E7 /* CPTOptionsFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTOptionsFactory.m; sourceTree = "<group>"; };
+		9CAF12F122D84F02001528E7 /* CPTOptionsPresenterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTOptionsPresenterProtocol.h; sourceTree = "<group>"; };
+		9CAF12F222D84F11001528E7 /* CPTOptionsViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTOptionsViewProtocol.h; sourceTree = "<group>"; };
+		9CAF12F422D85401001528E7 /* CPTLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTLabel.h; sourceTree = "<group>"; };
+		9CAF12F522D85401001528E7 /* CPTLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTLabel.m; sourceTree = "<group>"; };
 		9CEC441822B60E89004BC6FE /* CPTMainScreenFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenFactory.h; sourceTree = "<group>"; };
 		9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenFactory.m; sourceTree = "<group>"; };
 		9CEC441B22B60EEE004BC6FE /* CPTMainScreenPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenPresenter.h; sourceTree = "<group>"; };
@@ -208,6 +222,7 @@
 		9C7A549D22A29D9B008A1632 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				9CAF12F322D853D4001528E7 /* UILabel */,
 				9CAF12D922D45844001528E7 /* UITextField */,
 				9C7A54A422A29E45008A1632 /* UINavigationController */,
 			);
@@ -217,6 +232,7 @@
 		9C7A549F22A29DD0008A1632 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				9CAF12E022D650F2001528E7 /* Options */,
 				9CEC442322B7591A004BC6FE /* AddCurrency */,
 				9C7A54A022A29DE2008A1632 /* Main */,
 			);
@@ -250,6 +266,62 @@
 				9CAF12DB22D4588F001528E7 /* CPTTextField.m */,
 			);
 			name = UITextField;
+			sourceTree = "<group>";
+		};
+		9CAF12E022D650F2001528E7 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12E122D65100001528E7 /* Builder */,
+				9CAF12E222D65108001528E7 /* Model */,
+				9CAF12E322D6510F001528E7 /* Presenter */,
+				9CAF12E422D65114001528E7 /* View */,
+			);
+			name = Options;
+			sourceTree = "<group>";
+		};
+		9CAF12E122D65100001528E7 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12EE22D84E8E001528E7 /* CPTOptionsFactory.h */,
+				9CAF12EF22D84E8E001528E7 /* CPTOptionsFactory.m */,
+			);
+			name = Builder;
+			sourceTree = "<group>";
+		};
+		9CAF12E222D65108001528E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9CAF12E322D6510F001528E7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12E822D84E5A001528E7 /* CPTOptionsPresenter.h */,
+				9CAF12E922D84E5A001528E7 /* CPTOptionsPresenter.m */,
+				9CAF12F122D84F02001528E7 /* CPTOptionsPresenterProtocol.h */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		9CAF12E422D65114001528E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12EB22D84E74001528E7 /* CPTOptionsViewController.h */,
+				9CAF12EC22D84E74001528E7 /* CPTOptionsViewController.m */,
+				9CAF12F222D84F11001528E7 /* CPTOptionsViewProtocol.h */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9CAF12F322D853D4001528E7 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12F422D85401001528E7 /* CPTLabel.h */,
+				9CAF12F522D85401001528E7 /* CPTLabel.m */,
+			);
+			name = UILabel;
 			sourceTree = "<group>";
 		};
 		9CEC441422B60B7E004BC6FE /* Model */ = {
@@ -473,12 +545,16 @@
 				9CEC443122B75B69004BC6FE /* CPTAddCurrencyPresenter.m in Sources */,
 				9CEC442E22B75AC0004BC6FE /* CPTAddCurrencyViewController.m in Sources */,
 				9C7A53C72296E02E008A1632 /* cryptoProfit.xcdatamodeld in Sources */,
+				9CAF12ED22D84E74001528E7 /* CPTOptionsViewController.m in Sources */,
 				9C7A53CF2296E030008A1632 /* main.m in Sources */,
+				9CAF12F022D84E8E001528E7 /* CPTOptionsFactory.m in Sources */,
 				9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */,
+				9CAF12F622D85401001528E7 /* CPTLabel.m in Sources */,
 				9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */,
 				9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */,
 				9C7A54A322A29E17008A1632 /* CPTNavigationController.m in Sources */,
 				9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */,
+				9CAF12EA22D84E5A001528E7 /* CPTOptionsPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
