@@ -6,9 +6,11 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@class UITableViewCell;
+
 
 NS_ASSUME_NONNULL_BEGIN
+
 
 @interface CPTWalletCell : UITableViewCell
 

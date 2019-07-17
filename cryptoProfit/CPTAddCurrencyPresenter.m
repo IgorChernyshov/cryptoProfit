@@ -9,6 +9,7 @@
 @import UIKit.UINavigationController;
 #import "CPTAddCurrencyPresenter.h"
 
+
 @implementation CPTAddCurrencyPresenter
 
 @synthesize view;

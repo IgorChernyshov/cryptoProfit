@@ -6,9 +6,12 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
+@import UIKit;
 #import "CPTAddCurrencyViewController.h"
+#import "CPTAddCurrencyPresenterProtocol.h"
 #import "CPTTextField.h"
 #import "UIColor+CPTColors.h"
+
 
 @interface CPTAddCurrencyViewController ()
 
@@ -17,6 +20,7 @@
 @property (nonatomic, strong) CPTTextField *currencyQuantityTextField;
 
 @end
+
 
 @implementation CPTAddCurrencyViewController
 

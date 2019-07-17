@@ -6,8 +6,9 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+@import UIKit;
+@import CoreData;
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -16,7 +17,6 @@
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
 - (void)saveContext;
-
 
 @end
 

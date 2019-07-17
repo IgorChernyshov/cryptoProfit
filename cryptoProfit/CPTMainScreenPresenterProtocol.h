@@ -6,15 +6,16 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-@class CPTMainScreenViewController;
+@class UIViewController;
+@protocol CPTMainScreenViewProtocol;
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 
 @protocol CPTMainScreenPresenterProtocol <NSObject>
 
-@property (nonatomic, weak) CPTMainScreenViewController *view;
+@property (nonatomic, weak) UIViewController<CPTMainScreenViewProtocol> *view;
 
 - (void)optionsButtonWasPressed;
 - (void)addCurrencyButtonWasPressed;

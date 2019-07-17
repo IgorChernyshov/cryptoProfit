@@ -6,6 +6,7 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
+@import UIKit;
 #import "CPTNavigationController.h"
 #import "CPTMainScreenFactory.h"
 #import "UIColor+CPTColors.h"
@@ -16,7 +17,8 @@
 - (instancetype)init
 {
 	self = [super init];
-	if (self) {
+	if (self)
+	{
 		[self configureInitialViewController];
 		[self configureNavigationBar];
 	}

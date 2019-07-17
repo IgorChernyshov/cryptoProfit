@@ -6,9 +6,10 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "CPTAddCurrencyPresenterProtocol.h"
+@class UIViewController;
+@protocol CPTAddCurrencyPresenterProtocol;
 #import "CPTAddCurrencyViewProtocol.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 

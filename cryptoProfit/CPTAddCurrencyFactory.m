@@ -6,6 +6,8 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
+@import UIKit;
+#import "CPTAddCurrencyViewProtocol.h"
 #import "CPTAddCurrencyFactory.h"
 #import "CPTAddCurrencyViewController.h"
 #import "CPTAddCurrencyPresenter.h"

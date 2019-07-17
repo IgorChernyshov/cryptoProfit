@@ -6,9 +6,10 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
+@import UIKit;
 #import "CPTMainScreenFactory.h"
+#import "CPTMainScreenViewController.h"
 #import "CPTMainScreenPresenter.h"
-#import "CPTAddCurrencyFactory.h"
 
 
 @implementation CPTMainScreenFactory

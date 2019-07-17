@@ -6,8 +6,8 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "CPTMainScreenViewController.h"
+@class UIViewController;
+@protocol CPTMainScreenViewProtocol;
 
 
 NS_ASSUME_NONNULL_BEGIN

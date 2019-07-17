@@ -6,8 +6,10 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
+@import UIKit.UITableViewCell;
 #import "CPTWalletCell.h"
 #import "UIColor+CPTColors.h"
+
 
 @implementation CPTWalletCell
 

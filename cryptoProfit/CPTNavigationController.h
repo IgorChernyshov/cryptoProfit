@@ -6,7 +6,7 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-@import UIKit;
+@class UINavigationController;
 
 
 /**

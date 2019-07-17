@@ -10,6 +10,7 @@
 #import "CPTLabel.h"
 #import "UIColor+CPTColors.h"
 
+
 @implementation CPTLabel
 
 - (instancetype)initWithText:(NSString *)text

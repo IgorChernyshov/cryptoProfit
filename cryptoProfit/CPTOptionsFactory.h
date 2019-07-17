@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface CPTOptionsFactory : NSObject
 
-+ (UIViewController<CPTOptionsViewProtocol> *)build;	/**< Метод класса для сборки модуля */
++ (UIViewController<CPTOptionsViewProtocol> *)build; /**< Метод класса для сборки модуля */
 
 @end
 

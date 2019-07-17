@@ -6,8 +6,8 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "CPTAddCurrencyViewProtocol.h"
+@class UIViewController;
+@protocol CPTAddCurrencyViewProtocol;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface CPTAddCurrencyFactory : NSObject
 
-+ (UIViewController<CPTAddCurrencyViewProtocol> *)build;	/**< Метод класса для сборки модуля */
++ (UIViewController<CPTAddCurrencyViewProtocol> *)build; /**< Метод класса для сборки модуля */
 
 @end
 

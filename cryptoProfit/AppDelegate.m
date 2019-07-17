@@ -14,9 +14,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	CPTNavigationController *navigationController = [CPTNavigationController new];
 	CGRect windowFrame = [[UIScreen mainScreen] bounds];
 	self.window = [[UIWindow alloc] initWithFrame:windowFrame];
+	CPTNavigationController *navigationController = [CPTNavigationController new];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     

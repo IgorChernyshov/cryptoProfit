@@ -6,10 +6,11 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 
 NS_ASSUME_NONNULL_BEGIN
+
 
 @protocol CPTMainScreenViewProtocol <NSObject>
 

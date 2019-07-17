@@ -6,11 +6,12 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
+@import UIKit;
 #import "CPTMainScreenViewController.h"
 #import "CPTWalletCell.h"
 #import "UIColor+CPTColors.h"
 
-#define WalletCellReuseIdentifier @"WalletCellIdentifier"
+static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 
 
 @interface CPTMainScreenViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -63,7 +64,7 @@
 	self.tableView = [UITableView new];
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
-	[self.tableView registerClass:[CPTWalletCell class] forCellReuseIdentifier:WalletCellReuseIdentifier];
+	[self.tableView registerClass:[CPTWalletCell class] forCellReuseIdentifier:CPTMainScreenCellIdentifier];
 	
 	self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
 	self.tableView.allowsSelection = NO;

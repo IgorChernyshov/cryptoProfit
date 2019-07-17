@@ -6,8 +6,8 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
+@import UIKit.UINavigationController;
 #import "CPTMainScreenPresenter.h"
-#import "CPTMainScreenViewController.h"
 #import "CPTAddCurrencyFactory.h"
 #import "CPTOptionsFactory.h"
 

@@ -6,9 +6,10 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-@import UIKit;
+@class UIViewController;
 #import "CPTMainScreenPresenterProtocol.h"
 #import "CPTMainScreenViewProtocol.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
