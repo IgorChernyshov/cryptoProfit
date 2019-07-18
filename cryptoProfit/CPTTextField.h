@@ -12,8 +12,18 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Стандартное текстовое поле, которое используется в приложении.
+ Имеет преднастроенный внешний вид и тип клавиатуры.
+ TranslatesAutoresizingMaskIntoConstraints выключен.
+ */
 @interface CPTTextField : UITextField
 
+/**
+ Устанавливает в текстовое поле плейсхолдер с атрибутами.
+
+ @param text Текст плейсхолдера.
+ */
 - (void)configureAttributedPlaceholderWithText:(NSString *)text;
 
 @end

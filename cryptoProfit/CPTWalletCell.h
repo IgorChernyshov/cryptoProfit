@@ -7,12 +7,17 @@
 //
 
 @class UITableViewCell;
+@class CPTLabel;
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 
 @interface CPTWalletCell : UITableViewCell
+
+@property (nonatomic, strong) CPTLabel *nameLabel;
+@property (nonatomic, strong) CPTLabel *quantityLabel;
+@property (nonatomic, strong) CPTLabel *deltaLabel;
 
 @end
 
