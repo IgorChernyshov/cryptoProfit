@@ -9,6 +9,7 @@
 @import UIKit;
 #import "CPTMainScreenViewController.h"
 #import "CPTWalletCell.h"
+#import "CPTLabel.h"
 #import "UIColor+CPTColors.h"
 
 static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
@@ -18,6 +19,7 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 
 @property (nonatomic, strong) id<CPTMainScreenPresenterProtocol> presenter;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIView *tableHeaderView;
 
 @end
 
@@ -54,9 +56,49 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 {
 	self.view.backgroundColor = [UIColor walletTableViewBackgroundColor];
 
+	[self addTableHeaderView];
 	[self addTableView];
 	[self configureNavigationController];
 	[self createConstraints];
+}
+
+- (void)addTableHeaderView
+{
+	self.tableHeaderView = [UIView new];
+	self.tableHeaderView.translatesAutoresizingMaskIntoConstraints = NO;
+	self.tableHeaderView.backgroundColor = [UIColor walletTableViewBackgroundColor];
+	
+	CPTLabel *walletNameLabel = [[CPTLabel alloc] initWithText:@"Валюта"];
+	walletNameLabel.translatesAutoresizingMaskIntoConstraints = NO;
+	
+	CPTLabel *walletTotalLabel = [[CPTLabel alloc] initWithText:@"Кол-во"];
+	walletTotalLabel.translatesAutoresizingMaskIntoConstraints = NO;
+	
+	CPTLabel *walletChangeLabel = [[CPTLabel alloc] initWithText:@"Изменение"];
+	walletChangeLabel.translatesAutoresizingMaskIntoConstraints = NO;
+	
+	[self.tableHeaderView addSubview:walletNameLabel];
+	[self.tableHeaderView addSubview:walletTotalLabel];
+	[self.tableHeaderView addSubview:walletChangeLabel];
+	[self.view addSubview:self.tableHeaderView];
+	
+	[self.view addConstraints:@[
+								[self.tableHeaderView.topAnchor constraintEqualToAnchor:self.view.topAnchor],
+								[self.tableHeaderView.leftAnchor constraintEqualToAnchor:self.view.leftAnchor],
+								[self.tableHeaderView.rightAnchor constraintEqualToAnchor:self.view.rightAnchor],
+								[self.tableHeaderView.heightAnchor constraintEqualToConstant:40.f],
+								
+								[walletNameLabel.leftAnchor constraintEqualToAnchor:self.tableHeaderView.leftAnchor constant:16.f],
+								[walletNameLabel.centerYAnchor constraintEqualToAnchor:self.tableHeaderView.centerYAnchor],
+								[walletNameLabel.rightAnchor constraintEqualToAnchor:self.tableHeaderView.centerXAnchor],
+								
+								[walletTotalLabel.leftAnchor constraintEqualToAnchor:self.tableHeaderView.centerXAnchor constant:16.f],
+								[walletTotalLabel.centerYAnchor constraintEqualToAnchor:self.tableHeaderView.centerYAnchor],
+								[walletTotalLabel.rightAnchor constraintEqualToAnchor:walletChangeLabel.leftAnchor constant:-16.f],
+								
+								[walletChangeLabel.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-16.f],
+								[walletChangeLabel.centerYAnchor constraintEqualToAnchor:self.tableHeaderView.centerYAnchor]
+								]];
 }
 
 - (void)addTableView
@@ -64,6 +106,7 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 	self.tableView = [UITableView new];
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
+	self.tableView.estimatedRowHeight = 100.f;
 	[self.tableView registerClass:[CPTWalletCell class] forCellReuseIdentifier:CPTMainScreenCellIdentifier];
 	
 	self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -92,7 +135,7 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 - (void)createConstraints
 {
 	[self.view addConstraints:@[
-								[self.tableView.topAnchor constraintEqualToAnchor:self.view.topAnchor],
+								[self.tableView.topAnchor constraintEqualToAnchor:self.tableHeaderView.bottomAnchor],
 								[self.tableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
 								[self.tableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
 								[self.tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]

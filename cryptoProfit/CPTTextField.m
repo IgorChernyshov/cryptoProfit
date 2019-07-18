@@ -13,6 +13,9 @@
 
 @implementation CPTTextField
 
+
+#pragma mark - Инициализатор
+
 - (instancetype)init
 {
 	self = [super init];
@@ -32,7 +35,7 @@
 }
 
 
-#pragma mark - Helpers
+#pragma mark - Публичные методы
 
 - (void)configureAttributedPlaceholderWithText:(NSString *)text
 {
@@ -40,6 +43,9 @@
 	NSAttributedString *placeholder = [[NSAttributedString alloc] initWithString:text attributes: attributes];
 	self.attributedPlaceholder = placeholder;
 }
+
+
+#pragma mark - Хелперы
 
 - (NSDictionary<NSAttributedStringKey,id> *)placeholderAttributes
 {

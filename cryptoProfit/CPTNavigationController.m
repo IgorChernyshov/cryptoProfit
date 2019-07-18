@@ -14,6 +14,9 @@
 
 @implementation CPTNavigationController
 
+
+#pragma mark - Инициализатор
+
 - (instancetype)init
 {
 	self = [super init];
