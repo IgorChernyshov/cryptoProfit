@@ -13,7 +13,7 @@
 #import "UIColor+CPTColors.h"
 
 
-@interface CPTAddCurrencyViewController ()
+@interface CPTAddCurrencyViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) id<CPTAddCurrencyPresenterProtocol> presenter;
 @property (nonatomic, strong) CPTTextField *currencyNameTextField;
@@ -79,6 +79,7 @@
 {
 	self.currencyNameTextField = [CPTTextField new];
 	[self.currencyNameTextField configureAttributedPlaceholderWithText:@"Название валюты"];
+	self.currencyNameTextField.delegate = self;
 	
 	[self.view addSubview:self.currencyNameTextField];
 }
@@ -116,6 +117,14 @@
 {
 	// TODO: Save currency information into Core Data
 	[self.presenter saveButtonWasPressed];
+}
+
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+	[self.presenter textFieldDidBeginEditing];
 }
 
 @end

@@ -24,6 +24,7 @@
 		9CAF12F622D85401001528E7 /* CPTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12F522D85401001528E7 /* CPTLabel.m */; };
 		9CAF133322E03A69001528E7 /* CPTAPIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF133222E03A69001528E7 /* CPTAPIFactory.m */; };
 		9CAF133922E03D1D001528E7 /* CPTNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF133822E03D1D001528E7 /* CPTNetworkService.m */; };
+		9CAF133F22E18AC6001528E7 /* CPTDataParserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF133E22E18AC6001528E7 /* CPTDataParserService.m */; };
 		9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */; };
 		9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */; };
 		9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442122B62650004BC6FE /* CPTWalletCell.m */; };
@@ -88,6 +89,9 @@
 		9CAF133722E03D1D001528E7 /* CPTNetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNetworkService.h; sourceTree = "<group>"; };
 		9CAF133822E03D1D001528E7 /* CPTNetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTNetworkService.m; sourceTree = "<group>"; };
 		9CAF133A22E03D35001528E7 /* CPTNetworkServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNetworkServiceProtocol.h; sourceTree = "<group>"; };
+		9CAF133C22E18ABB001528E7 /* CPTDataParserServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTDataParserServiceProtocol.h; sourceTree = "<group>"; };
+		9CAF133D22E18AC6001528E7 /* CPTDataParserService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTDataParserService.h; sourceTree = "<group>"; };
+		9CAF133E22E18AC6001528E7 /* CPTDataParserService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTDataParserService.m; sourceTree = "<group>"; };
 		9CEC441822B60E89004BC6FE /* CPTMainScreenFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenFactory.h; sourceTree = "<group>"; };
 		9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenFactory.m; sourceTree = "<group>"; };
 		9CEC441B22B60EEE004BC6FE /* CPTMainScreenPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenPresenter.h; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 		9CAF132D22E0396C001528E7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9CAF133B22E18A9F001528E7 /* DataParserService */,
 				9CAF133022E03A3A001528E7 /* SearchService */,
 				9CAF132F22E03A32001528E7 /* NetworkService */,
 			);
@@ -376,6 +381,16 @@
 				9CAF132E22E03A2B001528E7 /* APIFactory */,
 			);
 			name = Factories;
+			sourceTree = "<group>";
+		};
+		9CAF133B22E18A9F001528E7 /* DataParserService */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF133C22E18ABB001528E7 /* CPTDataParserServiceProtocol.h */,
+				9CAF133D22E18AC6001528E7 /* CPTDataParserService.h */,
+				9CAF133E22E18AC6001528E7 /* CPTDataParserService.m */,
+			);
+			name = DataParserService;
 			sourceTree = "<group>";
 		};
 		9CEC441422B60B7E004BC6FE /* Model */ = {
@@ -604,6 +619,7 @@
 				9CAF12ED22D84E74001528E7 /* CPTOptionsViewController.m in Sources */,
 				9C7A53CF2296E030008A1632 /* main.m in Sources */,
 				9CAF12F022D84E8E001528E7 /* CPTOptionsFactory.m in Sources */,
+				9CAF133F22E18AC6001528E7 /* CPTDataParserService.m in Sources */,
 				9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */,
 				9CAF12F622D85401001528E7 /* CPTLabel.m in Sources */,
 				9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */,

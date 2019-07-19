@@ -51,6 +51,7 @@
 															   return;
 														   }
 														   NSDictionary *temp = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+														   NSLog(@"%@", temp);
 														   // TODO: Parse and process data
 													   }];
 	[sessionDataTask resume];
