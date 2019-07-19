@@ -23,6 +23,7 @@
 		9CAF12F022D84E8E001528E7 /* CPTOptionsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12EF22D84E8E001528E7 /* CPTOptionsFactory.m */; };
 		9CAF12F622D85401001528E7 /* CPTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12F522D85401001528E7 /* CPTLabel.m */; };
 		9CAF133322E03A69001528E7 /* CPTAPIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF133222E03A69001528E7 /* CPTAPIFactory.m */; };
+		9CAF133922E03D1D001528E7 /* CPTNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF133822E03D1D001528E7 /* CPTNetworkService.m */; };
 		9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */; };
 		9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */; };
 		9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442122B62650004BC6FE /* CPTWalletCell.m */; };
@@ -84,6 +85,9 @@
 		9CAF133122E03A69001528E7 /* CPTAPIFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAPIFactory.h; sourceTree = "<group>"; };
 		9CAF133222E03A69001528E7 /* CPTAPIFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTAPIFactory.m; sourceTree = "<group>"; };
 		9CAF133622E03AB3001528E7 /* CPTAPIFactoryProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAPIFactoryProtocol.h; sourceTree = "<group>"; };
+		9CAF133722E03D1D001528E7 /* CPTNetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNetworkService.h; sourceTree = "<group>"; };
+		9CAF133822E03D1D001528E7 /* CPTNetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTNetworkService.m; sourceTree = "<group>"; };
+		9CAF133A22E03D35001528E7 /* CPTNetworkServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNetworkServiceProtocol.h; sourceTree = "<group>"; };
 		9CEC441822B60E89004BC6FE /* CPTMainScreenFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenFactory.h; sourceTree = "<group>"; };
 		9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenFactory.m; sourceTree = "<group>"; };
 		9CEC441B22B60EEE004BC6FE /* CPTMainScreenPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenPresenter.h; sourceTree = "<group>"; };
@@ -352,6 +356,9 @@
 		9CAF132F22E03A32001528E7 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				9CAF133A22E03D35001528E7 /* CPTNetworkServiceProtocol.h */,
+				9CAF133722E03D1D001528E7 /* CPTNetworkService.h */,
+				9CAF133822E03D1D001528E7 /* CPTNetworkService.m */,
 			);
 			name = NetworkService;
 			sourceTree = "<group>";
@@ -587,6 +594,7 @@
 			files = (
 				9CEC442A22B7595D004BC6FE /* CPTAddCurrencyFactory.m in Sources */,
 				9C7A53C12296E02E008A1632 /* CPTMainScreenViewController.m in Sources */,
+				9CAF133922E03D1D001528E7 /* CPTNetworkService.m in Sources */,
 				9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */,
 				9CAF12DC22D4588F001528E7 /* CPTTextField.m in Sources */,
 				9CEC443122B75B69004BC6FE /* CPTAddCurrencyPresenter.m in Sources */,
