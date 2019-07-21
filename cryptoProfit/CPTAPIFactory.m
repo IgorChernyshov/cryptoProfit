@@ -11,7 +11,7 @@
 
 @implementation CPTAPIFactory
 
-+ (nonnull NSURL *)getCurrencyListURL
+- (nonnull NSURL *)currencyListURL
 {
 	NSURL *requestURL = [NSURL URLWithString:@"https://min-api.cryptocompare.com/data/all/coinlist"];
 	return requestURL;

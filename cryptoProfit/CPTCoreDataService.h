@@ -1,18 +1,18 @@
 //
-//  CPTDataParserService.h
+//  CPTCoreDataService.h
 //  cryptoProfit
 //
 //  Created by Igor Chernyshov on 19/07/2019.
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-#import "CPTDataParserServiceProtocol.h"
+#import "CPTCoreDataServiceProtocol.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface CPTDataParserService : NSObject <CPTDataParserServiceProtocol>
+@interface CPTCoreDataService : NSObject <CPTCoreDataServiceProtocol>
 
 @end
 

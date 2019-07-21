@@ -7,6 +7,19 @@
 //
 
 @import Foundation;
+@protocol CPTAddCurrencyPresenterProtocol;
+
+
+/**
+ Список типов сетевых запросов. Используется для определения соответствующего метода парсинга ответов от сервера.
+
+ - CPTNetworkRequestTypeCurrencyList: Запрос списка всех криптовалют.
+ */
+typedef NS_ENUM(NSUInteger, CPTNetworkRequestType)
+{
+	CPTNetworkRequestTypeCurrencyList = 0
+};
+
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -22,15 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
  Запрашивает список всех криптовалют.
  */
 - (void)requestCurrencyList;
-
-@end
-
-
-/**
- Делегат сетевого сервиса.
- Получает результаты сетевого запроса от сервиса.
- */
-@protocol CPTNetworkServiceOutputProtocol <NSObject>
 
 @end
 

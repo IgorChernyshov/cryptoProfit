@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return URL запроса.
  */
-+ (NSURL *)getCurrencyListURL;
+- (NSURL *)currencyListURL;
 
 @end
 

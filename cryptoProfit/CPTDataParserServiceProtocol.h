@@ -18,6 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol CPTDataParserServiceProtocol <NSObject>
 
+/**
+ Генерирует список криптовалют из ответа сервера.
+
+ @param dictionary Словарь с ответом от сервера.
+ */
+- (void)createCoinsListFromDictionary:(NSDictionary *)dictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END
