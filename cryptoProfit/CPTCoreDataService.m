@@ -12,6 +12,7 @@
 #import "CPTCoreDataService.h"
 #import "CPTAddCurrencyPresenterProtocol.h"
 #import "Coin+CoreDataClass.h"
+#import "CPTUserSettings.h"
 
 
 @interface CPTCoreDataService ()

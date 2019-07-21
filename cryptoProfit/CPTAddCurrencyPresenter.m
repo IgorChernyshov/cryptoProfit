@@ -11,6 +11,7 @@
 #import "CPTNetworkServiceProtocol.h"
 #import "CPTAddCurrencyViewProtocol.h"
 #import "CPTNetworkService.h"
+#import "CPTUserSettings.h"
 
 
 @interface CPTAddCurrencyPresenter ()
@@ -64,8 +65,21 @@
 
 - (void)viewAppearedOnScreen
 {
+	if (![self coinsListUpdateIsNeeded])
+	{
+		return;
+	}
 	[self.view loadingStarted];
 	[self.networkService requestCurrencyList];
+}
+
+- (BOOL)coinsListUpdateIsNeeded
+{
+	if ([CPTUserSettings coinsListWasUpdatedAfterLaunch])
+	{
+		return NO;
+	}
+	return YES;
 }
 
 
@@ -73,6 +87,7 @@
 
 - (void)coinsListWasSaved
 {
+	[CPTUserSettings coinsListHasBeenUpdated];
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[self.view loadingFinished];
 	});
