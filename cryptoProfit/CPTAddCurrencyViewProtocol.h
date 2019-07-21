@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol CPTAddCurrencyViewProtocol <NSObject>
 
-- (void)coinsListWasSaved;
+- (void)loadingStarted;
+- (void)loadingFinished;
 
 @end
 

@@ -28,6 +28,7 @@
 		9CAF134622E20CA2001528E7 /* CPTCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF134522E20CA2001528E7 /* CPTCoreDataService.m */; };
 		9CAF134D22E20DE0001528E7 /* Coin+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF134B22E20DE0001528E7 /* Coin+CoreDataClass.m */; };
 		9CAF134E22E20DE0001528E7 /* Coin+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF134C22E20DE0001528E7 /* Coin+CoreDataProperties.m */; };
+		9CAF135222E47D80001528E7 /* CPTLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF135122E47D80001528E7 /* CPTLoadingView.m */; };
 		9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */; };
 		9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */; };
 		9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442122B62650004BC6FE /* CPTWalletCell.m */; };
@@ -102,6 +103,8 @@
 		9CAF134A22E20DE0001528E7 /* Coin+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coin+CoreDataClass.h"; sourceTree = "<group>"; };
 		9CAF134B22E20DE0001528E7 /* Coin+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Coin+CoreDataClass.m"; sourceTree = "<group>"; };
 		9CAF134C22E20DE0001528E7 /* Coin+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Coin+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9CAF135022E47D80001528E7 /* CPTLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTLoadingView.h; sourceTree = "<group>"; };
+		9CAF135122E47D80001528E7 /* CPTLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTLoadingView.m; sourceTree = "<group>"; };
 		9CEC441822B60E89004BC6FE /* CPTMainScreenFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenFactory.h; sourceTree = "<group>"; };
 		9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenFactory.m; sourceTree = "<group>"; };
 		9CEC441B22B60EEE004BC6FE /* CPTMainScreenPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenPresenter.h; sourceTree = "<group>"; };
@@ -247,6 +250,7 @@
 		9C7A549D22A29D9B008A1632 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				9CAF134F22E47D60001528E7 /* UIActivityIndicator */,
 				9CAF12F322D853D4001528E7 /* UILabel */,
 				9CAF12D922D45844001528E7 /* UITextField */,
 				9C7A54A422A29E45008A1632 /* UINavigationController */,
@@ -424,6 +428,15 @@
 				9CAF134C22E20DE0001528E7 /* Coin+CoreDataProperties.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		9CAF134F22E47D60001528E7 /* UIActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF135022E47D80001528E7 /* CPTLoadingView.h */,
+				9CAF135122E47D80001528E7 /* CPTLoadingView.m */,
+			);
+			name = UIActivityIndicator;
 			sourceTree = "<group>";
 		};
 		9CEC441422B60B7E004BC6FE /* Model */ = {
@@ -651,6 +664,7 @@
 				9CAF133322E03A69001528E7 /* CPTAPIFactory.m in Sources */,
 				9CAF12ED22D84E74001528E7 /* CPTOptionsViewController.m in Sources */,
 				9C7A53CF2296E030008A1632 /* main.m in Sources */,
+				9CAF135222E47D80001528E7 /* CPTLoadingView.m in Sources */,
 				9CAF134622E20CA2001528E7 /* CPTCoreDataService.m in Sources */,
 				9CAF134D22E20DE0001528E7 /* Coin+CoreDataClass.m in Sources */,
 				9CAF12F022D84E8E001528E7 /* CPTOptionsFactory.m in Sources */,

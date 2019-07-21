@@ -20,6 +20,16 @@
 	return [self cpt_green];
 }
 
++ (UIColor *)spinnerViewBackgroundColor
+{
+	return [self cpt_darkGray64];
+}
+
++ (UIColor *)spinnerColor
+{
+	return [self cpt_green64];
+}
+
 + (UIColor *)navigationControllerBackgroundColor
 {
 	return [self cpt_darkGray100];
@@ -66,12 +76,12 @@
 						   alpha:1];
 }
 
-+ (UIColor *)cpt_darkGray65
++ (UIColor *)cpt_darkGray64
 {
 	return [UIColor colorWithRed:41.f/255.f
 						   green:40.f/255.f
 							blue:52.f/255.f
-						   alpha:0.65];
+						   alpha:0.64];
 }
 
 + (UIColor *)cpt_lightGray

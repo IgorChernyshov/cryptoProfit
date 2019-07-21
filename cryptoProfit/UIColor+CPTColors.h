@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 // Общие цвета приложения
 + (UIColor *)defaultTextColor;
 
+// Цвета спиннера
++ (UIColor *)spinnerViewBackgroundColor;
++ (UIColor *)spinnerColor;
+
 // Цвета Navigation Controller'а
 + (UIColor *)navigationControllerBackgroundColor;
 + (UIColor *)navigationControllerTintColor;

@@ -64,6 +64,7 @@
 
 - (void)viewAppearedOnScreen
 {
+	[self.view loadingStarted];
 	[self.networkService requestCurrencyList];
 }
 
@@ -72,7 +73,9 @@
 
 - (void)coinsListWasSaved
 {
-	[self.view coinsListWasSaved];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self.view loadingFinished];
+	});
 }
 
 @end
