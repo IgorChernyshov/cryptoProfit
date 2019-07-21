@@ -11,6 +11,7 @@
 #import "CPTAPIFactory.h"
 #import "CPTDataParserServiceProtocol.h"
 #import "CPTDataParserService.h"
+#import "CPTCoreDataServiceProtocol.h"
 
 
 @interface CPTNetworkService ()
@@ -22,6 +23,8 @@
 
 
 @implementation CPTNetworkService
+
+@synthesize mainScreenPresenter, addCurrencyPresenter;
 
 
 #pragma mark - CPTNetworkServiceInputProtocol
@@ -66,7 +69,7 @@
 	switch (requestType)
 	{
 		case CPTNetworkRequestTypeCurrencyList:
-			[self.dataParser createCoinsListFromDictionary:data];
+			[self.dataParser createCoinsListFromDictionary:data withOutput:self.addCurrencyPresenter];
 			break;
 	}
 }

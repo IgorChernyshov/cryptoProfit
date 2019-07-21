@@ -24,6 +24,7 @@
 #pragma mark - CPTDataParserServiceProtocol
 
 - (void)createCoinsListFromDictionary:(NSDictionary *)dictionary
+						   withOutput:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
 {
 	if (!dictionary)
 	{
@@ -44,7 +45,7 @@
 				[coins addObject:newCoin];
 			}
 		}
-		[self.coreDataService saveToDatabaseCoinsList:coins];
+		[self.coreDataService saveToDatabaseCoinsList:coins withOutput:output];
 	});
 }
 

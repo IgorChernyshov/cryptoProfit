@@ -10,6 +10,7 @@
 @import UIKit;
 #import "AppDelegate.h"
 #import "CPTCoreDataService.h"
+#import "CPTAddCurrencyPresenterProtocol.h"
 #import "Coin+CoreDataClass.h"
 
 
@@ -24,6 +25,7 @@
 @implementation CPTCoreDataService
 
 - (void)saveToDatabaseCoinsList:(NSArray<NSDictionary *> *)coinsList
+				   withOutput:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
 {
 	for (NSDictionary *coin in coinsList) {
 		@autoreleasepool
@@ -49,6 +51,7 @@
 			[newCoin.managedObjectContext save:&error];
 		}
 	}
+	[output coinsListWasSaved];
 }
 
 - (NSManagedObjectContext *)coreDataContext

@@ -9,6 +9,7 @@
 @import UIKit.UINavigationController;
 #import "CPTAddCurrencyPresenter.h"
 #import "CPTNetworkServiceProtocol.h"
+#import "CPTAddCurrencyViewProtocol.h"
 #import "CPTNetworkService.h"
 
 
@@ -32,6 +33,7 @@
 	if (self)
 	{
 		_networkService = [CPTNetworkService new];
+		_networkService.addCurrencyPresenter = self;
 	}
 	return self;
 }
@@ -54,7 +56,23 @@
 
 - (void)textFieldDidBeginEditing
 {
+
+}
+
+
+#pragma mark - CPTAddCurrencyPresenterProtocol
+
+- (void)viewAppearedOnScreen
+{
 	[self.networkService requestCurrencyList];
+}
+
+
+#pragma mark - CPTCoreDataServiceOutputProtocol
+
+- (void)coinsListWasSaved
+{
+	[self.view coinsListWasSaved];
 }
 
 @end

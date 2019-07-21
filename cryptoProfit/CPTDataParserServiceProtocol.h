@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+@protocol CPTCoreDataServiceOutputProtocol;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -22,8 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
  Генерирует список криптовалют из ответа сервера.
 
  @param dictionary Словарь с ответом от сервера.
+ @param output Ссылка на делегат, который запросил данные.
  */
-- (void)createCoinsListFromDictionary:(NSDictionary *)dictionary;
+- (void)createCoinsListFromDictionary:(NSDictionary *)dictionary
+						   withOutput:(id<CPTCoreDataServiceOutputProtocol>)output;
 
 @end
 

@@ -7,7 +7,9 @@
 //
 
 @import Foundation;
+@protocol CPTMainScreenPresenter;
 @protocol CPTAddCurrencyPresenterProtocol;
+@protocol CPTCoreDataServiceOutputProtocol;
 
 
 /**
@@ -35,6 +37,11 @@ NS_ASSUME_NONNULL_BEGIN
  Запрашивает список всех криптовалют.
  */
 - (void)requestCurrencyList;
+
+@optional
+
+@property (nonatomic, weak) id<CPTMainScreenPresenter> mainScreenPresenter;
+@property (nonatomic, weak) id<CPTAddCurrencyPresenterProtocol, CPTCoreDataServiceOutputProtocol> addCurrencyPresenter;
 
 @end
 

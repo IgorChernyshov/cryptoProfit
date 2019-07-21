@@ -45,6 +45,7 @@
 	[super viewDidLoad];
 	
 	[self configureUI];
+	[self.presenter viewAppearedOnScreen];
 }
 
 
@@ -125,6 +126,14 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
 	[self.presenter textFieldDidBeginEditing];
+}
+
+
+#pragma mark - CPTAddCurrencyViewProtocol
+
+- (void)coinsListWasSaved
+{
+
 }
 
 @end

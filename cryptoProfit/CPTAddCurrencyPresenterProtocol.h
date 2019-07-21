@@ -7,6 +7,7 @@
 //
 
 @protocol CPTAddCurrencyViewProtocol;
+@protocol CPTNetworkServiceOutputProtocol;
 @class UIViewController;
 
 
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)backButtonWasPressed;
 - (void)saveButtonWasPressed;
 - (void)textFieldDidBeginEditing;
+- (void)viewAppearedOnScreen;
 
 @end
 
