@@ -6,7 +6,7 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
-@import Foundation;
+@import UIKit;
 @class Coin;
 @protocol CPTCoreDataServiceOutputProtocol;
 
@@ -26,6 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)loadCoinsListWithFilter:(NSString *)filter
 						 output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output;
 
++ (void)saveUsersCoinWithName:(NSString *)name
+					 quantity:(CGFloat)quantity
+					   output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output;
+
 @end
 
 
@@ -33,6 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)coinsListWasSaved;
 - (void)filteringFinishedWithCoinsList:(NSArray<Coin *> *)coinsList;
+- (void)usersCoinSavedSuccessfully;
 
 @end
 
