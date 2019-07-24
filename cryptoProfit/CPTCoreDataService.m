@@ -70,6 +70,25 @@
 	});
 }
 
++ (void)saveUsersCoinWithName:(NSString *)name
+					 quantity:(CGFloat)quantity
+					   output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
+{
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Coin"];
+	fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", name];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		NSManagedObjectContext *context = [CPTCoreDataService coreDataContext];
+		dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+			NSError *error = nil;
+			NSArray *result = [context executeFetchRequest:fetchRequest error:&error];
+			if (result.count == 1)
+			{
+				[output usersCoinSavedSuccessfully];
+			}
+		});
+	});
+}
+
 + (NSManagedObjectContext *)coreDataContext
 {
 	UIApplication *application = [UIApplication sharedApplication];

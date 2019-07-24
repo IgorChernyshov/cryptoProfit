@@ -14,6 +14,7 @@
 #import "CPTCoreDataService.h"
 #import "Coin+CoreDataClass.h"
 #import "CPTUserSettings.h"
+#import "CPTTextField.h"
 
 
 @interface CPTAddCurrencyPresenter ()
@@ -51,7 +52,19 @@
 
 - (void)saveButtonWasPressed
 {
-	[self.view.navigationController popViewControllerAnimated:YES];
+	[self.view loadingStarted];
+
+	BOOL coinsNameIsCorrect = [self.view.coinsNames containsObject:self.view.currencyNameTextField.text];
+	CGFloat coinsQuantity = self.view.currencyNameTextField.text.floatValue;
+
+	if (!(coinsNameIsCorrect && coinsQuantity >= 0))
+	{
+		[self.view loadingFinished];
+		return;
+	}
+	[CPTCoreDataService saveUsersCoinWithName:self.view.currencyNameTextField.text
+									 quantity:coinsQuantity
+									   output:self];
 }
 
 
@@ -103,6 +116,13 @@
 	[CPTUserSettings coinsListHasBeenUpdated];
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[self.view loadingFinished];
+	});
+}
+
+- (void)usersCoinSavedSuccessfully
+{
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self.view.navigationController popViewControllerAnimated:YES];
 	});
 }
 

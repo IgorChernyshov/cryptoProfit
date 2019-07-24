@@ -20,17 +20,17 @@
 
 @property (nonatomic, strong) id<CPTAddCurrencyPresenterProtocol> presenter;
 
-@property (nonatomic, strong) CPTTextField *currencyNameTextField;
-@property (nonatomic, strong) CPTTextField *currencyQuantityTextField;
 @property (nonatomic, strong) CPTLoadingView *spinner;
-
 @property (nonatomic, strong) UITableView *coinsSearchTableView;
-@property (nonatomic, strong) NSArray<NSString *> *coinsNames;
 
 @end
 
 
 @implementation CPTAddCurrencyViewController
+
+@synthesize currencyNameTextField;
+@synthesize currencyQuantityTextField;
+@synthesize coinsNames;
 
 
 #pragma mark - Инициализатор
@@ -41,7 +41,7 @@
 	if (self)
 	{
 		_presenter = presenter;
-		_coinsNames = [NSArray new];
+		coinsNames = [NSArray new];
 	}
 	return self;
 }
@@ -182,7 +182,6 @@
 
 - (void)saveButtonWasPressed
 {
-	// TODO: Save currency information into Core Data
 	[self.presenter saveButtonWasPressed];
 }
 

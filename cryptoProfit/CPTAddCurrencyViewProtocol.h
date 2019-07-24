@@ -7,12 +7,17 @@
 //
 
 @import Foundation;
+@class CPTTextField;
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 
 @protocol CPTAddCurrencyViewProtocol <NSObject>
+
+@property (nonatomic, strong) CPTTextField *currencyNameTextField;
+@property (nonatomic, strong) CPTTextField *currencyQuantityTextField;
+@property (nonatomic, strong) NSArray<NSString *> *coinsNames;
 
 - (void)loadingStarted;
 - (void)loadingFinished;
