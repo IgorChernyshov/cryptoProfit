@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+@class Coin;
 @protocol CPTCoreDataServiceOutputProtocol;
 
 
@@ -19,14 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol CPTCoreDataServiceProtocol <NSObject>
 
-/**
- Сохраняет список криптовалют в базу данных.
-
- @param coinsList Список криптовалют.
- @param output Ссылка на делегат, который запросил данные.
- */
-- (void)saveToDatabaseCoinsList:(NSArray<NSDictionary *> *)coinsList
++ (void)saveToDatabaseCoinsList:(NSArray<NSDictionary *> *)coinsList
 					 withOutput:(id<CPTCoreDataServiceOutputProtocol>)output;
+
++ (void)loadCoinsListWithFilter:(NSString *)filter
+						 output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output;
 
 @end
 
@@ -34,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol CPTCoreDataServiceOutputProtocol <NSObject>
 
 - (void)coinsListWasSaved;
+- (void)filteringFinishedWithCoinsList:(NSArray<Coin *> *)coinsList;
 
 @end
 

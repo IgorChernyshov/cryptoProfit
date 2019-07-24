@@ -10,6 +10,7 @@
 #import "CPTNavigationController.h"
 #import "CPTMainScreenFactory.h"
 #import "UIColor+CPTColors.h"
+#import "CPTUserSettings.h"
 
 
 @implementation CPTNavigationController
@@ -24,6 +25,7 @@
 	{
 		[self configureInitialViewController];
 		[self configureNavigationBar];
+		[CPTUserSettings applicationStarted];
 	}
 	return self;
 }

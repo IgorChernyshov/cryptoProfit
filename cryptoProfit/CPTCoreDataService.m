@@ -15,34 +15,29 @@
 #import "CPTUserSettings.h"
 
 
-@interface CPTCoreDataService ()
-
-@property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
-@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-
-@end
-
-
 @implementation CPTCoreDataService
 
-- (void)saveToDatabaseCoinsList:(NSArray<NSDictionary *> *)coinsList
-				   withOutput:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
++ (void)saveToDatabaseCoinsList:(NSArray<NSDictionary *> *)coinsList
+					 withOutput:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
 {
+	__block NSManagedObjectContext *context;
+	dispatch_sync(dispatch_get_main_queue(), ^{
+		context = [CPTCoreDataService coreDataContext];
+	});
 	for (NSDictionary *coin in coinsList) {
 		@autoreleasepool
 		{
 			NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Coin"];
 			fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name ==[c] %@", [coin objectForKey:@"name"]];
 			NSError *error = nil;
-			NSArray *result = [self.coreDataContext executeFetchRequest:fetchRequest error:&error];
-
+			NSArray *result = [context executeFetchRequest:fetchRequest error:&error];
 			if (!(result.count == 0) || error)
 			{
 				continue;
 			}
 
 			Coin *newCoin = [NSEntityDescription insertNewObjectForEntityForName:@"Coin"
-														  inManagedObjectContext:self.coreDataContext];
+														  inManagedObjectContext:[CPTCoreDataService coreDataContext]];
 			newCoin.name = [coin objectForKey:@"name"];
 			newCoin.shortName = [coin objectForKey:@"shortName"];
 			newCoin.quantity = 0.f;
@@ -55,22 +50,33 @@
 	[output coinsListWasSaved];
 }
 
-- (NSManagedObjectContext *)coreDataContext
++ (void)loadCoinsListWithFilter:(NSString *)filter
+						 output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
 {
-	if (_coreDataContext)
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Coin"];
+	if (filter.length > 0)
 	{
-		return _coreDataContext;
+		fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@ OR shortName CONTAINS[cd] %@", filter, filter];
 	}
-
-	UIApplication *application = [UIApplication sharedApplication];
-	__block NSManagedObjectContext *context;
-	dispatch_sync(dispatch_get_main_queue(), ^{
-		NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).persistentContainer;
-		context = container.viewContext;
+	NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+	fetchRequest.sortDescriptors = @[sortDescriptor];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		NSManagedObjectContext *context = [CPTCoreDataService coreDataContext];
+		dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+			NSError *error = nil;
+			NSArray *result = [context executeFetchRequest:fetchRequest error:&error];
+			[output filteringFinishedWithCoinsList:result];
+		});
 	});
+}
 
-	_coreDataContext = context;
-	return _coreDataContext;
++ (NSManagedObjectContext *)coreDataContext
+{
+	UIApplication *application = [UIApplication sharedApplication];
+	NSManagedObjectContext *context;
+	NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).persistentContainer;
+	context = container.viewContext;
+	return context;
 }
 
 @end

@@ -11,6 +11,8 @@
 #import "CPTNetworkServiceProtocol.h"
 #import "CPTAddCurrencyViewProtocol.h"
 #import "CPTNetworkService.h"
+#import "CPTCoreDataService.h"
+#import "Coin+CoreDataClass.h"
 #import "CPTUserSettings.h"
 
 
@@ -53,11 +55,22 @@
 }
 
 
-#pragma mark - Обработчик событий TextFieldDelegate
+#pragma mark - Обработчик событий TextField
 
-- (void)textFieldDidBeginEditing
+- (void)userChangedCoinNameToName:(NSString *)name
 {
+	[CPTCoreDataService loadCoinsListWithFilter:name output:self];
+}
 
+- (void)filteringFinishedWithCoinsList:(NSArray<Coin *> *)coinsList
+{
+	NSMutableArray *coinsNames = [NSMutableArray new];
+	for (Coin* coin in coinsList) {
+		[coinsNames addObject:coin.name];
+	}
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self.view showCoinsListWithCoinsNames:[coinsNames copy]];
+	});
 }
 
 

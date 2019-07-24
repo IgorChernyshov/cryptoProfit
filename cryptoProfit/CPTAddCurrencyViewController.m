@@ -9,17 +9,23 @@
 @import UIKit;
 #import "CPTAddCurrencyViewController.h"
 #import "CPTAddCurrencyPresenterProtocol.h"
+#import "CPTCoinNameCell.h"
+#import "CPTLabel.h"
 #import "CPTTextField.h"
 #import "CPTLoadingView.h"
 #import "UIColor+CPTColors.h"
 
 
-@interface CPTAddCurrencyViewController () <UITextFieldDelegate>
+@interface CPTAddCurrencyViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) id<CPTAddCurrencyPresenterProtocol> presenter;
+
 @property (nonatomic, strong) CPTTextField *currencyNameTextField;
 @property (nonatomic, strong) CPTTextField *currencyQuantityTextField;
 @property (nonatomic, strong) CPTLoadingView *spinner;
+
+@property (nonatomic, strong) UITableView *coinsSearchTableView;
+@property (nonatomic, strong) NSArray<NSString *> *coinsNames;
 
 @end
 
@@ -35,6 +41,7 @@
 	if (self)
 	{
 		_presenter = presenter;
+		_coinsNames = [NSArray new];
 	}
 	return self;
 }
@@ -61,6 +68,7 @@
 	[self addCurrencyNameTextField];
 	[self addCurrencyQuantityTextField];
 	[self addLoadingView];
+	[self addCoinSearchTableView];
 	[self createConstraints];
 }
 
@@ -83,7 +91,8 @@
 {
 	self.currencyNameTextField = [CPTTextField new];
 	[self.currencyNameTextField configureAttributedPlaceholderWithText:@"Название валюты"];
-	self.currencyNameTextField.delegate = self;
+	[self.currencyNameTextField addTarget:self action:@selector(textFieldDidChangeText) forControlEvents:UIControlEventEditingChanged];
+	[self.currencyNameTextField addTarget:self action:@selector(textFieldDidChangeText) forControlEvents:UIControlEventEditingDidBegin];
 	
 	[self.view addSubview:self.currencyNameTextField];
 }
@@ -103,6 +112,21 @@
 	[self.view addSubview:self.spinner];
 }
 
+- (void)addCoinSearchTableView
+{
+	self.coinsSearchTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+	[self.coinsSearchTableView registerClass:[CPTCoinNameCell class] forCellReuseIdentifier:@"coinNameCellReuseID"];
+	self.coinsSearchTableView.tableFooterView = [UIView new];
+	self.coinsSearchTableView.translatesAutoresizingMaskIntoConstraints = NO;
+	self.coinsSearchTableView.backgroundColor = [UIColor walletTableViewBackgroundColor];
+	self.coinsSearchTableView.separatorColor = [UIColor walletTableViewSeparatorColor];
+	self.coinsSearchTableView.dataSource = self;
+	self.coinsSearchTableView.delegate = self;
+	self.coinsSearchTableView.hidden = YES;
+
+	[self.view addSubview:self.coinsSearchTableView];
+}
+
 - (void)createConstraints
 {
 	[self.view addConstraints:@[
@@ -115,8 +139,37 @@
 								[self.currencyQuantityTextField.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-16.f],
 
 								[self.spinner.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
-								[self.spinner.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor]
+								[self.spinner.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor],
+
+								[self.coinsSearchTableView.topAnchor constraintEqualToAnchor:self.currencyNameTextField.bottomAnchor],
+								[self.coinsSearchTableView.leftAnchor constraintEqualToAnchor:self.currencyNameTextField.leftAnchor],
+								[self.coinsSearchTableView.rightAnchor constraintEqualToAnchor:self.currencyNameTextField.rightAnchor],
+								[self.coinsSearchTableView.heightAnchor constraintEqualToConstant:CGRectGetHeight(self.view.frame) * 0.5]
 								]];
+}
+
+
+#pragma mark - TableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	return self.coinsNames.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	CPTCoinNameCell *cell = [CPTCoinNameCell new];
+	cell.coinName.text = self.coinsNames[indexPath.row];
+	return cell;
+}
+
+
+#pragma mark - TableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	self.currencyNameTextField.text = self.coinsNames[indexPath.row];
+	[self hideCoinsList];
 }
 
 
@@ -134,11 +187,11 @@
 }
 
 
-#pragma mark - UITextFieldDelegate
+#pragma mark - Обработчик событий TextField
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
+- (void)textFieldDidChangeText
 {
-	[self.presenter textFieldDidBeginEditing];
+	[self.presenter userChangedCoinNameToName:self.currencyNameTextField.text];
 }
 
 
@@ -149,6 +202,7 @@
 	[self.spinner show];
 	self.currencyNameTextField.enabled = NO;
 	self.currencyQuantityTextField.enabled = NO;
+	self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
 - (void)loadingFinished
@@ -156,6 +210,19 @@
 	[self.spinner hide];
 	self.currencyNameTextField.enabled = YES;
 	self.currencyQuantityTextField.enabled = YES;
+	self.navigationItem.rightBarButtonItem.enabled = YES;
+}
+
+- (void)showCoinsListWithCoinsNames:(NSArray<NSString *> *)coins
+{
+	self.coinsNames = coins;
+	[self.coinsSearchTableView reloadData];
+	self.coinsSearchTableView.hidden = NO;
+}
+
+- (void)hideCoinsList
+{
+	self.coinsSearchTableView.hidden = YES;
 }
 
 @end

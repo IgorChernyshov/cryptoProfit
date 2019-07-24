@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CPTUserSettings : NSObject
 
 // Сохранить настройки пользователя
++ (void)applicationStarted;
 + (void)coinsListHasBeenUpdated;
 
 // Загрузить настройки пользователя

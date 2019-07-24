@@ -17,6 +17,11 @@ static NSString * const CPTCoinsListWasUpdatedAfterLaunch = @"cptCoinsListWasUpd
 
 #pragma mark - Сохранение данных пользователя
 
++ (void)applicationStarted
+{
+	[[self userDefaults] setBool:NO forKey:CPTCoinsListWasUpdatedAfterLaunch];
+}
+
 + (void)coinsListHasBeenUpdated
 {
 	[[self userDefaults] setBool:YES forKey:CPTCoinsListWasUpdatedAfterLaunch];

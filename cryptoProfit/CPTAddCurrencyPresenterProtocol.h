@@ -20,7 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)backButtonWasPressed;
 - (void)saveButtonWasPressed;
-- (void)textFieldDidBeginEditing;
+
+- (void)userChangedCoinNameToName:(NSString *)name;
+
 - (void)viewAppearedOnScreen;
 
 @end

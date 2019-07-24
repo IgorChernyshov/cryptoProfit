@@ -11,13 +11,6 @@
 #import "CPTCoreDataService.h"
 
 
-@interface CPTDataParserService ()
-
-@property (nonatomic, strong) id<CPTCoreDataServiceProtocol> coreDataService;
-
-@end
-
-
 @implementation CPTDataParserService
 
 
@@ -45,21 +38,8 @@
 				[coins addObject:newCoin];
 			}
 		}
-		[self.coreDataService saveToDatabaseCoinsList:coins withOutput:output];
+		[CPTCoreDataService saveToDatabaseCoinsList:coins withOutput:output];
 	});
-}
-
-
-#pragma mark - Геттеры
-
-- (id<CPTCoreDataServiceProtocol>)coreDataService
-{
-	if (_coreDataService)
-	{
-		return _coreDataService;
-	}
-	_coreDataService = [CPTCoreDataService new];
-	return _coreDataService;
 }
 
 @end
