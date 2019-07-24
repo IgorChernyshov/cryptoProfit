@@ -7,6 +7,7 @@
 //
 
 @protocol CPTAddCurrencyViewProtocol;
+@protocol CPTNetworkServiceOutputProtocol;
 @class UIViewController;
 
 
@@ -19,6 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)backButtonWasPressed;
 - (void)saveButtonWasPressed;
+
+- (void)userChangedCoinNameToName:(NSString *)name;
+
+- (void)viewAppearedOnScreen;
 
 @end
 

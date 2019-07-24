@@ -22,6 +22,15 @@
 		9CAF12ED22D84E74001528E7 /* CPTOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12EC22D84E74001528E7 /* CPTOptionsViewController.m */; };
 		9CAF12F022D84E8E001528E7 /* CPTOptionsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12EF22D84E8E001528E7 /* CPTOptionsFactory.m */; };
 		9CAF12F622D85401001528E7 /* CPTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12F522D85401001528E7 /* CPTLabel.m */; };
+		9CAF133322E03A69001528E7 /* CPTAPIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF133222E03A69001528E7 /* CPTAPIFactory.m */; };
+		9CAF133922E03D1D001528E7 /* CPTNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF133822E03D1D001528E7 /* CPTNetworkService.m */; };
+		9CAF133F22E18AC6001528E7 /* CPTDataParserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF133E22E18AC6001528E7 /* CPTDataParserService.m */; };
+		9CAF134622E20CA2001528E7 /* CPTCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF134522E20CA2001528E7 /* CPTCoreDataService.m */; };
+		9CAF134D22E20DE0001528E7 /* Coin+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF134B22E20DE0001528E7 /* Coin+CoreDataClass.m */; };
+		9CAF134E22E20DE0001528E7 /* Coin+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF134C22E20DE0001528E7 /* Coin+CoreDataProperties.m */; };
+		9CAF135222E47D80001528E7 /* CPTLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF135122E47D80001528E7 /* CPTLoadingView.m */; };
+		9CAF135522E4C58F001528E7 /* CPTUserSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF135422E4C58F001528E7 /* CPTUserSettings.m */; };
+		9CAF135822E4CC30001528E7 /* CPTCoinNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF135722E4CC30001528E7 /* CPTCoinNameCell.m */; };
 		9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */; };
 		9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */; };
 		9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442122B62650004BC6FE /* CPTWalletCell.m */; };
@@ -80,6 +89,28 @@
 		9CAF12F222D84F11001528E7 /* CPTOptionsViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTOptionsViewProtocol.h; sourceTree = "<group>"; };
 		9CAF12F422D85401001528E7 /* CPTLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTLabel.h; sourceTree = "<group>"; };
 		9CAF12F522D85401001528E7 /* CPTLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTLabel.m; sourceTree = "<group>"; };
+		9CAF133122E03A69001528E7 /* CPTAPIFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAPIFactory.h; sourceTree = "<group>"; };
+		9CAF133222E03A69001528E7 /* CPTAPIFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTAPIFactory.m; sourceTree = "<group>"; };
+		9CAF133622E03AB3001528E7 /* CPTAPIFactoryProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAPIFactoryProtocol.h; sourceTree = "<group>"; };
+		9CAF133722E03D1D001528E7 /* CPTNetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNetworkService.h; sourceTree = "<group>"; };
+		9CAF133822E03D1D001528E7 /* CPTNetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTNetworkService.m; sourceTree = "<group>"; };
+		9CAF133A22E03D35001528E7 /* CPTNetworkServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNetworkServiceProtocol.h; sourceTree = "<group>"; };
+		9CAF133C22E18ABB001528E7 /* CPTDataParserServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTDataParserServiceProtocol.h; sourceTree = "<group>"; };
+		9CAF133D22E18AC6001528E7 /* CPTDataParserService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTDataParserService.h; sourceTree = "<group>"; };
+		9CAF133E22E18AC6001528E7 /* CPTDataParserService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTDataParserService.m; sourceTree = "<group>"; };
+		9CAF134422E20CA2001528E7 /* CPTCoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTCoreDataService.h; sourceTree = "<group>"; };
+		9CAF134522E20CA2001528E7 /* CPTCoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTCoreDataService.m; sourceTree = "<group>"; };
+		9CAF134722E20CAD001528E7 /* CPTCoreDataServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTCoreDataServiceProtocol.h; sourceTree = "<group>"; };
+		9CAF134922E20DE0001528E7 /* Coin+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coin+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9CAF134A22E20DE0001528E7 /* Coin+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coin+CoreDataClass.h"; sourceTree = "<group>"; };
+		9CAF134B22E20DE0001528E7 /* Coin+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Coin+CoreDataClass.m"; sourceTree = "<group>"; };
+		9CAF134C22E20DE0001528E7 /* Coin+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Coin+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9CAF135022E47D80001528E7 /* CPTLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTLoadingView.h; sourceTree = "<group>"; };
+		9CAF135122E47D80001528E7 /* CPTLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTLoadingView.m; sourceTree = "<group>"; };
+		9CAF135322E4C58F001528E7 /* CPTUserSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTUserSettings.h; sourceTree = "<group>"; };
+		9CAF135422E4C58F001528E7 /* CPTUserSettings.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTUserSettings.m; sourceTree = "<group>"; };
+		9CAF135622E4CC30001528E7 /* CPTCoinNameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTCoinNameCell.h; sourceTree = "<group>"; };
+		9CAF135722E4CC30001528E7 /* CPTCoinNameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTCoinNameCell.m; sourceTree = "<group>"; };
 		9CEC441822B60E89004BC6FE /* CPTMainScreenFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenFactory.h; sourceTree = "<group>"; };
 		9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenFactory.m; sourceTree = "<group>"; };
 		9CEC441B22B60EEE004BC6FE /* CPTMainScreenPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenPresenter.h; sourceTree = "<group>"; };
@@ -187,6 +218,8 @@
 			children = (
 				9C7A53CD2296E030008A1632 /* Info.plist */,
 				9C7A53C52296E02E008A1632 /* cryptoProfit.xcdatamodeld */,
+				9CAF135322E4C58F001528E7 /* CPTUserSettings.h */,
+				9CAF135422E4C58F001528E7 /* CPTUserSettings.m */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -194,21 +227,24 @@
 		9C7A549A22A299E2008A1632 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				9C7A549B22A29D7E008A1632 /* BusinessLogic */,
+				9C7A549B22A29D7E008A1632 /* Core */,
 				9C7A549F22A29DD0008A1632 /* Flows */,
 				9C7A549C22A29D96008A1632 /* UI */,
 			);
 			name = Application;
 			sourceTree = "<group>";
 		};
-		9C7A549B22A29D7E008A1632 /* BusinessLogic */ = {
+		9C7A549B22A29D7E008A1632 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9CAF134822E20D9E001528E7 /* Model */,
 				9C7A53CE2296E030008A1632 /* main.m */,
 				9C7A53BC2296E02E008A1632 /* AppDelegate.h */,
 				9C7A53BD2296E02E008A1632 /* AppDelegate.m */,
+				9CAF133422E03A70001528E7 /* Factories */,
+				9CAF132D22E0396C001528E7 /* Services */,
 			);
-			name = BusinessLogic;
+			name = Core;
 			sourceTree = "<group>";
 		};
 		9C7A549C22A29D96008A1632 /* UI */ = {
@@ -222,6 +258,7 @@
 		9C7A549D22A29D9B008A1632 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				9CAF134F22E47D60001528E7 /* UIActivityIndicator */,
 				9CAF12F322D853D4001528E7 /* UILabel */,
 				9CAF12D922D45844001528E7 /* UITextField */,
 				9C7A54A422A29E45008A1632 /* UINavigationController */,
@@ -324,6 +361,84 @@
 			name = UILabel;
 			sourceTree = "<group>";
 		};
+		9CAF132D22E0396C001528E7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF134322E20C8B001528E7 /* CoreDataService */,
+				9CAF133B22E18A9F001528E7 /* DataParserService */,
+				9CAF132F22E03A32001528E7 /* NetworkService */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		9CAF132E22E03A2B001528E7 /* APIFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF133622E03AB3001528E7 /* CPTAPIFactoryProtocol.h */,
+				9CAF133122E03A69001528E7 /* CPTAPIFactory.h */,
+				9CAF133222E03A69001528E7 /* CPTAPIFactory.m */,
+			);
+			name = APIFactory;
+			sourceTree = "<group>";
+		};
+		9CAF132F22E03A32001528E7 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF133A22E03D35001528E7 /* CPTNetworkServiceProtocol.h */,
+				9CAF133722E03D1D001528E7 /* CPTNetworkService.h */,
+				9CAF133822E03D1D001528E7 /* CPTNetworkService.m */,
+			);
+			name = NetworkService;
+			sourceTree = "<group>";
+		};
+		9CAF133422E03A70001528E7 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF132E22E03A2B001528E7 /* APIFactory */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		9CAF133B22E18A9F001528E7 /* DataParserService */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF133C22E18ABB001528E7 /* CPTDataParserServiceProtocol.h */,
+				9CAF133D22E18AC6001528E7 /* CPTDataParserService.h */,
+				9CAF133E22E18AC6001528E7 /* CPTDataParserService.m */,
+			);
+			name = DataParserService;
+			sourceTree = "<group>";
+		};
+		9CAF134322E20C8B001528E7 /* CoreDataService */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF134722E20CAD001528E7 /* CPTCoreDataServiceProtocol.h */,
+				9CAF134422E20CA2001528E7 /* CPTCoreDataService.h */,
+				9CAF134522E20CA2001528E7 /* CPTCoreDataService.m */,
+			);
+			name = CoreDataService;
+			sourceTree = "<group>";
+		};
+		9CAF134822E20D9E001528E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF134A22E20DE0001528E7 /* Coin+CoreDataClass.h */,
+				9CAF134B22E20DE0001528E7 /* Coin+CoreDataClass.m */,
+				9CAF134922E20DE0001528E7 /* Coin+CoreDataProperties.h */,
+				9CAF134C22E20DE0001528E7 /* Coin+CoreDataProperties.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9CAF134F22E47D60001528E7 /* UIActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF135022E47D80001528E7 /* CPTLoadingView.h */,
+				9CAF135122E47D80001528E7 /* CPTLoadingView.m */,
+			);
+			name = UIActivityIndicator;
+			sourceTree = "<group>";
+		};
 		9CEC441422B60B7E004BC6FE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +503,8 @@
 				9CEC442C22B75AC0004BC6FE /* CPTAddCurrencyViewController.h */,
 				9CEC442D22B75AC0004BC6FE /* CPTAddCurrencyViewController.m */,
 				9CEC442B22B75A05004BC6FE /* CPTAddCurrencyViewProtocol.h */,
+				9CAF135622E4CC30001528E7 /* CPTCoinNameCell.h */,
+				9CAF135722E4CC30001528E7 /* CPTCoinNameCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -540,18 +657,27 @@
 			files = (
 				9CEC442A22B7595D004BC6FE /* CPTAddCurrencyFactory.m in Sources */,
 				9C7A53C12296E02E008A1632 /* CPTMainScreenViewController.m in Sources */,
+				9CAF133922E03D1D001528E7 /* CPTNetworkService.m in Sources */,
+				9CAF135522E4C58F001528E7 /* CPTUserSettings.m in Sources */,
 				9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */,
 				9CAF12DC22D4588F001528E7 /* CPTTextField.m in Sources */,
 				9CEC443122B75B69004BC6FE /* CPTAddCurrencyPresenter.m in Sources */,
 				9CEC442E22B75AC0004BC6FE /* CPTAddCurrencyViewController.m in Sources */,
 				9C7A53C72296E02E008A1632 /* cryptoProfit.xcdatamodeld in Sources */,
+				9CAF133322E03A69001528E7 /* CPTAPIFactory.m in Sources */,
 				9CAF12ED22D84E74001528E7 /* CPTOptionsViewController.m in Sources */,
+				9CAF135822E4CC30001528E7 /* CPTCoinNameCell.m in Sources */,
 				9C7A53CF2296E030008A1632 /* main.m in Sources */,
+				9CAF135222E47D80001528E7 /* CPTLoadingView.m in Sources */,
+				9CAF134622E20CA2001528E7 /* CPTCoreDataService.m in Sources */,
+				9CAF134D22E20DE0001528E7 /* Coin+CoreDataClass.m in Sources */,
 				9CAF12F022D84E8E001528E7 /* CPTOptionsFactory.m in Sources */,
+				9CAF133F22E18AC6001528E7 /* CPTDataParserService.m in Sources */,
 				9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */,
 				9CAF12F622D85401001528E7 /* CPTLabel.m in Sources */,
 				9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */,
 				9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */,
+				9CAF134E22E20DE0001528E7 /* Coin+CoreDataProperties.m in Sources */,
 				9C7A54A322A29E17008A1632 /* CPTNavigationController.m in Sources */,
 				9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */,
 				9CAF12EA22D84E5A001528E7 /* CPTOptionsPresenter.m in Sources */,

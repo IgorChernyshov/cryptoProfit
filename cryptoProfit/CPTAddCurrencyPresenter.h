@@ -7,12 +7,13 @@
 //
 
 #import "CPTAddCurrencyPresenterProtocol.h"
+#import "CPTCoreDataServiceProtocol.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface CPTAddCurrencyPresenter : NSObject <CPTAddCurrencyPresenterProtocol>
+@interface CPTAddCurrencyPresenter : NSObject <CPTAddCurrencyPresenterProtocol, CPTCoreDataServiceOutputProtocol>
 
 @end
 
