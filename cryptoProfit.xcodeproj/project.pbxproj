@@ -280,7 +280,6 @@
 			isa = PBXGroup;
 			children = (
 				9CEC441722B60E6D004BC6FE /* Builder */,
-				9CEC441422B60B7E004BC6FE /* Model */,
 				9CEC441622B60B7F004BC6FE /* Presenter */,
 				9CEC441522B60B7F004BC6FE /* View */,
 			);
@@ -309,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				9CAF12E122D65100001528E7 /* Builder */,
-				9CAF12E222D65108001528E7 /* Model */,
 				9CAF12E322D6510F001528E7 /* Presenter */,
 				9CAF12E422D65114001528E7 /* View */,
 			);
@@ -323,13 +321,6 @@
 				9CAF12EF22D84E8E001528E7 /* CPTOptionsFactory.m */,
 			);
 			name = Builder;
-			sourceTree = "<group>";
-		};
-		9CAF12E222D65108001528E7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		9CAF12E322D6510F001528E7 /* Presenter */ = {
@@ -374,9 +365,9 @@
 		9CAF132E22E03A2B001528E7 /* APIFactory */ = {
 			isa = PBXGroup;
 			children = (
-				9CAF133622E03AB3001528E7 /* CPTAPIFactoryProtocol.h */,
 				9CAF133122E03A69001528E7 /* CPTAPIFactory.h */,
 				9CAF133222E03A69001528E7 /* CPTAPIFactory.m */,
+				9CAF133622E03AB3001528E7 /* CPTAPIFactoryProtocol.h */,
 			);
 			name = APIFactory;
 			sourceTree = "<group>";
@@ -384,9 +375,9 @@
 		9CAF132F22E03A32001528E7 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				9CAF133A22E03D35001528E7 /* CPTNetworkServiceProtocol.h */,
 				9CAF133722E03D1D001528E7 /* CPTNetworkService.h */,
 				9CAF133822E03D1D001528E7 /* CPTNetworkService.m */,
+				9CAF133A22E03D35001528E7 /* CPTNetworkServiceProtocol.h */,
 			);
 			name = NetworkService;
 			sourceTree = "<group>";
@@ -402,9 +393,9 @@
 		9CAF133B22E18A9F001528E7 /* DataParserService */ = {
 			isa = PBXGroup;
 			children = (
-				9CAF133C22E18ABB001528E7 /* CPTDataParserServiceProtocol.h */,
 				9CAF133D22E18AC6001528E7 /* CPTDataParserService.h */,
 				9CAF133E22E18AC6001528E7 /* CPTDataParserService.m */,
+				9CAF133C22E18ABB001528E7 /* CPTDataParserServiceProtocol.h */,
 			);
 			name = DataParserService;
 			sourceTree = "<group>";
@@ -412,9 +403,9 @@
 		9CAF134322E20C8B001528E7 /* CoreDataService */ = {
 			isa = PBXGroup;
 			children = (
-				9CAF134722E20CAD001528E7 /* CPTCoreDataServiceProtocol.h */,
 				9CAF134422E20CA2001528E7 /* CPTCoreDataService.h */,
 				9CAF134522E20CA2001528E7 /* CPTCoreDataService.m */,
+				9CAF134722E20CAD001528E7 /* CPTCoreDataServiceProtocol.h */,
 			);
 			name = CoreDataService;
 			sourceTree = "<group>";
@@ -437,13 +428,6 @@
 				9CAF135122E47D80001528E7 /* CPTLoadingView.m */,
 			);
 			name = UIActivityIndicator;
-			sourceTree = "<group>";
-		};
-		9CEC441422B60B7E004BC6FE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		9CEC441522B60B7F004BC6FE /* View */ = {
@@ -481,7 +465,6 @@
 			isa = PBXGroup;
 			children = (
 				9CEC442422B75922004BC6FE /* Builder */,
-				9CEC442622B75932004BC6FE /* Model */,
 				9CEC442722B75935004BC6FE /* Presenter */,
 				9CEC442522B7592E004BC6FE /* View */,
 			);
@@ -507,13 +490,6 @@
 				9CAF135722E4CC30001528E7 /* CPTCoinNameCell.m */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		9CEC442622B75932004BC6FE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		9CEC442722B75935004BC6FE /* Presenter */ = {

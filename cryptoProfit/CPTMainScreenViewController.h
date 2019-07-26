@@ -7,8 +7,8 @@
 //
 
 @class UIViewController;
-#import "CPTMainScreenPresenterProtocol.h"
 #import "CPTMainScreenViewProtocol.h"
+@protocol CPTMainScreenPresenterProtocol;
 
 
 NS_ASSUME_NONNULL_BEGIN

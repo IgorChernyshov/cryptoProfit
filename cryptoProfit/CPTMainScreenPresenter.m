@@ -8,6 +8,9 @@
 
 @import UIKit.UINavigationController;
 #import "CPTMainScreenPresenter.h"
+#import "CPTMainScreenViewProtocol.h"
+#import "CPTCoreDataService.h"
+#import "Coin+CoreDataClass.h"
 #import "CPTAddCurrencyFactory.h"
 #import "CPTOptionsFactory.h"
 
@@ -15,6 +18,28 @@
 @implementation CPTMainScreenPresenter
 
 @synthesize view;
+
+
+#pragma mark - CPTMainScreenPresenterProtocol
+
+- (void)viewWillAppearOnScreen
+{
+//	[CPTCoreDataService getUsersCoinsListWithOutput:self];
+}
+
+- (void)successfullyLoadedUsersCoinsList:(NSArray<Coin *> *)coinsList
+{
+	NSMutableArray *coinsNames = [NSMutableArray new];
+	for (Coin* coin in coinsList) {
+		[coinsNames addObject:coin.name];
+	}
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self.view showCoinsListWithCoinsNames:[coinsNames copy]];
+	});
+}
+
+
+#pragma mark - Навигация
 
 - (void)addCurrencyButtonWasPressed
 {

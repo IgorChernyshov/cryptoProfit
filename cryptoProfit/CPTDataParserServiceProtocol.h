@@ -7,7 +7,7 @@
 //
 
 @import Foundation;
-@protocol CPTCoreDataServiceOutputProtocol;
+@protocol CPTAddCurrencyPresenterProtocol;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param output Ссылка на делегат, который запросил данные.
  */
 - (void)createCoinsListFromDictionary:(NSDictionary *)dictionary
-						   withOutput:(id<CPTCoreDataServiceOutputProtocol>)output;
+						   withOutput:(id<CPTAddCurrencyPresenterProtocol>)output;
 
 @end
 

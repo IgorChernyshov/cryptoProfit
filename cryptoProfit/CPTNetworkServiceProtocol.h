@@ -7,7 +7,7 @@
 //
 
 @import Foundation;
-@protocol CPTMainScreenPresenter;
+@protocol CPTMainScreenPresenterProtocol;
 @protocol CPTAddCurrencyPresenterProtocol;
 @protocol CPTCoreDataServiceOutputProtocol;
 
@@ -40,8 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 
-@property (nonatomic, weak) id<CPTMainScreenPresenter> mainScreenPresenter;
-@property (nonatomic, weak) id<CPTAddCurrencyPresenterProtocol, CPTCoreDataServiceOutputProtocol> addCurrencyPresenter;
+@property (nonatomic, weak) id<CPTMainScreenPresenterProtocol> mainScreenPresenter;
+@property (nonatomic, weak) id<CPTAddCurrencyPresenterProtocol> addCurrencyPresenter;
 
 @end
 

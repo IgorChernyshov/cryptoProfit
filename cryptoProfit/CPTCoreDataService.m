@@ -15,87 +15,108 @@
 #import "CPTUserSettings.h"
 
 
+@interface CPTCoreDataService ()
+
+@property (nonatomic, strong) NSManagedObjectContext *coreDataContext;
+
+@end
+
+
 @implementation CPTCoreDataService
 
-+ (void)saveToDatabaseCoinsList:(NSArray<NSDictionary *> *)coinsList
-					 withOutput:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
+@synthesize mainScreenPresenter;
+@synthesize addCurrencyPresenter;
+
+#pragma mark - Initializer
+
+- (instancetype)init
 {
-	__block NSManagedObjectContext *context;
-	dispatch_sync(dispatch_get_main_queue(), ^{
-		context = [CPTCoreDataService coreDataContext];
-	});
-	for (NSDictionary *coin in coinsList) {
-		@autoreleasepool
-		{
-			NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Coin"];
-			fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name ==[c] %@", [coin objectForKey:@"name"]];
-			NSError *error = nil;
-			NSArray *result = [context executeFetchRequest:fetchRequest error:&error];
-			if (!(result.count == 0) || error)
-			{
-				continue;
-			}
-
-			Coin *newCoin = [NSEntityDescription insertNewObjectForEntityForName:@"Coin"
-														  inManagedObjectContext:[CPTCoreDataService coreDataContext]];
-			newCoin.name = [coin objectForKey:@"name"];
-			newCoin.shortName = [coin objectForKey:@"shortName"];
-			newCoin.quantity = 0.f;
-			newCoin.value = 0.f;
-			newCoin.delta = 0.f;
-
-			[newCoin.managedObjectContext save:&error];
-		}
+	self = [super init];
+	if (self) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			self->_coreDataContext = [self coreDataContext];
+		});
 	}
-	[output coinsListWasSaved];
+	return self;
 }
 
-+ (void)loadCoinsListWithFilter:(NSString *)filter
-						 output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
+- (void)saveCoinsList:(NSArray<NSDictionary *> *)coinsList
+{
+	NSError *error = nil;
+	for (NSDictionary *coin in coinsList)
+	{
+//		@autoreleasepool
+//		{
+			Coin *newCoin = [NSEntityDescription insertNewObjectForEntityForName:@"Coin"
+														  inManagedObjectContext:[self coreDataContext]];
+			newCoin.name = coin[@"name"];
+			newCoin.shortName = coin[@"shortName"];
+			[newCoin.managedObjectContext save:&error];
+//		}
+	}
+}
+
+- (void)loadCoinsListWithOutput:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
 {
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Coin"];
-	if (filter.length > 0)
-	{
-		fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@ OR shortName CONTAINS[cd] %@", filter, filter];
-	}
 	NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
 	fetchRequest.sortDescriptors = @[sortDescriptor];
-	dispatch_async(dispatch_get_main_queue(), ^{
-		NSManagedObjectContext *context = [CPTCoreDataService coreDataContext];
-		dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
-			NSError *error = nil;
-			NSArray *result = [context executeFetchRequest:fetchRequest error:&error];
-			[output filteringFinishedWithCoinsList:result];
-		});
-	});
+	NSError *error = nil;
+	NSArray *result = [self.coreDataContext executeFetchRequest:fetchRequest error:&error];
+	[output loadedCoinsList:result];
 }
 
-+ (void)saveUsersCoinWithName:(NSString *)name
+- (void)saveUsersCoinWithName:(NSString *)name
 					 quantity:(CGFloat)quantity
 					   output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
 {
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Coin"];
 	fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", name];
-	dispatch_async(dispatch_get_main_queue(), ^{
-		NSManagedObjectContext *context = [CPTCoreDataService coreDataContext];
-		dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
-			NSError *error = nil;
-			NSArray *result = [context executeFetchRequest:fetchRequest error:&error];
-			if (result.count == 1)
-			{
-				[output usersCoinSavedSuccessfully];
-			}
-		});
-	});
+	NSError *error = nil;
+	NSArray *result = [self.coreDataContext executeFetchRequest:fetchRequest error:&error];
+	if (result.count == 1)
+	{
+		[self updateCoinInCoreDataWithName:name quantity:quantity];
+		[output usersCoinSavedSuccessfully];
+	}
 }
 
-+ (NSManagedObjectContext *)coreDataContext
+- (void)getUsersCoinsListWithOutput:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
 {
+	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Coin"];
+	fetchRequest.predicate = [NSPredicate predicateWithFormat:@"quantity != 0"];
+	NSError *error = nil;
+	NSArray *result = [self.coreDataContext executeFetchRequest:fetchRequest error:&error];
+	[output successfullyLoadedUsersCoinsList:result];
+}
+
+
+#pragma mark - Хелперы
+
+- (NSManagedObjectContext *)coreDataContext
+{
+	if (_coreDataContext)
+	{
+		return _coreDataContext;
+	}
 	UIApplication *application = [UIApplication sharedApplication];
-	NSManagedObjectContext *context;
 	NSPersistentContainer *container = ((AppDelegate *)(application.delegate)).persistentContainer;
-	context = container.viewContext;
-	return context;
+	_coreDataContext = container.viewContext;
+	return _coreDataContext;
+}
+
+- (void)updateCoinInCoreDataWithName:(NSString *)name quantity:(CGFloat)quantity
+{
+	Coin *coin = [NSEntityDescription insertNewObjectForEntityForName:@"Coin" inManagedObjectContext:self.coreDataContext];
+	coin.name = name;
+	coin.quantity = quantity;
+
+	NSError *error = nil;
+	if ([coin.managedObjectContext save:&error])
+	{
+		return;
+	}
+	NSLog(@"Не удалось сохранить объект %@", error.localizedDescription);
 }
 
 @end

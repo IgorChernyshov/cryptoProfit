@@ -8,6 +8,8 @@
 
 @import UIKit;
 @class Coin;
+@protocol CPTMainScreenPresenterProtocol;
+@protocol CPTAddCurrencyPresenterProtocol;
 @protocol CPTCoreDataServiceOutputProtocol;
 
 
@@ -20,24 +22,32 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol CPTCoreDataServiceProtocol <NSObject>
 
-+ (void)saveToDatabaseCoinsList:(NSArray<NSDictionary *> *)coinsList
-					 withOutput:(id<CPTCoreDataServiceOutputProtocol>)output;
+- (void)saveCoinsList:(NSArray<NSDictionary *> *)coinsList;
 
-+ (void)loadCoinsListWithFilter:(NSString *)filter
-						 output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output;
+- (void)loadCoinsListWithOutput:(nonnull id<CPTCoreDataServiceOutputProtocol>)output;
 
-+ (void)saveUsersCoinWithName:(NSString *)name
+- (void)saveUsersCoinWithName:(NSString *)name
 					 quantity:(CGFloat)quantity
 					   output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output;
+
+- (void)getUsersCoinsListWithOutput:(nonnull id<CPTCoreDataServiceOutputProtocol>)output;
+
+@optional
+
+@property (nonatomic, weak) id<CPTMainScreenPresenterProtocol> mainScreenPresenter;
+@property (nonatomic, weak) id<CPTAddCurrencyPresenterProtocol> addCurrencyPresenter;
 
 @end
 
 
 @protocol CPTCoreDataServiceOutputProtocol <NSObject>
 
+@optional
+
 - (void)coinsListWasSaved;
-- (void)filteringFinishedWithCoinsList:(NSArray<Coin *> *)coinsList;
+- (void)loadedCoinsList:(NSArray<Coin *> *)coinsList;
 - (void)usersCoinSavedSuccessfully;
+- (void)successfullyLoadedUsersCoinsList:(NSArray<Coin *> *)coinsList;
 
 @end
 

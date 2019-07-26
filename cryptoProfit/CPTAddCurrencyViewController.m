@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong) CPTLoadingView *spinner;
 @property (nonatomic, strong) UITableView *coinsSearchTableView;
+@property (nonatomic, copy) NSArray<NSString *> *filteredCoinsNames;
+@property (nonatomic, copy) NSArray<NSString *> *coinsNames;
 
 @end
 
@@ -30,7 +32,6 @@
 
 @synthesize currencyNameTextField;
 @synthesize currencyQuantityTextField;
-@synthesize coinsNames;
 
 
 #pragma mark - Инициализатор
@@ -41,7 +42,8 @@
 	if (self)
 	{
 		_presenter = presenter;
-		coinsNames = [NSArray new];
+		_coinsNames = [NSArray new];
+		_filteredCoinsNames = [NSArray new];
 	}
 	return self;
 }
@@ -91,8 +93,8 @@
 {
 	self.currencyNameTextField = [CPTTextField new];
 	[self.currencyNameTextField configureAttributedPlaceholderWithText:@"Название валюты"];
-	[self.currencyNameTextField addTarget:self action:@selector(textFieldDidChangeText) forControlEvents:UIControlEventEditingChanged];
-	[self.currencyNameTextField addTarget:self action:@selector(textFieldDidChangeText) forControlEvents:UIControlEventEditingDidBegin];
+	[self.currencyNameTextField addTarget:self action:@selector(editedTextField) forControlEvents:UIControlEventEditingChanged];
+	[self.currencyNameTextField addTarget:self action:@selector(editedTextField) forControlEvents:UIControlEventEditingDidBegin];
 	
 	[self.view addSubview:self.currencyNameTextField];
 }
@@ -101,6 +103,7 @@
 {
 	self.currencyQuantityTextField = [CPTTextField new];
 	[self.currencyQuantityTextField configureAttributedPlaceholderWithText:@"Количество"];
+	self.currencyQuantityTextField.keyboardType = UIKeyboardTypeNumberPad;
 	
 	[self.view addSubview:self.currencyQuantityTextField];
 }
@@ -153,13 +156,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return self.coinsNames.count;
+	return self.filteredCoinsNames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	CPTCoinNameCell *cell = [CPTCoinNameCell new];
-	cell.coinName.text = self.coinsNames[indexPath.row];
+	cell.coinName.text = self.filteredCoinsNames[indexPath.row];
 	return cell;
 }
 
@@ -168,7 +171,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	self.currencyNameTextField.text = self.coinsNames[indexPath.row];
+	self.currencyNameTextField.text = self.filteredCoinsNames[indexPath.row];
 	[self hideCoinsList];
 }
 
@@ -182,15 +185,23 @@
 
 - (void)saveButtonWasPressed
 {
-	[self.presenter saveButtonWasPressed];
+	BOOL coinsNameIsCorrect = [self.coinsNames containsObject:self.currencyNameTextField.text];
+	CGFloat coinsQuantity = self.currencyNameTextField.text.floatValue;
+	if (!coinsNameIsCorrect || coinsQuantity < 0)
+	{
+		return;
+	}
+
+	[self.presenter saveButtonWasPressedWithCoinName:self.currencyNameTextField.text
+											quantity:coinsQuantity];
 }
 
 
 #pragma mark - Обработчик событий TextField
 
-- (void)textFieldDidChangeText
+- (void)editedTextField
 {
-	[self.presenter userChangedCoinNameToName:self.currencyNameTextField.text];
+	[self.presenter userIsSearchingForCoinName:self.currencyNameTextField.text inArrayOfNames:self.coinsNames];
 }
 
 
@@ -204,17 +215,21 @@
 	self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
-- (void)loadingFinished
+- (void)loadingFinishedWithCoinsNames:(NSArray<NSString *> *)coins
 {
 	[self.spinner hide];
 	self.currencyNameTextField.enabled = YES;
 	self.currencyQuantityTextField.enabled = YES;
 	self.navigationItem.rightBarButtonItem.enabled = YES;
+	if (coins.count > 0)
+	{
+		self.coinsNames = coins;
+	}
 }
 
-- (void)showCoinsListWithCoinsNames:(NSArray<NSString *> *)coins
+- (void)showFilteredCoinsListWithCoinsNames:(NSArray<NSString *> *)coins
 {
-	self.coinsNames = coins;
+	self.filteredCoinsNames = coins;
 	[self.coinsSearchTableView reloadData];
 	self.coinsSearchTableView.hidden = NO;
 }

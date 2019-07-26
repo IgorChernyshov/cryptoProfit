@@ -17,12 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) CPTTextField *currencyNameTextField;
 @property (nonatomic, strong) CPTTextField *currencyQuantityTextField;
-@property (nonatomic, strong) NSArray<NSString *> *coinsNames;
 
 - (void)loadingStarted;
-- (void)loadingFinished;
+- (void)loadingFinishedWithCoinsNames:(NSArray<NSString *> *)coins;
 
-- (void)showCoinsListWithCoinsNames:(NSArray<NSString *> *)coins;
+- (void)showFilteredCoinsListWithCoinsNames:(NSArray<NSString *> *)coins;
 - (void)hideCoinsList;
 
 @end
