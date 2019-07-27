@@ -25,7 +25,7 @@
 	{
 		[self configureInitialViewController];
 		[self configureNavigationBar];
-		[CPTUserSettings applicationStarted];
+//		[CPTUserSettings applicationStarted];
 	}
 	return self;
 }

@@ -55,7 +55,7 @@
 																		   NSError * _Nullable error) {
 														   if (!data || error)
 														   {
-															   return;
+															   [self requestToParseData:@{} ofRequestType:requestType];
 														   }
 														   NSDictionary *serverResponse = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
 														   NSDictionary *responseData = [serverResponse objectForKey:@"Data"];

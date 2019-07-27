@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) UIViewController<CPTMainScreenViewProtocol> *view;
 
+- (void)viewWillAppearOnScreen;
+
 - (void)optionsButtonWasPressed;
 - (void)addCurrencyButtonWasPressed;
 

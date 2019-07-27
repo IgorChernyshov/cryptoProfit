@@ -20,8 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSString *shortName;
 @property (nonatomic) float quantity;
-@property (nonatomic) float delta;
-@property (nonatomic) float value;
 
 @end
 

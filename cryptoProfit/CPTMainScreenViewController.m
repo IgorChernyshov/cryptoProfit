@@ -8,6 +8,7 @@
 
 @import UIKit;
 #import "CPTMainScreenViewController.h"
+#import "CPTMainScreenPresenterProtocol.h"
 #import "CPTWalletCell.h"
 #import "CPTLabel.h"
 #import "UIColor+CPTColors.h"
@@ -18,7 +19,10 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 @interface CPTMainScreenViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) id<CPTMainScreenPresenterProtocol> presenter;
+
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, copy) NSArray<NSString *> *coinsNames;
+@property (nonatomic, copy) NSArray<NSNumber *> *coinsQuantity;
 @property (nonatomic, strong) UIView *tableHeaderView;
 
 @end
@@ -35,6 +39,7 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 	if (self)
 	{
 		_presenter = presenter;
+		_coinsNames = [NSArray new];
 	}
 	return self;
 }
@@ -47,6 +52,12 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 	[super viewDidLoad];
 	
 	[self configureUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.presenter viewWillAppearOnScreen];
 }
 
 
@@ -156,16 +167,40 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 }
 
 
+#pragma mark - CPTMainScreenViewProtocol
+
+- (void)showCoinsListWithCoinsNames:(NSArray<NSString *> *)coins quantity:(NSArray<NSNumber *> *)quantity;
+{
+	self.coinsNames = coins;
+	self.coinsQuantity = quantity;
+	[self.tableView reloadData];
+	self.tableView.hidden = NO;
+}
+
+- (void)loadingStarted
+{
+
+}
+
+- (void)loadingFinished
+{
+
+}
+
+
 #pragma mark - UITableViewDataSource Protocol
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 1;
+	return self.coinsNames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return [CPTWalletCell new];
+	CPTWalletCell *cell = [CPTWalletCell new];
+	cell.nameLabel.text = self.coinsNames[indexPath.row];
+	cell.quantityLabel.text = self.coinsQuantity[indexPath.row].stringValue;
+	return cell;
 }
 
 @end

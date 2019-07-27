@@ -6,9 +6,10 @@
 //  Copyright © 2019 Igor Chernyshov. All rights reserved.
 //
 
+@import UIKit;
+@class UIViewController;
 @protocol CPTAddCurrencyViewProtocol;
 @protocol CPTNetworkServiceOutputProtocol;
-@class UIViewController;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -19,9 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) UIViewController<CPTAddCurrencyViewProtocol> *view;
 
 - (void)backButtonWasPressed;
-- (void)saveButtonWasPressed;
+- (void)saveButtonWasPressedWithCoinName:(NSString *)name quantity:(NSNumber *)quantity;
 
-- (void)userChangedCoinNameToName:(NSString *)name;
+- (void)parsedCoinsListWithNames:(NSArray<NSString *> *)names;
+- (void)userIsSearchingForCoinName:(NSString *)name inArrayOfNames:(NSArray<NSString *> *)names;
 
 - (void)viewAppearedOnScreen;
 

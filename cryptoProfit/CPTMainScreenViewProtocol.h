@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol CPTMainScreenViewProtocol <NSObject>
 
+- (void)loadingStarted;
+- (void)loadingFinished;
+
+- (void)showCoinsListWithCoinsNames:(NSArray<NSString *> *)coins quantity:(NSArray<NSNumber *> *)quantity;
+
 @end
 
 NS_ASSUME_NONNULL_END

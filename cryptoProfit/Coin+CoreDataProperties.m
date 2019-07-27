@@ -19,7 +19,5 @@
 @dynamic name;
 @dynamic shortName;
 @dynamic quantity;
-@dynamic delta;
-@dynamic value;
 
 @end

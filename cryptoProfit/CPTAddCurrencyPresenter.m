@@ -20,6 +20,7 @@
 @interface CPTAddCurrencyPresenter ()
 
 @property (nonatomic, strong) id<CPTNetworkServiceInputProtocol> networkService;
+@property (nonatomic, strong) id<CPTCoreDataServiceProtocol> coreDataService;
 
 @end
 
@@ -38,6 +39,8 @@
 	{
 		_networkService = [CPTNetworkService new];
 		_networkService.addCurrencyPresenter = self;
+		_coreDataService = [CPTCoreDataService new];
+		_coreDataService.addCurrencyPresenter = self;
 	}
 	return self;
 }
@@ -50,39 +53,38 @@
 	[self.view.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)saveButtonWasPressed
+- (void)saveButtonWasPressedWithCoinName:(NSString *)name
+								quantity:(NSNumber *)quantity
 {
 	[self.view loadingStarted];
-
-	BOOL coinsNameIsCorrect = [self.view.coinsNames containsObject:self.view.currencyNameTextField.text];
-	CGFloat coinsQuantity = self.view.currencyNameTextField.text.floatValue;
-
-	if (!(coinsNameIsCorrect && coinsQuantity >= 0))
-	{
-		[self.view loadingFinished];
-		return;
-	}
-	[CPTCoreDataService saveUsersCoinWithName:self.view.currencyNameTextField.text
-									 quantity:coinsQuantity
-									   output:self];
+	[self.coreDataService saveUsersCoinWithName:name
+									   quantity:quantity
+										 output:self];
 }
 
 
 #pragma mark - Обработчик событий TextField
 
-- (void)userChangedCoinNameToName:(NSString *)name
+- (void)userIsSearchingForCoinName:(NSString *)name inArrayOfNames:(NSArray<NSString *> *)names;
 {
-	[CPTCoreDataService loadCoinsListWithFilter:name output:self];
+	if (name.length == 0)
+	{
+		[self.view showFilteredCoinsListWithCoinsNames:names];
+		return;
+	}
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", name];
+	NSArray<NSString *> *filteredCoinsNames = [names filteredArrayUsingPredicate:predicate];
+	[self.view showFilteredCoinsListWithCoinsNames:filteredCoinsNames];
 }
 
-- (void)filteringFinishedWithCoinsList:(NSArray<Coin *> *)coinsList
+- (void)loadedCoinsList:(NSArray<Coin *> *)coinsList
 {
 	NSMutableArray *coinsNames = [NSMutableArray new];
 	for (Coin* coin in coinsList) {
 		[coinsNames addObject:coin.name];
 	}
 	dispatch_async(dispatch_get_main_queue(), ^{
-		[self.view showCoinsListWithCoinsNames:[coinsNames copy]];
+		[self.view loadingFinishedWithCoinsNames:[coinsNames copy]];
 	});
 }
 
@@ -93,6 +95,7 @@
 {
 	if (![self coinsListUpdateIsNeeded])
 	{
+		[self.coreDataService loadCoinsListWithOutput:self];
 		return;
 	}
 	[self.view loadingStarted];
@@ -108,16 +111,17 @@
 	return YES;
 }
 
-
-#pragma mark - CPTCoreDataServiceOutputProtocol
-
-- (void)coinsListWasSaved
+- (void)parsedCoinsListWithNames:(NSArray<NSString *> *)names
 {
 	[CPTUserSettings coinsListHasBeenUpdated];
+	names = [names sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 	dispatch_async(dispatch_get_main_queue(), ^{
-		[self.view loadingFinished];
+		[self.view loadingFinishedWithCoinsNames:names];
 	});
 }
+
+
+#pragma mark - CPTCoreDataServiceOutputProtocol
 
 - (void)usersCoinSavedSuccessfully
 {
