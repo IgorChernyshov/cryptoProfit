@@ -22,6 +22,7 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray<NSString *> *coinsNames;
+@property (nonatomic, copy) NSArray<NSNumber *> *coinsQuantity;
 @property (nonatomic, strong) UIView *tableHeaderView;
 
 @end
@@ -168,9 +169,10 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 
 #pragma mark - CPTMainScreenViewProtocol
 
-- (void)showCoinsListWithCoinsNames:(NSArray<NSString *> *)coins
+- (void)showCoinsListWithCoinsNames:(NSArray<NSString *> *)coins quantity:(NSArray<NSNumber *> *)quantity;
 {
 	self.coinsNames = coins;
+	self.coinsQuantity = quantity;
 	[self.tableView reloadData];
 	self.tableView.hidden = NO;
 }
@@ -185,11 +187,6 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 
 }
 
-- (void)hideCoinsList
-{
-	self.tableView.hidden = YES;
-}
-
 
 #pragma mark - UITableViewDataSource Protocol
 
@@ -202,6 +199,7 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 {
 	CPTWalletCell *cell = [CPTWalletCell new];
 	cell.nameLabel.text = self.coinsNames[indexPath.row];
+	cell.quantityLabel.text = self.coinsQuantity[indexPath.row].stringValue;
 	return cell;
 }
 

@@ -103,7 +103,7 @@
 {
 	self.currencyQuantityTextField = [CPTTextField new];
 	[self.currencyQuantityTextField configureAttributedPlaceholderWithText:@"Количество"];
-	self.currencyQuantityTextField.keyboardType = UIKeyboardTypeNumberPad;
+	self.currencyQuantityTextField.keyboardType = UIKeyboardTypeDecimalPad;
 	
 	[self.view addSubview:self.currencyQuantityTextField];
 }
@@ -186,7 +186,7 @@
 - (void)saveButtonWasPressed
 {
 	BOOL coinsNameIsCorrect = [self.coinsNames containsObject:self.currencyNameTextField.text];
-	CGFloat coinsQuantity = self.currencyNameTextField.text.floatValue;
+	NSNumber *coinsQuantity = [NSNumber numberWithFloat:self.currencyQuantityTextField.text.floatValue];
 	if (!coinsNameIsCorrect || coinsQuantity < 0)
 	{
 		return;

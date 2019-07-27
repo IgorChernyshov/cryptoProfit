@@ -17,8 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadingStarted;
 - (void)loadingFinished;
 
-- (void)showCoinsListWithCoinsNames:(NSArray<NSString *> *)coins;
-- (void)hideCoinsList;
+- (void)showCoinsListWithCoinsNames:(NSArray<NSString *> *)coins quantity:(NSArray<NSNumber *> *)quantity;
 
 @end
 

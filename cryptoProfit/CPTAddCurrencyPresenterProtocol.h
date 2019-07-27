@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) UIViewController<CPTAddCurrencyViewProtocol> *view;
 
 - (void)backButtonWasPressed;
-- (void)saveButtonWasPressedWithCoinName:(NSString *)name quantity:(CGFloat)quantity;
+- (void)saveButtonWasPressedWithCoinName:(NSString *)name quantity:(NSNumber *)quantity;
 
 - (void)parsedCoinsListWithNames:(NSArray<NSString *> *)names;
 - (void)userIsSearchingForCoinName:(NSString *)name inArrayOfNames:(NSArray<NSString *> *)names;

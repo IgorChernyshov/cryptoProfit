@@ -54,7 +54,7 @@
 }
 
 - (void)saveButtonWasPressedWithCoinName:(NSString *)name
-								quantity:(CGFloat)quantity
+								quantity:(NSNumber *)quantity
 {
 	[self.view loadingStarted];
 	[self.coreDataService saveUsersCoinWithName:name
@@ -84,7 +84,7 @@
 		[coinsNames addObject:coin.name];
 	}
 	dispatch_async(dispatch_get_main_queue(), ^{
-		[self.view showFilteredCoinsListWithCoinsNames:[coinsNames copy]];
+		[self.view loadingFinishedWithCoinsNames:[coinsNames copy]];
 	});
 }
 

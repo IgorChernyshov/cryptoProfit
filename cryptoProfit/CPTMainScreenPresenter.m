@@ -15,26 +15,46 @@
 #import "CPTOptionsFactory.h"
 
 
+@interface CPTMainScreenPresenter ()
+
+@property (nonatomic, strong) id<CPTCoreDataServiceProtocol> coreDataService;
+
+@end
+
 @implementation CPTMainScreenPresenter
 
 @synthesize view;
 
 
+#pragma mark - Initializer
+
+- (instancetype)init
+{
+	self = [super init];
+	if (self) {
+		_coreDataService = [CPTCoreDataService new];
+		_coreDataService.mainScreenPresenter = self;
+	}
+	return self;
+}
+
 #pragma mark - CPTMainScreenPresenterProtocol
 
 - (void)viewWillAppearOnScreen
 {
-//	[CPTCoreDataService getUsersCoinsListWithOutput:self];
+	[self.coreDataService getUsersCoinsListWithOutput:self];
 }
 
 - (void)successfullyLoadedUsersCoinsList:(NSArray<Coin *> *)coinsList
 {
-	NSMutableArray *coinsNames = [NSMutableArray new];
+	NSMutableArray<NSString *> *coinsNames = [NSMutableArray new];
+	NSMutableArray<NSNumber *> *coinsQuantity = [NSMutableArray new];
 	for (Coin* coin in coinsList) {
 		[coinsNames addObject:coin.name];
+		[coinsQuantity addObject:[NSNumber numberWithFloat:coin.quantity]];
 	}
 	dispatch_async(dispatch_get_main_queue(), ^{
-		[self.view showCoinsListWithCoinsNames:[coinsNames copy]];
+		[self.view showCoinsListWithCoinsNames:[coinsNames copy] quantity:coinsQuantity];
 	});
 }
 

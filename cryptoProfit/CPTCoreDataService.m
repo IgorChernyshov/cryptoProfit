@@ -45,14 +45,20 @@
 	NSError *error = nil;
 	for (NSDictionary *coin in coinsList)
 	{
-//		@autoreleasepool
-//		{
-			Coin *newCoin = [NSEntityDescription insertNewObjectForEntityForName:@"Coin"
-														  inManagedObjectContext:[self coreDataContext]];
-			newCoin.name = coin[@"name"];
-			newCoin.shortName = coin[@"shortName"];
-			[newCoin.managedObjectContext save:&error];
-//		}
+		// Check if coin already exists
+		NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Coin"];
+		fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name CONTAINS %@", coin[@"name"]];
+		NSArray *result = [self.coreDataContext executeFetchRequest:fetchRequest error:&error];
+		if (result.count > 0)
+		{
+			NSLog(@"Coin with name %@ already exists", coin[@"name"]);
+			continue;
+		}
+		Coin *newCoin = [NSEntityDescription insertNewObjectForEntityForName:@"Coin"
+													  inManagedObjectContext:[self coreDataContext]];
+		newCoin.name = coin[@"name"];
+		newCoin.shortName = coin[@"shortName"];
+		[newCoin.managedObjectContext save:&error];
 	}
 }
 
@@ -67,16 +73,16 @@
 }
 
 - (void)saveUsersCoinWithName:(NSString *)name
-					 quantity:(CGFloat)quantity
+					 quantity:(NSNumber *)quantity
 					   output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
 {
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Coin"];
 	fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", name];
 	NSError *error = nil;
-	NSArray *result = [self.coreDataContext executeFetchRequest:fetchRequest error:&error];
+	NSArray<Coin *> *result = [self.coreDataContext executeFetchRequest:fetchRequest error:&error];
 	if (result.count == 1)
 	{
-		[self updateCoinInCoreDataWithName:name quantity:quantity];
+		[self updateCoinInCoreDataWithCoin:[result firstObject] quantity:quantity];
 		[output usersCoinSavedSuccessfully];
 	}
 }
@@ -105,11 +111,9 @@
 	return _coreDataContext;
 }
 
-- (void)updateCoinInCoreDataWithName:(NSString *)name quantity:(CGFloat)quantity
+- (void)updateCoinInCoreDataWithCoin:(Coin *)coin quantity:(NSNumber *)quantity
 {
-	Coin *coin = [NSEntityDescription insertNewObjectForEntityForName:@"Coin" inManagedObjectContext:self.coreDataContext];
-	coin.name = name;
-	coin.quantity = quantity;
+	coin.quantity = quantity.floatValue;
 
 	NSError *error = nil;
 	if ([coin.managedObjectContext save:&error])

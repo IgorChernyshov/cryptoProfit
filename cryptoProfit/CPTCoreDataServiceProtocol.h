@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadCoinsListWithOutput:(nonnull id<CPTCoreDataServiceOutputProtocol>)output;
 
 - (void)saveUsersCoinWithName:(NSString *)name
-					 quantity:(CGFloat)quantity
+					 quantity:(NSNumber *)quantity
 					   output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output;
 
 - (void)getUsersCoinsListWithOutput:(nonnull id<CPTCoreDataServiceOutputProtocol>)output;
