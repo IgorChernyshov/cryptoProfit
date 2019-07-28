@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C4EC82722ED75BE005D5C86 /* CPTCoinViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC82622ED75BE005D5C86 /* CPTCoinViewModel.m */; };
 		9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53BD2296E02E008A1632 /* AppDelegate.m */; };
 		9C7A53C12296E02E008A1632 /* CPTMainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53C02296E02E008A1632 /* CPTMainScreenViewController.m */; };
 		9C7A53C72296E02E008A1632 /* cryptoProfit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53C52296E02E008A1632 /* cryptoProfit.xcdatamodeld */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C4EC82522ED75BE005D5C86 /* CPTCoinViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTCoinViewModel.h; sourceTree = "<group>"; };
+		9C4EC82622ED75BE005D5C86 /* CPTCoinViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTCoinViewModel.m; sourceTree = "<group>"; };
 		9C7A53B92296E02E008A1632 /* cryptoProfit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cryptoProfit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7A53BC2296E02E008A1632 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9C7A53BD2296E02E008A1632 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,6 +157,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C4EC82422ED759F005D5C86 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C4EC82522ED75BE005D5C86 /* CPTCoinViewModel.h */,
+				9C4EC82622ED75BE005D5C86 /* CPTCoinViewModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		9C7A53B02296E02E008A1632 = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +291,7 @@
 		9C7A54A022A29DE2008A1632 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9C4EC82422ED759F005D5C86 /* Model */,
 				9CEC441722B60E6D004BC6FE /* Builder */,
 				9CEC441622B60B7F004BC6FE /* Presenter */,
 				9CEC441522B60B7F004BC6FE /* View */,
@@ -647,6 +660,7 @@
 				9CAF135222E47D80001528E7 /* CPTLoadingView.m in Sources */,
 				9CAF134622E20CA2001528E7 /* CPTCoreDataService.m in Sources */,
 				9CAF134D22E20DE0001528E7 /* Coin+CoreDataClass.m in Sources */,
+				9C4EC82722ED75BE005D5C86 /* CPTCoinViewModel.m in Sources */,
 				9CAF12F022D84E8E001528E7 /* CPTOptionsFactory.m in Sources */,
 				9CAF133F22E18AC6001528E7 /* CPTDataParserService.m in Sources */,
 				9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */,

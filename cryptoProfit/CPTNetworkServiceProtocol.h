@@ -19,7 +19,8 @@
  */
 typedef NS_ENUM(NSUInteger, CPTNetworkRequestType)
 {
-	CPTNetworkRequestTypeCurrencyList = 0
+	CPTNetworkRequestTypeCurrencyList = 0,
+	CPTNetworkRequestTypeCoinPrice
 };
 
 
@@ -37,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
  Запрашивает список всех криптовалют.
  */
 - (void)requestCurrencyList;
+
+/**
+ Запрашивает текущую стоимость одной единицы криптовалюты по её shortName.
+ */
+- (void)requestCoinPriceWithShortName:(NSString *)shortName;
 
 @optional
 

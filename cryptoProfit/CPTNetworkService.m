@@ -13,6 +13,7 @@
 #import "CPTDataParserService.h"
 #import "CPTCoreDataServiceProtocol.h"
 #import "CPTAddCurrencyPresenterProtocol.h"
+#import "CPTMainScreenPresenterProtocol.h"
 #import "CPTUserSettingsService.h"
 
 
@@ -34,53 +35,67 @@
 - (void)requestCurrencyList
 {
 	NSURL *currencyListURL = [self.apiFactory currencyListURL];
-	[self performNetworkRequestWithURL:currencyListURL requestType:CPTNetworkRequestTypeCurrencyList];
+	NSURLSessionDataTask *dataTask;
+	dataTask = [[self session] dataTaskWithRequest:[self requestWithURL:currencyListURL]
+								 completionHandler:^(NSData * _Nullable data,
+													 NSURLResponse * _Nullable response,
+													 NSError * _Nullable error) {
+									 if (!data || error)
+									 {
+										 [CPTUserSettingsService coinsListHasBeenUpdated];
+										 [self.addCurrencyPresenter viewAppearedOnScreen];
+										 return;
+									 }
+									 NSDictionary *serverResponse = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+									 [self requestToParseCoinsList:serverResponse];
+								 }];
+	[dataTask resume];
+}
+
+- (void)requestCoinPriceWithShortName:(NSString *)shortName;
+{
+	NSURL *coinPriceURL = [self.apiFactory coinPriceURLWithShortName:shortName];
+	NSURLSessionDataTask *dataTask;
+	dataTask = [[self session] dataTaskWithRequest:[self requestWithURL:coinPriceURL]
+								 completionHandler:^(NSData * _Nullable data,
+													 NSURLResponse * _Nullable response,
+													 NSError * _Nullable error) {
+									 if (!data || error)
+									 {
+										 return;
+									 }
+									 NSDictionary *serverResponse = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+									 NSNumber *price = [serverResponse valueForKey:@"RUB"];
+									 [self.mainScreenPresenter receivedPrice:price forCoinWithShortName:shortName];
+								 }];
+	[dataTask resume];
 }
 
 
 #pragma mark - Приватные методы
 
-- (void)performNetworkRequestWithURL:(NSURL *)url requestType:(CPTNetworkRequestType)requestType
+- (void)requestToParseCoinsList:(NSDictionary *)data
+{
+	NSDictionary *payload = [data objectForKey:@"Data"];
+	[self.dataParser createCoinsListFromDictionary:payload withOutput:self.addCurrencyPresenter];
+}
+
+
+#pragma mark - Хелперы
+
+- (NSMutableURLRequest *)requestWithURL:(NSURL *)url
 {
 	NSMutableURLRequest *request = [NSMutableURLRequest new];
 	[request setURL:url];
 	[request setHTTPMethod:@"GET"];
 	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
 	[request setTimeoutInterval:15];
-
-	NSURLSession *session;
-	session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-
-	NSURLSessionDataTask *sessionDataTask = [session dataTaskWithRequest:request
-													   completionHandler:^(NSData * _Nullable data,
-																		   NSURLResponse * _Nullable response,
-																		   NSError * _Nullable error) {
-														   if (!data || error)
-														   {
-															   [self requestToParseData:@{} ofRequestType:requestType];
-															   return;
-														   }
-														   NSDictionary *serverResponse = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-														   NSDictionary *responseData = [serverResponse objectForKey:@"Data"];
-														   [self requestToParseData:responseData ofRequestType:requestType];
-													   }];
-	[sessionDataTask resume];
+	return request;
 }
 
-- (void)requestToParseData:(NSDictionary *)data ofRequestType:(CPTNetworkRequestType)requestType
+- (NSURLSession *)session
 {
-	switch (requestType)
-	{
-		case CPTNetworkRequestTypeCurrencyList:
-			if (data.count == 0)
-			{
-				[CPTUserSettingsService coinsListHasBeenUpdated];
-				[self.addCurrencyPresenter viewAppearedOnScreen];
-				break;
-			}
-			[self.dataParser createCoinsListFromDictionary:data withOutput:self.addCurrencyPresenter];
-			break;
-	}
+	return [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
 }
 
 

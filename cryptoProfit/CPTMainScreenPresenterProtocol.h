@@ -26,6 +26,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)viewWillAppearOnScreen;
 
 /**
+ Оповещение о том, что цена единицы криптовалюты была получена с сервера.
+
+ @param price Цена одной единицы криптовалюты.
+ @param shortName Идентификатор криптовалюты.
+ */
+- (void)receivedPrice:(NSNumber *)price forCoinWithShortName:(NSString *)shortName;
+
+/**
  Оповещение, что у View была нажата кнопка "Настройки".
  */
 - (void)optionsButtonWasPressed;

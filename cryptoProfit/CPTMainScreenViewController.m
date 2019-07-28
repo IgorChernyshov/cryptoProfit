@@ -10,6 +10,7 @@
 #import "CPTMainScreenViewController.h"
 #import "CPTMainScreenPresenterProtocol.h"
 #import "CPTWalletCell.h"
+#import "CPTCoinViewModel.h"
 #import "CPTLabel.h"
 #import "UIColor+CPTColors.h"
 
@@ -22,8 +23,7 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 @property (nonatomic, strong) id<CPTMainScreenPresenterProtocol> presenter;
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, copy) NSArray<NSString *> *coinsNames;
-@property (nonatomic, copy) NSArray<NSNumber *> *coinsQuantity;
+@property (nonatomic, copy) NSArray<CPTCoinViewModel *> *coins;
 @property (nonatomic, strong) UIView *tableHeaderView;
 
 @end
@@ -40,7 +40,7 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 	if (self)
 	{
 		_presenter = presenter;
-		_coinsNames = [NSArray new];
+		_coins = [NSArray new];
 	}
 	return self;
 }
@@ -86,7 +86,7 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 	CPTLabel *walletTotalLabel = [[CPTLabel alloc] initWithText:@"Кол-во"];
 	walletTotalLabel.translatesAutoresizingMaskIntoConstraints = NO;
 	
-	CPTLabel *walletChangeLabel = [[CPTLabel alloc] initWithText:@"Изменение"];
+	CPTLabel *walletChangeLabel = [[CPTLabel alloc] initWithText:@"Сумма"];
 	walletChangeLabel.translatesAutoresizingMaskIntoConstraints = NO;
 	
 	[self.tableHeaderView addSubview:walletNameLabel];
@@ -170,12 +170,26 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 
 #pragma mark - CPTMainScreenViewProtocol
 
-- (void)showCoinsListWithCoinsNames:(NSArray<NSString *> *)coins quantity:(NSArray<NSNumber *> *)quantity;
+- (void)showCoinsListWithCoinsNames:(NSArray<CPTCoinViewModel *> *)coins
 {
-	self.coinsNames = coins;
-	self.coinsQuantity = quantity;
+	self.coins = coins;
 	[self.tableView reloadData];
 	self.tableView.hidden = NO;
+}
+
+- (void)updateCoinWithShortName:(NSString *)shortName setPrice:(NSNumber *)price
+{
+	for (CPTCoinViewModel *coin in self.coins)
+	{
+		if (![coin.shortName isEqualToString:shortName])
+		{
+			continue;
+		}
+		NSNumber *value = [NSNumber numberWithFloat:(coin.quantity.floatValue * price.floatValue)];
+		coin.value = value;
+		[self.tableView reloadData];
+		return;
+	}
 }
 
 - (void)loadingStarted
@@ -193,14 +207,16 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return self.coinsNames.count;
+	return self.coins.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	CPTWalletCell *cell = [CPTWalletCell new];
-	cell.nameLabel.text = self.coinsNames[indexPath.row];
-	cell.quantityLabel.text = self.coinsQuantity[indexPath.row].stringValue;
+	cell.nameLabel.text = self.coins[indexPath.row].name;
+	cell.quantityLabel.text = [NSString stringWithFormat:@"%@", self.coins[indexPath.row].quantity];
+	NSString *coinValue = [NSString stringWithFormat:@"%@ ₽", self.coins[indexPath.row].value];
+	cell.valueLabel.text = [coinValue isEqualToString:@"0 ₽"] ? @"Нет данных" : coinValue;
 	return cell;
 }
 

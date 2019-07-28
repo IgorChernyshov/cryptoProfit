@@ -79,7 +79,8 @@
 - (void)loadedCoinsList:(NSArray<Coin *> *)coinsList
 {
 	NSMutableArray *coinsNames = [NSMutableArray new];
-	for (Coin* coin in coinsList) {
+	for (Coin* coin in coinsList)
+	{
 		[coinsNames addObject:coin.name];
 	}
 	dispatch_async(dispatch_get_main_queue(), ^{
