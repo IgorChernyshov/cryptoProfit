@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+@class CPTCoinViewModel;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -30,10 +31,17 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Оповещение о том, что необходимо показать на экране список пользовательских криптовалют.
 
- @param coins Массив с именами пользовательских криптовалют.
- @param quantity Массив с количеством пользовательских криптовалют.
+ @param coins Массив с вью-моделями пользовательских криптовалют.
  */
-- (void)showCoinsListWithCoinsNames:(NSArray<NSString *> *)coins quantity:(NSArray<NSNumber *> *)quantity;
+- (void)showCoinsListWithCoinsNames:(NSArray<CPTCoinViewModel *> *)coins;
+
+/**
+ Обновляет цену единицы криптовалюты.
+
+ @param shortName Идентификатор криптовалюты.
+ @param price Цена единицы криптовалюты.
+ */
+- (void)updateCoinWithShortName:(NSString *)shortName setPrice:(NSNumber *)price;
 
 @end
 

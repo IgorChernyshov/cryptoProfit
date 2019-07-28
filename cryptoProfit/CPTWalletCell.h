@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) CPTLabel *nameLabel; /**< Лейбл с названием криптовалюты. */
 @property (nonatomic, strong) CPTLabel *quantityLabel; /**< Лейбл с количеством криптовалюты. */
-@property (nonatomic, strong) CPTLabel *deltaLabel; /**< Лейбл с изменением стоимости криптовалюты. */
+@property (nonatomic, strong) CPTLabel *valueLabel; /**< Лейбл с изменением стоимости криптовалюты. */
 
 @end
 

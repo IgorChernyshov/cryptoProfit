@@ -25,6 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSURL *)currencyListURL;
 
+/**
+ Создаёт URL API-запроса на получение цены криптовалюты.
+
+ @param shortName Кодовое имя криптовалюты.
+ @return URL запроса.
+ */
+- (NSURL *)coinPriceURLWithShortName:(NSString *)shortName;
+
 @end
 
 NS_ASSUME_NONNULL_END

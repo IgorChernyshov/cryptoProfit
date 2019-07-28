@@ -54,8 +54,8 @@
 
 - (void)addDeltaLabel
 {
-	_deltaLabel = [[CPTLabel alloc] initWithText:@"Test delta"];
-	[self.contentView addSubview:_deltaLabel];
+	_valueLabel = [[CPTLabel alloc] initWithText:@"Test delta"];
+	[self.contentView addSubview:_valueLabel];
 }
 
 - (void)createConstraints
@@ -68,10 +68,10 @@
 
 									   [_quantityLabel.leftAnchor constraintEqualToAnchor:self.contentView.centerXAnchor constant:16.f],
 									   [_quantityLabel.centerYAnchor constraintEqualToAnchor:_nameLabel.centerYAnchor],
-									   [_quantityLabel.rightAnchor constraintEqualToAnchor:_deltaLabel.leftAnchor constant:-16.f],
+									   [_quantityLabel.rightAnchor constraintEqualToAnchor:_valueLabel.leftAnchor constant:-16.f],
 
-									   [_deltaLabel.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor constant:-16.f],
-									   [_deltaLabel.centerYAnchor constraintEqualToAnchor:_nameLabel.centerYAnchor]
+									   [_valueLabel.rightAnchor constraintEqualToAnchor:self.contentView.rightAnchor constant:-16.f],
+									   [_valueLabel.centerYAnchor constraintEqualToAnchor:_nameLabel.centerYAnchor]
 									   ]];
 }
 
