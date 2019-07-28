@@ -13,6 +13,7 @@
 #import "CPTLabel.h"
 #import "UIColor+CPTColors.h"
 
+
 static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 
 

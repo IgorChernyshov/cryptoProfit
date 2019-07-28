@@ -20,6 +20,9 @@
 
 @property (nonatomic, strong) id<CPTAddCurrencyPresenterProtocol> presenter;
 
+@property (nonatomic, strong) CPTTextField *currencyNameTextField;
+@property (nonatomic, strong) CPTTextField *currencyQuantityTextField;
+
 @property (nonatomic, strong) CPTLoadingView *spinner;
 @property (nonatomic, strong) UITableView *coinsSearchTableView;
 @property (nonatomic, copy) NSArray<NSString *> *filteredCoinsNames;
@@ -29,9 +32,6 @@
 
 
 @implementation CPTAddCurrencyViewController
-
-@synthesize currencyNameTextField;
-@synthesize currencyQuantityTextField;
 
 
 #pragma mark - Инициализатор

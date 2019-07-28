@@ -13,6 +13,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Презентер экрана поиска и добавления пользовательских криптовалют. Содержит бизнес-логику, управляет View.
+ */
 @interface CPTAddCurrencyPresenter : NSObject <CPTAddCurrencyPresenterProtocol, CPTCoreDataServiceOutputProtocol>
 
 @end

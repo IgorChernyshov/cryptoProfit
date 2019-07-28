@@ -12,6 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Список цветов, используемых в приложении.
+ */
 @interface UIColor (CPTColors)
 
 // Общие цвета приложения

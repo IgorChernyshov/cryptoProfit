@@ -12,6 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Сервис парсера данных. Парсит JSON полученные из сети в словари, с которыми работает сервис CoreData.
+ */
 @interface CPTDataParserService : NSObject <CPTDataParserServiceProtocol>
 
 @end

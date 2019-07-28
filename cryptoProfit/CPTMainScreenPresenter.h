@@ -13,6 +13,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Презентер экрана отображения пользовательских криптовалют. Содержит бизнес-логику, управляет View.
+ */
 @interface CPTMainScreenPresenter : NSObject <CPTMainScreenPresenterProtocol, CPTCoreDataServiceOutputProtocol>
 
 @end

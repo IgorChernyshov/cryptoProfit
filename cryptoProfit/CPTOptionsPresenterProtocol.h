@@ -13,11 +13,21 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Протокол презентера экрана опций. Содержит описание методов, которые должен имплементировать презентер.
+ */
 @protocol CPTOptionsPresenterProtocol <NSObject>
 
-@property (nonatomic, weak) UIViewController<CPTOptionsViewProtocol> *view;
+@property (nonatomic, weak) UIViewController<CPTOptionsViewProtocol> *view; /**< View экрана опций, которой управляет презентер. */
 
+/**
+ Оповещение от View, что была нажата кнопка "Назад".
+ */
 - (void)backButtonWasPressed;
+
+/**
+ Оповещение от View, что была нажата кнопка "Сохранить".
+ */
 - (void)saveButtonWasPressed;
 
 @end

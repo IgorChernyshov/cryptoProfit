@@ -19,6 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface CPTMainScreenViewController : UIViewController <CPTMainScreenViewProtocol>
 
+/**
+ Инициализатор View. У View обязательно должен быть презентер.
+
+ @param presenter Презентер экрана добавления криптовалюты.
+ @return Настроенная View.
+ */
 - (instancetype)initWithPresenter:(id<CPTMainScreenPresenterProtocol>)presenter;
 
 + (instancetype)new NS_UNAVAILABLE;

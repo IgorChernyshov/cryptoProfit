@@ -14,8 +14,17 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Пассивная View экрана поиска и добавления криптовалюты. Управляется презентером.
+ */
 @interface CPTAddCurrencyViewController : UIViewController <CPTAddCurrencyViewProtocol>
 
+/**
+ Инициализатор View. У View обязательно должен быть презентер.
+
+ @param presenter Презентер экрана добавления криптовалюты.
+ @return Настроенная View.
+ */
 - (instancetype)initWithPresenter:(id<CPTAddCurrencyPresenterProtocol>)presenter;
 
 + (instancetype)new NS_UNAVAILABLE;

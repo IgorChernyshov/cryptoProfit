@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Протокол сетевого сервиса.
- Описывает обязательные методы, которые должен имплементировать сетевой сервис.
+ Описывает методы, которые должен имплементировать сетевой сервис.
  */
 @protocol CPTNetworkServiceInputProtocol <NSObject>
 
@@ -40,8 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 
-@property (nonatomic, weak) id<CPTMainScreenPresenterProtocol> mainScreenPresenter;
-@property (nonatomic, weak) id<CPTAddCurrencyPresenterProtocol> addCurrencyPresenter;
+@property (nonatomic, weak) id<CPTMainScreenPresenterProtocol> mainScreenPresenter; /**< Презентер главного экрана, если есть. */
+@property (nonatomic, weak) id<CPTAddCurrencyPresenterProtocol> addCurrencyPresenter;  /**< Презентер экрана добавления криптовалют, если есть. */
 
 @end
 

@@ -13,15 +13,33 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Протокол View экрана добавления криптовалюты. Описывает методы, которые должна имплементировать View.
+ */
 @protocol CPTAddCurrencyViewProtocol <NSObject>
 
-@property (nonatomic, strong) CPTTextField *currencyNameTextField;
-@property (nonatomic, strong) CPTTextField *currencyQuantityTextField;
-
+/**
+ Оповещение, что загрузка данных началась.
+ */
 - (void)loadingStarted;
+
+/**
+ Оповещение, что загрузка списка всех криптовалют завершилась.
+
+ @param coins Результат загрузки списка всех криптовалют.
+ */
 - (void)loadingFinishedWithCoinsNames:(NSArray<NSString *> *)coins;
 
+/**
+ Оповещение, что загрузка отфильтрованного списка криптовалют завершилась.
+
+ @param coins Отфильтрованный список криптовалют.
+ */
 - (void)showFilteredCoinsListWithCoinsNames:(NSArray<NSString *> *)coins;
+
+/**
+ Оповещение, что необходимо спрятать список для поиска криптовалют.
+ */
 - (void)hideCoinsList;
 
 @end

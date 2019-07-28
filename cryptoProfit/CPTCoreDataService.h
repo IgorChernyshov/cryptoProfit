@@ -12,6 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Сервис по работе с CoreData. Сохраняет и загружает объекты Coin в CoreData.
+ */
 @interface CPTCoreDataService : NSObject <CPTCoreDataServiceProtocol>
 
 @end
