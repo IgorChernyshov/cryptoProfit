@@ -13,9 +13,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Ячейка, отображающая название криптовалюты в списке для поиска криптовалют.
+ */
 @interface CPTCoinNameCell : UITableViewCell
 
-@property (nonatomic, strong) CPTLabel *coinName;
+@property (nonatomic, strong) CPTLabel *coinName; /**< Лейбл с названием криптовалюты. */
 
 @end
 

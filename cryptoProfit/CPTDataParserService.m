@@ -10,7 +10,6 @@
 #import "CPTAddCurrencyPresenterProtocol.h"
 #import "CPTCoreDataServiceProtocol.h"
 #import "CPTCoreDataService.h"
-#import "Coin+CoreDataClass.h"
 
 
 @interface CPTDataParserService ()
@@ -28,7 +27,8 @@
 - (instancetype)init
 {
 	self = [super init];
-	if (self) {
+	if (self)
+	{
 		_coreDataService = [CPTCoreDataService new];
 	}
 	return self;
@@ -44,29 +44,26 @@
 	{
 		return;
 	}
-
-//	dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		NSMutableArray<NSString *> *coinsNames = [NSMutableArray new];
-		NSMutableArray<NSDictionary *> *coins = [NSMutableArray new];
-		NSArray<NSDictionary *> *coinsList = dictionary.allValues;
-		for (NSDictionary *coin in coinsList)
+	NSMutableArray<NSString *> *coinsNames = [NSMutableArray new];
+	NSMutableArray<NSDictionary *> *coins = [NSMutableArray new];
+	NSArray<NSDictionary *> *coinsList = dictionary.allValues;
+	for (NSDictionary *coin in coinsList)
+	{
+		@autoreleasepool
 		{
-			@autoreleasepool
-			{
-				NSString *coinName = [coin objectForKey:@"CoinName"];
-				NSString *coinShortName = [coin objectForKey:@"Name"];
+			NSString *coinName = [coin objectForKey:@"CoinName"];
+			NSString *coinShortName = [coin objectForKey:@"Name"];
 
-				NSDictionary *newCoin = @{
-										  @"name" : coinName,
-										  @"shortName" : coinShortName
-										  };
-				[coinsNames addObject:coinName];
-				[coins addObject:newCoin];
-			}
+			NSDictionary *newCoin = @{
+									  @"name" : coinName,
+									  @"shortName" : coinShortName
+									  };
+			[coinsNames addObject:coinName];
+			[coins addObject:newCoin];
 		}
-		[self.coreDataService saveCoinsList:coins];
-		[output parsedCoinsListWithNames:[coinsNames copy]];
-//	});
+	}
+	[self.coreDataService saveCoinsList:coins];
+	[output parsedCoinsListWithNames:[coinsNames copy]];
 }
 
 @end

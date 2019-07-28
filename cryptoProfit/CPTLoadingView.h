@@ -12,9 +12,19 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ View с индикатором загрузки.
+ */
 @interface CPTLoadingView : UIView
 
+/**
+ Отобразить view.
+ */
 - (void)show;
+
+/**
+ Скрыть view.
+ */
 - (void)hide;
 
 @end

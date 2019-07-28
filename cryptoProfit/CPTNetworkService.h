@@ -12,6 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Сервис сетевых запросов. Отправляет API-запросы к серверу и отправляет результат запроса на обработку другим сервисам.
+ */
 @interface CPTNetworkService : NSObject <CPTNetworkServiceInputProtocol>
 
 @end

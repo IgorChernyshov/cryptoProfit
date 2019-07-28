@@ -12,6 +12,8 @@
 #import "CPTDataParserServiceProtocol.h"
 #import "CPTDataParserService.h"
 #import "CPTCoreDataServiceProtocol.h"
+#import "CPTAddCurrencyPresenterProtocol.h"
+#import "CPTUserSettingsService.h"
 
 
 @interface CPTNetworkService ()
@@ -56,6 +58,7 @@
 														   if (!data || error)
 														   {
 															   [self requestToParseData:@{} ofRequestType:requestType];
+															   return;
 														   }
 														   NSDictionary *serverResponse = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
 														   NSDictionary *responseData = [serverResponse objectForKey:@"Data"];
@@ -69,6 +72,12 @@
 	switch (requestType)
 	{
 		case CPTNetworkRequestTypeCurrencyList:
+			if (data.count == 0)
+			{
+				[CPTUserSettingsService coinsListHasBeenUpdated];
+				[self.addCurrencyPresenter viewAppearedOnScreen];
+				break;
+			}
 			[self.dataParser createCoinsListFromDictionary:data withOutput:self.addCurrencyPresenter];
 			break;
 	}

@@ -10,9 +10,8 @@
 @import UIKit;
 #import "AppDelegate.h"
 #import "CPTCoreDataService.h"
-#import "CPTAddCurrencyPresenterProtocol.h"
 #import "Coin+CoreDataClass.h"
-#import "CPTUserSettings.h"
+#import "CPTUserSettingsService.h"
 
 
 @interface CPTCoreDataService ()
@@ -24,15 +23,13 @@
 
 @implementation CPTCoreDataService
 
-@synthesize mainScreenPresenter;
-@synthesize addCurrencyPresenter;
-
 #pragma mark - Initializer
 
 - (instancetype)init
 {
 	self = [super init];
-	if (self) {
+	if (self)
+	{
 		dispatch_async(dispatch_get_main_queue(), ^{
 			self->_coreDataContext = [self coreDataContext];
 		});
@@ -51,9 +48,9 @@
 		NSArray *result = [self.coreDataContext executeFetchRequest:fetchRequest error:&error];
 		if (result.count > 0)
 		{
-			NSLog(@"Coin with name %@ already exists", coin[@"name"]);
 			continue;
 		}
+		// Save coin if it doesn't exist
 		Coin *newCoin = [NSEntityDescription insertNewObjectForEntityForName:@"Coin"
 													  inManagedObjectContext:[self coreDataContext]];
 		newCoin.name = coin[@"name"];

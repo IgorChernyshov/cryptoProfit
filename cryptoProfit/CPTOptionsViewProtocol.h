@@ -12,6 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Протокол View экрана опций. Описывает методы, которые должна имплементировать View.
+ */
 @protocol CPTOptionsViewProtocol <NSObject>
 
 @end

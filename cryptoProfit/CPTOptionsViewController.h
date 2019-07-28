@@ -14,8 +14,17 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Пассивная View экрана опций. Управляется презентером.
+ */
 @interface CPTOptionsViewController : UIViewController <CPTOptionsViewProtocol>
 
+/**
+ Инициализатор View. У View обязательно должен быть презентер.
+
+ @param presenter Презентер экрана опций.
+ @return Настроенная View.
+ */
 - (instancetype)initWithPresenter:(id<CPTOptionsPresenterProtocol>)presenter;
 
 + (instancetype)new NS_UNAVAILABLE;

@@ -31,9 +31,9 @@
 - (instancetype)init
 {
 	self = [super init];
-	if (self) {
+	if (self)
+	{
 		_coreDataService = [CPTCoreDataService new];
-		_coreDataService.mainScreenPresenter = self;
 	}
 	return self;
 }

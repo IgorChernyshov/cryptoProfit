@@ -13,7 +13,7 @@
 #import "CPTNetworkService.h"
 #import "CPTCoreDataService.h"
 #import "Coin+CoreDataClass.h"
-#import "CPTUserSettings.h"
+#import "CPTUserSettingsService.h"
 #import "CPTTextField.h"
 
 
@@ -40,7 +40,6 @@
 		_networkService = [CPTNetworkService new];
 		_networkService.addCurrencyPresenter = self;
 		_coreDataService = [CPTCoreDataService new];
-		_coreDataService.addCurrencyPresenter = self;
 	}
 	return self;
 }
@@ -104,7 +103,7 @@
 
 - (BOOL)coinsListUpdateIsNeeded
 {
-	if ([CPTUserSettings coinsListWasUpdatedAfterLaunch])
+	if ([CPTUserSettingsService coinsListWasUpdatedAfterLaunch])
 	{
 		return NO;
 	}
@@ -113,7 +112,7 @@
 
 - (void)parsedCoinsListWithNames:(NSArray<NSString *> *)names
 {
-	[CPTUserSettings coinsListHasBeenUpdated];
+	[CPTUserSettingsService coinsListHasBeenUpdated];
 	names = [names sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 	dispatch_async(dispatch_get_main_queue(), ^{
 		[self.view loadingFinishedWithCoinsNames:names];

@@ -30,7 +30,8 @@
 - (instancetype)init
 {
 	self = [super init];
-	if (self) {
+	if (self)
+	{
 		[self defaultInit];
 	}
 	return self;
@@ -39,7 +40,8 @@
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
 	self = [super initWithCoder:coder];
-	if (self) {
+	if (self)
+	{
 		[self defaultInit];
 	}
 	return self;
@@ -48,7 +50,8 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
 	self = [super initWithFrame:frame];
-	if (self) {
+	if (self)
+	{
 		[self defaultInit];
 	}
 	return self;

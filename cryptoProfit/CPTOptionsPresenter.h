@@ -12,6 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
+/**
+ Презентер экрана опций. Содержит бизнес-логику, управляет View.
+ */
 @interface CPTOptionsPresenter : NSObject <CPTOptionsPresenterProtocol>
 
 @end
