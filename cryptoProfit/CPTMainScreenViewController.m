@@ -216,7 +216,7 @@ static NSString * const CPTMainScreenCellIdentifier = @"WalletCellIdentifier";
 	cell.nameLabel.text = self.coins[indexPath.row].name;
 	cell.quantityLabel.text = [NSString stringWithFormat:@"%@", self.coins[indexPath.row].quantity];
 	NSString *coinValue = [NSString stringWithFormat:@"%@ ₽", self.coins[indexPath.row].value];
-	cell.valueLabel.text = [coinValue isEqualToString:@"0 ₽"] ? @"Нет данных" : coinValue;
+	cell.valueLabel.text = [coinValue isEqualToString:@"(null) ₽"] ? @"Загрузка" : coinValue;
 	return cell;
 }
 
