@@ -89,7 +89,7 @@
 	[request setURL:url];
 	[request setHTTPMethod:@"GET"];
 	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-	[request setTimeoutInterval:15];
+	[request setTimeoutInterval:30];
 	return request;
 }
 
