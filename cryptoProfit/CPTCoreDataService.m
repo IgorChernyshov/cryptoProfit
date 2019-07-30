@@ -44,7 +44,7 @@
 	{
 		// Check if coin already exists
 		NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Coin"];
-		fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name CONTAINS %@", coin[@"name"]];
+		fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name ==[c] %@", coin[@"name"]];
 		NSArray *result = [self.coreDataContext executeFetchRequest:fetchRequest error:&error];
 		if (result.count > 0)
 		{
@@ -74,7 +74,7 @@
 					   output:(nonnull id<CPTCoreDataServiceOutputProtocol>)output
 {
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Coin"];
-	fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", name];
+	fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name ==[c] %@", name];
 	NSError *error = nil;
 	NSArray<Coin *> *result = [self.coreDataContext executeFetchRequest:fetchRequest error:&error];
 	if (result.count == 1)
