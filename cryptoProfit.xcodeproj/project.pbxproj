@@ -7,14 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1401F6FEE64E8F496CF6AA /* libPods-cryptoProfitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93014D1C979547B0E45B3624 /* libPods-cryptoProfitUITests.a */; };
+		9C4EC82722ED75BE005D5C86 /* CPTCoinViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4EC82622ED75BE005D5C86 /* CPTCoinViewModel.m */; };
 		9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53BD2296E02E008A1632 /* AppDelegate.m */; };
-		9C7A53C12296E02E008A1632 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53C02296E02E008A1632 /* ViewController.m */; };
+		9C7A53C12296E02E008A1632 /* CPTMainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53C02296E02E008A1632 /* CPTMainScreenViewController.m */; };
 		9C7A53C72296E02E008A1632 /* cryptoProfit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53C52296E02E008A1632 /* cryptoProfit.xcdatamodeld */; };
 		9C7A53C92296E030008A1632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C7A53C82296E030008A1632 /* Assets.xcassets */; };
 		9C7A53CC2296E030008A1632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C7A53CA2296E030008A1632 /* LaunchScreen.storyboard */; };
 		9C7A53CF2296E030008A1632 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53CE2296E030008A1632 /* main.m */; };
-		9C7A53D92296E030008A1632 /* cryptoProfitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53D82296E030008A1632 /* cryptoProfitTests.m */; };
 		9C7A53E42296E030008A1632 /* cryptoProfitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A53E32296E030008A1632 /* cryptoProfitUITests.m */; };
+		9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */; };
+		9C7A54A322A29E17008A1632 /* CPTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7A54A222A29E17008A1632 /* CPTNavigationController.m */; };
+		9C991D3422EF4295004FEAA4 /* CPTAPIFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C991D3322EF4295004FEAA4 /* CPTAPIFactoryTests.m */; };
+		9C991D3622EF46AB004FEAA4 /* CPTMainScreenFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C991D3522EF46AB004FEAA4 /* CPTMainScreenFactoryTests.m */; };
+		9C991D3822EFFF87004FEAA4 /* CPTMainScreenPresenterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C991D3722EFFF87004FEAA4 /* CPTMainScreenPresenterTests.m */; };
+		9CAF12DC22D4588F001528E7 /* CPTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12DB22D4588F001528E7 /* CPTTextField.m */; };
+		9CAF12EA22D84E5A001528E7 /* CPTOptionsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12E922D84E5A001528E7 /* CPTOptionsPresenter.m */; };
+		9CAF12ED22D84E74001528E7 /* CPTOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12EC22D84E74001528E7 /* CPTOptionsViewController.m */; };
+		9CAF12F022D84E8E001528E7 /* CPTOptionsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12EF22D84E8E001528E7 /* CPTOptionsFactory.m */; };
+		9CAF12F622D85401001528E7 /* CPTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF12F522D85401001528E7 /* CPTLabel.m */; };
+		9CAF133322E03A69001528E7 /* CPTAPIFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF133222E03A69001528E7 /* CPTAPIFactory.m */; };
+		9CAF133922E03D1D001528E7 /* CPTNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF133822E03D1D001528E7 /* CPTNetworkService.m */; };
+		9CAF133F22E18AC6001528E7 /* CPTDataParserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF133E22E18AC6001528E7 /* CPTDataParserService.m */; };
+		9CAF134622E20CA2001528E7 /* CPTCoreDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF134522E20CA2001528E7 /* CPTCoreDataService.m */; };
+		9CAF134D22E20DE0001528E7 /* Coin+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF134B22E20DE0001528E7 /* Coin+CoreDataClass.m */; };
+		9CAF134E22E20DE0001528E7 /* Coin+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF134C22E20DE0001528E7 /* Coin+CoreDataProperties.m */; };
+		9CAF135222E47D80001528E7 /* CPTLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF135122E47D80001528E7 /* CPTLoadingView.m */; };
+		9CAF135522E4C58F001528E7 /* CPTUserSettingsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF135422E4C58F001528E7 /* CPTUserSettingsService.m */; };
+		9CAF135822E4CC30001528E7 /* CPTCoinNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAF135722E4CC30001528E7 /* CPTCoinNameCell.m */; };
+		9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */; };
+		9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */; };
+		9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442122B62650004BC6FE /* CPTWalletCell.m */; };
+		9CEC442A22B7595D004BC6FE /* CPTAddCurrencyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442922B7595D004BC6FE /* CPTAddCurrencyFactory.m */; };
+		9CEC442E22B75AC0004BC6FE /* CPTAddCurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC442D22B75AC0004BC6FE /* CPTAddCurrencyViewController.m */; };
+		9CEC443122B75B69004BC6FE /* CPTAddCurrencyPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC443022B75B69004BC6FE /* CPTAddCurrencyPresenter.m */; };
+		BF885A59CDACA5FA786811BF /* libPods-cryptoProfitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7D0DEA3736A66B801BA2E7 /* libPods-cryptoProfitTests.a */; };
+		CFD1391D08175F88D6D09317 /* libPods-cryptoProfit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F8CD93AD4374DA53C27151 /* libPods-cryptoProfit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,22 +63,89 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1F8473F7C57B247AB485F5 /* Pods-cryptoProfitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoProfitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cryptoProfitUITests/Pods-cryptoProfitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		93014D1C979547B0E45B3624 /* libPods-cryptoProfitUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cryptoProfitUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C4EC82522ED75BE005D5C86 /* CPTCoinViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTCoinViewModel.h; sourceTree = "<group>"; };
+		9C4EC82622ED75BE005D5C86 /* CPTCoinViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTCoinViewModel.m; sourceTree = "<group>"; };
 		9C7A53B92296E02E008A1632 /* cryptoProfit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cryptoProfit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7A53BC2296E02E008A1632 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9C7A53BD2296E02E008A1632 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9C7A53BF2296E02E008A1632 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9C7A53C02296E02E008A1632 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9C7A53BF2296E02E008A1632 /* CPTMainScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenViewController.h; sourceTree = "<group>"; };
+		9C7A53C02296E02E008A1632 /* CPTMainScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenViewController.m; sourceTree = "<group>"; };
 		9C7A53C62296E02E008A1632 /* cryptoProfit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cryptoProfit.xcdatamodel; sourceTree = "<group>"; };
 		9C7A53C82296E030008A1632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C7A53CB2296E030008A1632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C7A53CD2296E030008A1632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C7A53CE2296E030008A1632 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9C7A53D42296E030008A1632 /* cryptoProfitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cryptoProfitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C7A53D82296E030008A1632 /* cryptoProfitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cryptoProfitTests.m; sourceTree = "<group>"; };
 		9C7A53DA2296E030008A1632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C7A53DF2296E030008A1632 /* cryptoProfitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cryptoProfitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7A53E32296E030008A1632 /* cryptoProfitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cryptoProfitUITests.m; sourceTree = "<group>"; };
 		9C7A53E52296E030008A1632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C7A549422A299AC008A1632 /* UIColor+CPTColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+CPTColors.h"; sourceTree = "<group>"; };
+		9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CPTColors.m"; sourceTree = "<group>"; };
+		9C7A54A122A29E17008A1632 /* CPTNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNavigationController.h; sourceTree = "<group>"; };
+		9C7A54A222A29E17008A1632 /* CPTNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTNavigationController.m; sourceTree = "<group>"; };
+		9C991D3322EF4295004FEAA4 /* CPTAPIFactoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTAPIFactoryTests.m; sourceTree = "<group>"; };
+		9C991D3522EF46AB004FEAA4 /* CPTMainScreenFactoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenFactoryTests.m; sourceTree = "<group>"; };
+		9C991D3722EFFF87004FEAA4 /* CPTMainScreenPresenterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenPresenterTests.m; sourceTree = "<group>"; };
+		9CAF12DA22D4588F001528E7 /* CPTTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTTextField.h; sourceTree = "<group>"; };
+		9CAF12DB22D4588F001528E7 /* CPTTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTTextField.m; sourceTree = "<group>"; };
+		9CAF12E822D84E5A001528E7 /* CPTOptionsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTOptionsPresenter.h; sourceTree = "<group>"; };
+		9CAF12E922D84E5A001528E7 /* CPTOptionsPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTOptionsPresenter.m; sourceTree = "<group>"; };
+		9CAF12EB22D84E74001528E7 /* CPTOptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTOptionsViewController.h; sourceTree = "<group>"; };
+		9CAF12EC22D84E74001528E7 /* CPTOptionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTOptionsViewController.m; sourceTree = "<group>"; };
+		9CAF12EE22D84E8E001528E7 /* CPTOptionsFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTOptionsFactory.h; sourceTree = "<group>"; };
+		9CAF12EF22D84E8E001528E7 /* CPTOptionsFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTOptionsFactory.m; sourceTree = "<group>"; };
+		9CAF12F122D84F02001528E7 /* CPTOptionsPresenterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTOptionsPresenterProtocol.h; sourceTree = "<group>"; };
+		9CAF12F222D84F11001528E7 /* CPTOptionsViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTOptionsViewProtocol.h; sourceTree = "<group>"; };
+		9CAF12F422D85401001528E7 /* CPTLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTLabel.h; sourceTree = "<group>"; };
+		9CAF12F522D85401001528E7 /* CPTLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTLabel.m; sourceTree = "<group>"; };
+		9CAF133122E03A69001528E7 /* CPTAPIFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAPIFactory.h; sourceTree = "<group>"; };
+		9CAF133222E03A69001528E7 /* CPTAPIFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTAPIFactory.m; sourceTree = "<group>"; };
+		9CAF133622E03AB3001528E7 /* CPTAPIFactoryProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAPIFactoryProtocol.h; sourceTree = "<group>"; };
+		9CAF133722E03D1D001528E7 /* CPTNetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNetworkService.h; sourceTree = "<group>"; };
+		9CAF133822E03D1D001528E7 /* CPTNetworkService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTNetworkService.m; sourceTree = "<group>"; };
+		9CAF133A22E03D35001528E7 /* CPTNetworkServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTNetworkServiceProtocol.h; sourceTree = "<group>"; };
+		9CAF133C22E18ABB001528E7 /* CPTDataParserServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTDataParserServiceProtocol.h; sourceTree = "<group>"; };
+		9CAF133D22E18AC6001528E7 /* CPTDataParserService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTDataParserService.h; sourceTree = "<group>"; };
+		9CAF133E22E18AC6001528E7 /* CPTDataParserService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTDataParserService.m; sourceTree = "<group>"; };
+		9CAF134422E20CA2001528E7 /* CPTCoreDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTCoreDataService.h; sourceTree = "<group>"; };
+		9CAF134522E20CA2001528E7 /* CPTCoreDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTCoreDataService.m; sourceTree = "<group>"; };
+		9CAF134722E20CAD001528E7 /* CPTCoreDataServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTCoreDataServiceProtocol.h; sourceTree = "<group>"; };
+		9CAF134922E20DE0001528E7 /* Coin+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coin+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9CAF134A22E20DE0001528E7 /* Coin+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coin+CoreDataClass.h"; sourceTree = "<group>"; };
+		9CAF134B22E20DE0001528E7 /* Coin+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Coin+CoreDataClass.m"; sourceTree = "<group>"; };
+		9CAF134C22E20DE0001528E7 /* Coin+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Coin+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9CAF135022E47D80001528E7 /* CPTLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTLoadingView.h; sourceTree = "<group>"; };
+		9CAF135122E47D80001528E7 /* CPTLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTLoadingView.m; sourceTree = "<group>"; };
+		9CAF135322E4C58F001528E7 /* CPTUserSettingsService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTUserSettingsService.h; sourceTree = "<group>"; };
+		9CAF135422E4C58F001528E7 /* CPTUserSettingsService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTUserSettingsService.m; sourceTree = "<group>"; };
+		9CAF135622E4CC30001528E7 /* CPTCoinNameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTCoinNameCell.h; sourceTree = "<group>"; };
+		9CAF135722E4CC30001528E7 /* CPTCoinNameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTCoinNameCell.m; sourceTree = "<group>"; };
+		9CEC441822B60E89004BC6FE /* CPTMainScreenFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenFactory.h; sourceTree = "<group>"; };
+		9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenFactory.m; sourceTree = "<group>"; };
+		9CEC441B22B60EEE004BC6FE /* CPTMainScreenPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenPresenter.h; sourceTree = "<group>"; };
+		9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTMainScreenPresenter.m; sourceTree = "<group>"; };
+		9CEC441E22B60F5D004BC6FE /* CPTMainScreenPresenterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenPresenterProtocol.h; sourceTree = "<group>"; };
+		9CEC441F22B610C1004BC6FE /* CPTMainScreenViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTMainScreenViewProtocol.h; sourceTree = "<group>"; };
+		9CEC442022B62650004BC6FE /* CPTWalletCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTWalletCell.h; sourceTree = "<group>"; };
+		9CEC442122B62650004BC6FE /* CPTWalletCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTWalletCell.m; sourceTree = "<group>"; };
+		9CEC442822B7595D004BC6FE /* CPTAddCurrencyFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAddCurrencyFactory.h; sourceTree = "<group>"; };
+		9CEC442922B7595D004BC6FE /* CPTAddCurrencyFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTAddCurrencyFactory.m; sourceTree = "<group>"; };
+		9CEC442B22B75A05004BC6FE /* CPTAddCurrencyViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAddCurrencyViewProtocol.h; sourceTree = "<group>"; };
+		9CEC442C22B75AC0004BC6FE /* CPTAddCurrencyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAddCurrencyViewController.h; sourceTree = "<group>"; };
+		9CEC442D22B75AC0004BC6FE /* CPTAddCurrencyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTAddCurrencyViewController.m; sourceTree = "<group>"; };
+		9CEC442F22B75B69004BC6FE /* CPTAddCurrencyPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAddCurrencyPresenter.h; sourceTree = "<group>"; };
+		9CEC443022B75B69004BC6FE /* CPTAddCurrencyPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPTAddCurrencyPresenter.m; sourceTree = "<group>"; };
+		9CEC443222B75B77004BC6FE /* CPTAddCurrencyPresenterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPTAddCurrencyPresenterProtocol.h; sourceTree = "<group>"; };
+		A52F1735EB61C2B4828CAC3C /* Pods-cryptoProfit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoProfit.release.xcconfig"; path = "Pods/Target Support Files/Pods-cryptoProfit/Pods-cryptoProfit.release.xcconfig"; sourceTree = "<group>"; };
+		A6B2AF14D6A419D1ABA39047 /* Pods-cryptoProfit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoProfit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cryptoProfit/Pods-cryptoProfit.debug.xcconfig"; sourceTree = "<group>"; };
+		AC74FFA90C7005FCEC16FD8D /* Pods-cryptoProfitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoProfitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cryptoProfitTests/Pods-cryptoProfitTests.release.xcconfig"; sourceTree = "<group>"; };
+		B3F8CD93AD4374DA53C27151 /* libPods-cryptoProfit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cryptoProfit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C68DF104C4BF89A1AF13B18C /* Pods-cryptoProfitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoProfitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cryptoProfitUITests/Pods-cryptoProfitUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD7D0DEA3736A66B801BA2E7 /* libPods-cryptoProfitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cryptoProfitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6CF5BAE73E9B0BBCF84AE6F /* Pods-cryptoProfitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoProfitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cryptoProfitTests/Pods-cryptoProfitTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD1391D08175F88D6D09317 /* libPods-cryptoProfit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF885A59CDACA5FA786811BF /* libPods-cryptoProfitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +169,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D1401F6FEE64E8F496CF6AA /* libPods-cryptoProfitUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31EBE17F1CE4A00FC8DDC61D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A6B2AF14D6A419D1ABA39047 /* Pods-cryptoProfit.debug.xcconfig */,
+				A52F1735EB61C2B4828CAC3C /* Pods-cryptoProfit.release.xcconfig */,
+				F6CF5BAE73E9B0BBCF84AE6F /* Pods-cryptoProfitTests.debug.xcconfig */,
+				AC74FFA90C7005FCEC16FD8D /* Pods-cryptoProfitTests.release.xcconfig */,
+				C68DF104C4BF89A1AF13B18C /* Pods-cryptoProfitUITests.debug.xcconfig */,
+				0C1F8473F7C57B247AB485F5 /* Pods-cryptoProfitUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7714EECC2611F6AD7E34DB5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3F8CD93AD4374DA53C27151 /* libPods-cryptoProfit.a */,
+				DD7D0DEA3736A66B801BA2E7 /* libPods-cryptoProfitTests.a */,
+				93014D1C979547B0E45B3624 /* libPods-cryptoProfitUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C4EC82422ED759F005D5C86 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C4EC82522ED75BE005D5C86 /* CPTCoinViewModel.h */,
+				9C4EC82622ED75BE005D5C86 /* CPTCoinViewModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		9C7A53B02296E02E008A1632 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +215,8 @@
 				9C7A53D72296E030008A1632 /* cryptoProfitTests */,
 				9C7A53E22296E030008A1632 /* cryptoProfitUITests */,
 				9C7A53BA2296E02E008A1632 /* Products */,
+				31EBE17F1CE4A00FC8DDC61D /* Pods */,
+				7714EECC2611F6AD7E34DB5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,15 +233,9 @@
 		9C7A53BB2296E02E008A1632 /* cryptoProfit */ = {
 			isa = PBXGroup;
 			children = (
-				9C7A53BC2296E02E008A1632 /* AppDelegate.h */,
-				9C7A53BD2296E02E008A1632 /* AppDelegate.m */,
-				9C7A53BF2296E02E008A1632 /* ViewController.h */,
-				9C7A53C02296E02E008A1632 /* ViewController.m */,
-				9C7A53C82296E030008A1632 /* Assets.xcassets */,
-				9C7A53CA2296E030008A1632 /* LaunchScreen.storyboard */,
-				9C7A53CD2296E030008A1632 /* Info.plist */,
-				9C7A53CE2296E030008A1632 /* main.m */,
-				9C7A53C52296E02E008A1632 /* cryptoProfit.xcdatamodeld */,
+				9C7A549A22A299E2008A1632 /* Application */,
+				9C7A549922A299D4008A1632 /* Configuration */,
+				9C7A549722A299B1008A1632 /* Resources */,
 			);
 			path = cryptoProfit;
 			sourceTree = "<group>";
@@ -117,7 +243,9 @@
 		9C7A53D72296E030008A1632 /* cryptoProfitTests */ = {
 			isa = PBXGroup;
 			children = (
-				9C7A53D82296E030008A1632 /* cryptoProfitTests.m */,
+				9C991D3322EF4295004FEAA4 /* CPTAPIFactoryTests.m */,
+				9C991D3522EF46AB004FEAA4 /* CPTMainScreenFactoryTests.m */,
+				9C991D3722EFFF87004FEAA4 /* CPTMainScreenPresenterTests.m */,
 				9C7A53DA2296E030008A1632 /* Info.plist */,
 			);
 			path = cryptoProfitTests;
@@ -132,6 +260,307 @@
 			path = cryptoProfitUITests;
 			sourceTree = "<group>";
 		};
+		9C7A549722A299B1008A1632 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A53C82296E030008A1632 /* Assets.xcassets */,
+				9C7A53CA2296E030008A1632 /* LaunchScreen.storyboard */,
+				9C7A549422A299AC008A1632 /* UIColor+CPTColors.h */,
+				9C7A549522A299AC008A1632 /* UIColor+CPTColors.m */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C7A549922A299D4008A1632 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A53CD2296E030008A1632 /* Info.plist */,
+				9C7A53C52296E02E008A1632 /* cryptoProfit.xcdatamodeld */,
+				9CAF135322E4C58F001528E7 /* CPTUserSettingsService.h */,
+				9CAF135422E4C58F001528E7 /* CPTUserSettingsService.m */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		9C7A549A22A299E2008A1632 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A549B22A29D7E008A1632 /* Core */,
+				9C7A549F22A29DD0008A1632 /* Flows */,
+				9C7A549C22A29D96008A1632 /* UI */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		9C7A549B22A29D7E008A1632 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF134822E20D9E001528E7 /* Model */,
+				9C7A53CE2296E030008A1632 /* main.m */,
+				9C7A53BC2296E02E008A1632 /* AppDelegate.h */,
+				9C7A53BD2296E02E008A1632 /* AppDelegate.m */,
+				9CAF133422E03A70001528E7 /* Factories */,
+				9CAF132D22E0396C001528E7 /* Services */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		9C7A549C22A29D96008A1632 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A549D22A29D9B008A1632 /* Elements */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		9C7A549D22A29D9B008A1632 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF134F22E47D60001528E7 /* UIActivityIndicator */,
+				9CAF12F322D853D4001528E7 /* UILabel */,
+				9CAF12D922D45844001528E7 /* UITextField */,
+				9C7A54A422A29E45008A1632 /* UINavigationController */,
+			);
+			name = Elements;
+			sourceTree = "<group>";
+		};
+		9C7A549F22A29DD0008A1632 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12E022D650F2001528E7 /* Options */,
+				9CEC442322B7591A004BC6FE /* AddCurrency */,
+				9C7A54A022A29DE2008A1632 /* Main */,
+			);
+			name = Flows;
+			sourceTree = "<group>";
+		};
+		9C7A54A022A29DE2008A1632 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC441722B60E6D004BC6FE /* Builder */,
+				9C4EC82422ED759F005D5C86 /* Model */,
+				9CEC441622B60B7F004BC6FE /* Presenter */,
+				9CEC441522B60B7F004BC6FE /* View */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		9C7A54A422A29E45008A1632 /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A54A122A29E17008A1632 /* CPTNavigationController.h */,
+				9C7A54A222A29E17008A1632 /* CPTNavigationController.m */,
+			);
+			name = UINavigationController;
+			sourceTree = "<group>";
+		};
+		9CAF12D922D45844001528E7 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12DA22D4588F001528E7 /* CPTTextField.h */,
+				9CAF12DB22D4588F001528E7 /* CPTTextField.m */,
+			);
+			name = UITextField;
+			sourceTree = "<group>";
+		};
+		9CAF12E022D650F2001528E7 /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12E122D65100001528E7 /* Builder */,
+				9CAF12E322D6510F001528E7 /* Presenter */,
+				9CAF12E422D65114001528E7 /* View */,
+			);
+			name = Options;
+			sourceTree = "<group>";
+		};
+		9CAF12E122D65100001528E7 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12EE22D84E8E001528E7 /* CPTOptionsFactory.h */,
+				9CAF12EF22D84E8E001528E7 /* CPTOptionsFactory.m */,
+			);
+			name = Builder;
+			sourceTree = "<group>";
+		};
+		9CAF12E322D6510F001528E7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12E822D84E5A001528E7 /* CPTOptionsPresenter.h */,
+				9CAF12E922D84E5A001528E7 /* CPTOptionsPresenter.m */,
+				9CAF12F122D84F02001528E7 /* CPTOptionsPresenterProtocol.h */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		9CAF12E422D65114001528E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12EB22D84E74001528E7 /* CPTOptionsViewController.h */,
+				9CAF12EC22D84E74001528E7 /* CPTOptionsViewController.m */,
+				9CAF12F222D84F11001528E7 /* CPTOptionsViewProtocol.h */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9CAF12F322D853D4001528E7 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF12F422D85401001528E7 /* CPTLabel.h */,
+				9CAF12F522D85401001528E7 /* CPTLabel.m */,
+			);
+			name = UILabel;
+			sourceTree = "<group>";
+		};
+		9CAF132D22E0396C001528E7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF134322E20C8B001528E7 /* CoreDataService */,
+				9CAF133B22E18A9F001528E7 /* DataParserService */,
+				9CAF132F22E03A32001528E7 /* NetworkService */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		9CAF132E22E03A2B001528E7 /* APIFactory */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF133122E03A69001528E7 /* CPTAPIFactory.h */,
+				9CAF133222E03A69001528E7 /* CPTAPIFactory.m */,
+				9CAF133622E03AB3001528E7 /* CPTAPIFactoryProtocol.h */,
+			);
+			name = APIFactory;
+			sourceTree = "<group>";
+		};
+		9CAF132F22E03A32001528E7 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF133722E03D1D001528E7 /* CPTNetworkService.h */,
+				9CAF133822E03D1D001528E7 /* CPTNetworkService.m */,
+				9CAF133A22E03D35001528E7 /* CPTNetworkServiceProtocol.h */,
+			);
+			name = NetworkService;
+			sourceTree = "<group>";
+		};
+		9CAF133422E03A70001528E7 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF132E22E03A2B001528E7 /* APIFactory */,
+			);
+			name = Factories;
+			sourceTree = "<group>";
+		};
+		9CAF133B22E18A9F001528E7 /* DataParserService */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF133D22E18AC6001528E7 /* CPTDataParserService.h */,
+				9CAF133E22E18AC6001528E7 /* CPTDataParserService.m */,
+				9CAF133C22E18ABB001528E7 /* CPTDataParserServiceProtocol.h */,
+			);
+			name = DataParserService;
+			sourceTree = "<group>";
+		};
+		9CAF134322E20C8B001528E7 /* CoreDataService */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF134422E20CA2001528E7 /* CPTCoreDataService.h */,
+				9CAF134522E20CA2001528E7 /* CPTCoreDataService.m */,
+				9CAF134722E20CAD001528E7 /* CPTCoreDataServiceProtocol.h */,
+			);
+			name = CoreDataService;
+			sourceTree = "<group>";
+		};
+		9CAF134822E20D9E001528E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF134A22E20DE0001528E7 /* Coin+CoreDataClass.h */,
+				9CAF134B22E20DE0001528E7 /* Coin+CoreDataClass.m */,
+				9CAF134922E20DE0001528E7 /* Coin+CoreDataProperties.h */,
+				9CAF134C22E20DE0001528E7 /* Coin+CoreDataProperties.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9CAF134F22E47D60001528E7 /* UIActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				9CAF135022E47D80001528E7 /* CPTLoadingView.h */,
+				9CAF135122E47D80001528E7 /* CPTLoadingView.m */,
+			);
+			name = UIActivityIndicator;
+			sourceTree = "<group>";
+		};
+		9CEC441522B60B7F004BC6FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C7A53BF2296E02E008A1632 /* CPTMainScreenViewController.h */,
+				9C7A53C02296E02E008A1632 /* CPTMainScreenViewController.m */,
+				9CEC441F22B610C1004BC6FE /* CPTMainScreenViewProtocol.h */,
+				9CEC442022B62650004BC6FE /* CPTWalletCell.h */,
+				9CEC442122B62650004BC6FE /* CPTWalletCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9CEC441622B60B7F004BC6FE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC441B22B60EEE004BC6FE /* CPTMainScreenPresenter.h */,
+				9CEC441C22B60EEE004BC6FE /* CPTMainScreenPresenter.m */,
+				9CEC441E22B60F5D004BC6FE /* CPTMainScreenPresenterProtocol.h */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		9CEC441722B60E6D004BC6FE /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC441822B60E89004BC6FE /* CPTMainScreenFactory.h */,
+				9CEC441922B60E89004BC6FE /* CPTMainScreenFactory.m */,
+			);
+			name = Builder;
+			sourceTree = "<group>";
+		};
+		9CEC442322B7591A004BC6FE /* AddCurrency */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC442422B75922004BC6FE /* Builder */,
+				9CEC442722B75935004BC6FE /* Presenter */,
+				9CEC442522B7592E004BC6FE /* View */,
+			);
+			name = AddCurrency;
+			sourceTree = "<group>";
+		};
+		9CEC442422B75922004BC6FE /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC442822B7595D004BC6FE /* CPTAddCurrencyFactory.h */,
+				9CEC442922B7595D004BC6FE /* CPTAddCurrencyFactory.m */,
+			);
+			name = Builder;
+			sourceTree = "<group>";
+		};
+		9CEC442522B7592E004BC6FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC442C22B75AC0004BC6FE /* CPTAddCurrencyViewController.h */,
+				9CEC442D22B75AC0004BC6FE /* CPTAddCurrencyViewController.m */,
+				9CEC442B22B75A05004BC6FE /* CPTAddCurrencyViewProtocol.h */,
+				9CAF135622E4CC30001528E7 /* CPTCoinNameCell.h */,
+				9CAF135722E4CC30001528E7 /* CPTCoinNameCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9CEC442722B75935004BC6FE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				9CEC442F22B75B69004BC6FE /* CPTAddCurrencyPresenter.h */,
+				9CEC443022B75B69004BC6FE /* CPTAddCurrencyPresenter.m */,
+				9CEC443222B75B77004BC6FE /* CPTAddCurrencyPresenterProtocol.h */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +568,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C7A53E82296E030008A1632 /* Build configuration list for PBXNativeTarget "cryptoProfit" */;
 			buildPhases = (
+				A10943672B8A48E7A076FB07 /* [CP] Check Pods Manifest.lock */,
 				9C7A53B52296E02E008A1632 /* Sources */,
 				9C7A53B62296E02E008A1632 /* Frameworks */,
 				9C7A53B72296E02E008A1632 /* Resources */,
@@ -156,6 +586,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C7A53EB2296E030008A1632 /* Build configuration list for PBXNativeTarget "cryptoProfitTests" */;
 			buildPhases = (
+				B888A5080304B186801A8059 /* [CP] Check Pods Manifest.lock */,
 				9C7A53D02296E030008A1632 /* Sources */,
 				9C7A53D12296E030008A1632 /* Frameworks */,
 				9C7A53D22296E030008A1632 /* Resources */,
@@ -174,6 +605,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C7A53EE2296E030008A1632 /* Build configuration list for PBXNativeTarget "cryptoProfitUITests" */;
 			buildPhases = (
+				27C18A4473E4C888DA4E3968 /* [CP] Check Pods Manifest.lock */,
 				9C7A53DB2296E030008A1632 /* Sources */,
 				9C7A53DC2296E030008A1632 /* Frameworks */,
 				9C7A53DD2296E030008A1632 /* Resources */,
@@ -256,15 +688,95 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27C18A4473E4C888DA4E3968 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cryptoProfitUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A10943672B8A48E7A076FB07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cryptoProfit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B888A5080304B186801A8059 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cryptoProfitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9C7A53B52296E02E008A1632 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C7A53C12296E02E008A1632 /* ViewController.m in Sources */,
+				9CEC442A22B7595D004BC6FE /* CPTAddCurrencyFactory.m in Sources */,
+				9C7A53C12296E02E008A1632 /* CPTMainScreenViewController.m in Sources */,
+				9CAF133922E03D1D001528E7 /* CPTNetworkService.m in Sources */,
+				9CAF135522E4C58F001528E7 /* CPTUserSettingsService.m in Sources */,
+				9CEC442222B62650004BC6FE /* CPTWalletCell.m in Sources */,
+				9CAF12DC22D4588F001528E7 /* CPTTextField.m in Sources */,
+				9CEC443122B75B69004BC6FE /* CPTAddCurrencyPresenter.m in Sources */,
+				9CEC442E22B75AC0004BC6FE /* CPTAddCurrencyViewController.m in Sources */,
 				9C7A53C72296E02E008A1632 /* cryptoProfit.xcdatamodeld in Sources */,
+				9CAF133322E03A69001528E7 /* CPTAPIFactory.m in Sources */,
+				9CAF12ED22D84E74001528E7 /* CPTOptionsViewController.m in Sources */,
+				9CAF135822E4CC30001528E7 /* CPTCoinNameCell.m in Sources */,
 				9C7A53CF2296E030008A1632 /* main.m in Sources */,
+				9CAF135222E47D80001528E7 /* CPTLoadingView.m in Sources */,
+				9CAF134622E20CA2001528E7 /* CPTCoreDataService.m in Sources */,
+				9CAF134D22E20DE0001528E7 /* Coin+CoreDataClass.m in Sources */,
+				9C4EC82722ED75BE005D5C86 /* CPTCoinViewModel.m in Sources */,
+				9CAF12F022D84E8E001528E7 /* CPTOptionsFactory.m in Sources */,
+				9CAF133F22E18AC6001528E7 /* CPTDataParserService.m in Sources */,
 				9C7A53BE2296E02E008A1632 /* AppDelegate.m in Sources */,
+				9CAF12F622D85401001528E7 /* CPTLabel.m in Sources */,
+				9CEC441A22B60E89004BC6FE /* CPTMainScreenFactory.m in Sources */,
+				9C7A549622A299AC008A1632 /* UIColor+CPTColors.m in Sources */,
+				9CAF134E22E20DE0001528E7 /* Coin+CoreDataProperties.m in Sources */,
+				9C7A54A322A29E17008A1632 /* CPTNavigationController.m in Sources */,
+				9CEC441D22B60EEE004BC6FE /* CPTMainScreenPresenter.m in Sources */,
+				9CAF12EA22D84E5A001528E7 /* CPTOptionsPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +784,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C7A53D92296E030008A1632 /* cryptoProfitTests.m in Sources */,
+				9C991D3422EF4295004FEAA4 /* CPTAPIFactoryTests.m in Sources */,
+				9C991D3622EF46AB004FEAA4 /* CPTMainScreenFactoryTests.m in Sources */,
+				9C991D3822EFFF87004FEAA4 /* CPTMainScreenPresenterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +939,7 @@
 		};
 		9C7A53E92296E030008A1632 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6B2AF14D6A419D1ABA39047 /* Pods-cryptoProfit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -442,6 +957,7 @@
 		};
 		9C7A53EA2296E030008A1632 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A52F1735EB61C2B4828CAC3C /* Pods-cryptoProfit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -459,6 +975,7 @@
 		};
 		9C7A53EC2296E030008A1632 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6CF5BAE73E9B0BBCF84AE6F /* Pods-cryptoProfitTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +995,7 @@
 		};
 		9C7A53ED2296E030008A1632 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC74FFA90C7005FCEC16FD8D /* Pods-cryptoProfitTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -497,6 +1015,7 @@
 		};
 		9C7A53EF2296E030008A1632 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C68DF104C4BF89A1AF13B18C /* Pods-cryptoProfitUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73YFFUD89Y;
@@ -515,6 +1034,7 @@
 		};
 		9C7A53F02296E030008A1632 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C1F8473F7C57B247AB485F5 /* Pods-cryptoProfitUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73YFFUD89Y;

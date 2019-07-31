@@ -7,16 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import "CPTNavigationController.h"
 
-@interface AppDelegate ()
-
-@end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+	CGRect windowFrame = [[UIScreen mainScreen] bounds];
+	self.window = [[UIWindow alloc] initWithFrame:windowFrame];
+	CPTNavigationController *navigationController = [CPTNavigationController new];
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
